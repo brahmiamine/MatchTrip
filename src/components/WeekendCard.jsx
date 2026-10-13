@@ -7,13 +7,13 @@ import { getDestinationHub } from '../lib/destinations.js';
 import { enrichFixture } from '../lib/media.js';
 import { ArrowRight, CalendarDays, MapPin, Star, Ticket } from 'lucide-react';
 import { FLAGS } from '../constants.js';
-import { dayLabel, formatDay, formatFull, formatTime, nextDate } from '../lib/dates.js';
+import { dayLabel, formatDay, formatFull, formatTime, weekendFriday, weekendSunday } from '../lib/dates.js';
 
 export default function WeekendCard({ weekend: w, onExamine }) {
   return <article className="weekend-card">
     <div className="weekend-top"><span className="country-small">{FLAGS[w.country]} {w.country}</span><span className="weekend-count">{w.items.length} matchs</span></div>
     <div className="weekend-destination-label">Destination</div><h3>{w.cluster}</h3>
-    <div className="weekend-date"><CalendarDays size={15}/>{formatFull(w.weekend)} — {formatFull(nextDate(w.weekend))}</div>
+    <div className="weekend-date"><CalendarDays size={15}/>{formatFull(weekendFriday(w.weekend))} — {formatFull(weekendSunday(w.weekend))}</div>
     {getDestinationHub(w.items[0]) && <div className="weekend-hub"><MapPin size={13}/> Ville de séjour : <strong>{getDestinationHub(w.items[0])}</strong></div>}
     <div className="weekend-events">
       {w.items.slice(0, 4).map(enrichFixture).map(m => <div className="weekend-event" key={m.fixture_key}>
