@@ -1,0 +1,21 @@
+name: Verify React build
+on:
+  push:
+    branches: [feat/matchtrip-explorer]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - name: Check seeded fixtures and migration
+        run: |
+          node --input-type=module -e "import('./src/data/fixtures.js').then(({seedFixtures})=>{if(seedFixtures.length!==147)process.exit(1);const keys=new Set(seedFixtures.map(x=>x.fixture_key));if(keys.size!==147)process.exit(2);console.log('147 fixtures, unique keys')})"
