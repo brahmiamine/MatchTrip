@@ -32,14 +32,14 @@ describe('regroupement', () => {
   });
   it('par destination', () => {
     const g = groupMatches([a, mk({ country: 'Italie', zone: 'Milan' })], 'zone');
-    expect(g.map(([k]) => k)).toEqual(['France / Paris', 'Italie / Milan']);
+    expect(g.map(([k]) => k)).toEqual(['France / Paris & alentours', 'Italie / Milan']);
   });
   it('destination répétée pour chaque date, dans l’ordre chronologique', () => {
     const x = mk({ home: 'X', date: '2026-10-18', country: 'Italie', zone: 'Milan' });
     const g = groupMatches(sortMatches([a, x, b, d], 'asc'), 'zone-date');
     expect(g.map(([k, v]) => [k, names(v)])).toEqual([
-      ['2026-10-17|France / Paris', 'DB'],
-      ['2026-10-18|France / Paris', 'A'],
+      ['2026-10-17|France / Paris & alentours', 'DB'],
+      ['2026-10-18|France / Paris & alentours', 'A'],
       ['2026-10-18|Italie / Milan', 'X'],
     ]);
   });
@@ -47,9 +47,26 @@ describe('regroupement', () => {
     const x = mk({ home: 'X', date: '2026-10-24', time: '15:00' });
     const g = groupMatches(sortMatches([x, a, b, d], 'asc'), 'zone-weekend');
     expect(g.map(([k, v]) => [k, names(v)])).toEqual([
-      ['2026-10-17|France / Paris', 'DBA'],
-      ['2026-10-24|France / Paris', 'X'],
+      ['2026-10-17|France / Paris & alentours', 'DBA'],
+      ['2026-10-24|France / Paris & alentours', 'X'],
     ]);
+  });
+  it('fusionne Paris et Autour de Paris dans toutes les vues destination', () => {
+    const paris = mk({ home: 'PSG', zone: 'Paris', date: '2026-11-28' });
+    const lens = mk({ home: 'Lens', zone: 'Autour de Paris', date: '2026-11-28' });
+    const auxerre = mk({ home: 'Auxerre', zone: 'Autour de Paris', date: '2026-11-29' });
+    for (const group of ['zone', 'zone-weekend']) {
+      const result = groupMatches([paris, lens, auxerre], group);
+      expect(result).toHaveLength(1);
+      expect(result[0][0]).toContain('France / Paris & alentours');
+      expect(result[0][1]).toHaveLength(3);
+    }
+    const byDay = groupMatches([paris, lens, auxerre], 'zone-date');
+    expect(byDay).toHaveLength(2);
+    expect(byDay[0][0]).toBe('2026-11-28|France / Paris & alentours');
+    expect(byDay[0][1]).toHaveLength(2);
+    expect(byDay[1][0]).toBe('2026-11-29|France / Paris & alentours');
+    expect(groupMatches([paris, lens, auxerre], 'date')).toHaveLength(2);
   });
   it('liste vide', () => expect(groupMatches([], 'date')).toEqual([]));
 });

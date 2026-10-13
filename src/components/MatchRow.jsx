@@ -1,6 +1,7 @@
 import React from 'react';
 import ClubLogo from './ClubLogo.jsx';
 import Stadium from './Stadium.jsx';
+import DistanceFromHub from './DistanceFromHub.jsx';
 import { enrichFixture } from '../lib/media.js';
 import { ArrowUpRight, CalendarDays, Heart, Star } from 'lucide-react';
 import { FLAGS } from '../constants.js';
@@ -14,6 +15,7 @@ export default function MatchRow({ match, favorite, onToggleFavorite }) {
       <div className="match-teams"><strong>{m.home}</strong><span>vs</span><ClubLogo club={m.away} url={m.away_logo_url} small/><strong>{m.away}</strong></div>
       <div className="match-sub"><span>{FLAGS[m.country]} {m.zone}</span><span className="dot-sep">·</span><span>{m.league}</span>{m.highlight && <span className="hot-label"><Star size={11}/> Affiche</span>}</div>
       <Stadium match={m}/>
+      <DistanceFromHub match={m}/>
     </div>
     <div className="match-right">
       <span className="match-date"><CalendarDays size={12}/>{m.date_window_start && m.date_window_end ? `${formatDay(m.date_window_start)} – ${formatDay(m.date_window_end)}` : formatDay(m.date)}</span>
