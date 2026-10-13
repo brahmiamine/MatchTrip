@@ -1,0 +1,40 @@
+/** Liens directs officiels vers la billetterie du club qui reçoit.
+ * Vérifiés sur les pages des clubs. Ne jamais générer d’URL de billetterie.
+ * Le fait d'avoir un lien ne garantit pas des billets en vente.
+ */
+export const OFFICIAL_TICKET_URLS = Object.freeze({
+  "PSG": "https://billetterie.psg.fr/",
+  "Paris FC": "https://billetterie.parisfc.fr/fr/",
+  "Troyes": "https://ticket.estac.fr/fr",
+  "Le Havre": "https://billetterie.hac.football/",
+  "Lens": "https://billetterie.rclens.fr/",
+  "Le Mans": "https://billetterie.lemansfc.fr/fr",
+  "Union SG": "https://ticketing.rusg.brussels/",
+  "Anderlecht": "https://ticketing.rsca.be/",
+  "Ajax": "https://tickets.ajax.nl/list/events",
+  "ADO Den Haag": "https://adodenhaag.nl/en/tickets",
+  "AZ Alkmaar": "https://www.az.nl/wedstrijden/",
+  "Sparta Rotterdam": "https://www.spartakaartje.nl/",
+  "Feyenoord": "https://tickets.feyenoord.com/",
+  "Real Madrid": "https://www.realmadrid.com/fr-FR/billetterie",
+  "Getafe": "https://www.getafecf.com/entradas",
+  "FC Barcelone": "https://www.fcbarcelona.com/en/entrades",
+  "Valencia CF": "https://www.valenciacf.com/entradas",
+  "Levante": "https://ticketing.levanteud.com/",
+  "AC Milan": "https://booking.acmilan.com/",
+  "Inter Milan": "https://www.inter.it/en/tickets",
+  "Atalanta": "https://www.atalanta.it/biglietteria",
+  "AS Roma": "https://www.asroma.com/en/tickets",
+  "Bologna": "https://www.bolognafc.it/biglietti/",
+  "Juventus": "https://www.juventus.com/en/tickets/",
+  "Torino": "https://www.torinofc.it/en/biglietteria/faq",
+  "Schalke 04": "https://tickets.schalke04.de/",
+  "Bayern Munich": "https://fcbayern.com/en/tickets",
+  "Borussia Dortmund": "https://www.bvb.de/de/de/tickets.html",
+  "Bayer Leverkusen": "https://www.bayer04.de/en-us/page/service/tickets",
+  "FC Augsburg": "https://tickets.fcaugsburg.de/fcaugsburg/heimtickets.htm",
+  "Eintracht Frankfurt": "https://stores.eintracht.de/tickets/info-service/ticketinformation/"
+});
+export function getTicketUrl(homeClub) {
+  return OFFICIAL_TICKET_URLS[homeClub] ?? null;
+}
