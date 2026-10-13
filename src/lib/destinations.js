@@ -21,7 +21,7 @@ export const DESTINATION_HUBS = Object.freeze({
   Italie: {
     'Milan / Lombardie': 'Milan', 'Rome / Latium': 'Rome',
     'Bologne / Émilie-Romagne': 'Bologne', 'Turin / Piémont': 'Turin',
-    'Venise / Udine': 'Venise', 'Autres villes italiennes': 'Naples',
+    'Venise / Udine': 'Venise',
   },
 });
 
@@ -94,6 +94,11 @@ export function getDestinationLabel(match) {
 }
 
 /** Ville principale à visiter / ville de séjour proposée pour une destination. */
+/** Nom lisible de la zone sans répéter le pays. */
+export function getDestinationName(match) {
+  return getDestinationLabel(match).slice(match.country.length + 3);
+}
+
 export function getDestinationHub(match) {
   const name = DESTINATION_HUBS[match.country]?.[match.zone];
   return name && CITY_COORDINATES[name] ? name : null;
