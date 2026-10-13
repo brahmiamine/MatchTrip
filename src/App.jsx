@@ -94,9 +94,9 @@ export default function App() {
   }),[filtered,sort]);
   const grouped = useMemo(() => {
     const map = new Map();
-    ordered.forEach(m => { const k = group === 'date' ? m.date : m.country + ' / ' + m.zone; if(!map.has(k))map.set(k,[]); map.get(k).push(m); });
+    ordered.slice(0,pageLimit).forEach(m => { const k = group === 'date' ? m.date : m.country + ' / ' + m.zone; if(!map.has(k))map.set(k,[]); map.get(k).push(m); });
     return [...map.entries()];
-  },[ordered,group]);
+  },[ordered,group,pageLimit]);
 
   const weekends = useMemo(() => {
     const map = new Map();
