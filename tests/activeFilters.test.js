@@ -9,7 +9,7 @@ describe('filtres actifs', () => {
   it('week-ends indisponibles non inclus', () => expect(describeActiveFilters({ ...defaultFilters(), excluded: ['2026-10-31'] })).toEqual([]));
   it('une pastille par valeur de liste et par critère', () => {
     const labels = describeActiveFilters(full).map(i => i.label);
-    expect(labels).toEqual(['France', 'Italie', 'Paris', 'PSG', 'Ligue 1', 'Week-end sam 17 oct – dim 18 oct', '« psg »', 'Du sam 17 oct au lun 30 nov', 'Dimanche', 'À partir de 18h', 'Grandes affiches', 'Date et heure confirmées', 'Favoris']);
+    expect(labels).toEqual(['France', 'Italie', 'Paris', 'PSG', 'Ligue 1', 'Week-end ven 16 oct – dim 18 oct', '« psg »', 'Du sam 17 oct au lun 30 nov', 'Dimanche', 'À partir de 18h', 'Grandes affiches', 'Date et heure vérifiées', 'Favoris']);
   });
   it('identifiants uniques', () => { const ids = describeActiveFilters(full).map(i => i.id); expect(new Set(ids).size).toBe(ids.length); });
   it('période ouverte d’un côté', () => {

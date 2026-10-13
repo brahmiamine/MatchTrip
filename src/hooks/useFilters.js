@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { removeFilter } from '../lib/activeFilters.js';
 import { addExcludedWeekend, defaultFilters, pruneSelection } from '../lib/filters.js';
 import { toggleItem } from '../lib/collections.js';
-import { nextDate } from '../lib/dates.js';
+import { weekendFriday, weekendSunday } from '../lib/dates.js';
 import { usePersistentList } from './usePersistentList.js';
 import { EXCLUDED_DEFAULT } from '../constants.js';
 
@@ -21,7 +21,7 @@ export function useFilters(all, initial) {
   /** Les week-ends indisponibles sont des contraintes personnelles : la réinitialisation les conserve. */
   const reset = useCallback(() => setFilters(defaultFilters()), []);
   const focusWeekend = useCallback(w => {
-    setFilters(f => ({ ...f, countries: [w.country], zones: w.zones, clubs: [], leagues: [], dateFrom: w.weekend, dateTo: nextDate(w.weekend) }));
+    setFilters(f => ({ ...f, countries: [w.country], zones: w.zones, clubs: [], leagues: [], dateFrom: weekendFriday(w.weekend), dateTo: weekendSunday(w.weekend) }));
     setExcluded(p => p.filter(x => x !== w.weekend));
   }, [setExcluded]);
 

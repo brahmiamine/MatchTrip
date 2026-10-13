@@ -1,10 +1,10 @@
 import { COUNTRY_ORDER, EVENING_FROM, EXCLUDED_DEFAULT } from '../constants.js';
-import { getWeekend, weekdayOf } from './dates.js';
+import { getWeekend, weekdayOf, isWeekendDay } from './dates.js';
 import { normalize, uniqueSorted } from './collections.js';
 
 export const defaultFilters = () => ({
   countries: [], zones: [], clubs: [], leagues: [], weekends: [], search: '',
-  dateFrom: '', dateTo: '', day: 'all', slot: 'all',
+  dateFrom: '', dateTo: '', day: 'all', slot: 'all', timeFrom: '', timeTo: '',
   onlyHighlights: false, onlyCertain: false, onlyFav: false,
   excluded: [...EXCLUDED_DEFAULT],
 });
@@ -30,14 +30,17 @@ export function matchesFilters(m, f, favorites = []) {
     // Date provisoire vendredi–dimanche : ne pas prétendre que le match est samedi.
     if (m.date_window_start && m.date_window_end) return false;
     const wd = weekdayOf(m.date);
-    if (f.day === 'samedi' ? wd !== 6 : wd !== 0) return false;
+    if (wd !== ({ vendredi: 5, samedi: 6, dimanche: 0 }[f.day])) return false;
   }
   const t = timeKey(m);
   if (f.slot === 'day' && (!t || t >= EVENING_FROM)) return false;
   if (f.slot === 'evening' && (!t || t < EVENING_FROM)) return false;
-  if (f.slot === 'unknown' && t) return false;
+  if (f.slot === 'unknown' && t && m.time_confirmed === true) return false;
+  if (f.timeFrom && (!t || t < f.timeFrom)) return false;
+  if (f.timeTo && (!t || t >= f.timeTo)) return false; // borne haute EXCLUE
+  if (f.timeFrom && f.timeTo && f.timeFrom >= f.timeTo) return false;
   if (f.onlyHighlights && !m.highlight) return false;
-  if (f.onlyCertain && (m.provisional || !t)) return false;
+  if (f.onlyCertain && (!m.date_confirmed || !m.time_confirmed || m.provisional || !t)) return false;
   if (f.onlyFav && !favorites.includes(m.fixture_key)) return false;
   if (f.excluded.includes(getWeekend(m.date))) return false;
   return true;
@@ -48,7 +51,7 @@ export const applyFilters = (all, f, favorites) => all.filter(m => matchesFilter
 /** Nombre de critères personnalisés actifs (hors période et week-ends exclus). */
 export function countActiveFilters(f) {
   const lists = [f.countries, f.zones, f.clubs, f.leagues, f.weekends].filter(x => x.length).length;
-  const flags = [f.search.trim(), f.day !== 'all', f.slot !== 'all', f.onlyHighlights, f.onlyCertain, f.onlyFav, Boolean(f.dateFrom), Boolean(f.dateTo)];
+  const flags = [f.search.trim(), f.day !== 'all', f.slot !== 'all', f.onlyHighlights, f.onlyCertain, f.onlyFav, Boolean(f.dateFrom), Boolean(f.dateTo), Boolean(f.timeFrom), Boolean(f.timeTo)];
   return lists + flags.filter(Boolean).length;
 }
 
@@ -75,7 +78,7 @@ export function buildOptions(all, f) {
     zones: uniqueSorted(present(inCountries.map(x => x.zone))),
     clubs: uniqueSorted(present(inZones.map(x => x.home))),
     leagues: uniqueSorted(present(inZones.map(x => x.league))),
-    weekends: [...new Set(present(inZones.map(x => x.date)).map(getWeekend))].sort(),
+    weekends: [...new Set(present(inZones.filter(x => isWeekendDay(x.date)).map(x => x.date)).map(getWeekend))].sort(),
     months: [...new Set(dates.map(d => d.slice(0, 7)))],
     dateBounds: { min: dates[0] || '', max: dates[dates.length - 1] || '' },
   };

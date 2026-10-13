@@ -3,6 +3,7 @@ import ClubLogo from './ClubLogo.jsx';
 import Stadium from './Stadium.jsx';
 import { getTicketUrl } from '../lib/ticketing.js';
 import DistanceFromHub from './DistanceFromHub.jsx';
+import FixtureStatus from './FixtureStatus.jsx';
 import { enrichFixture } from '../lib/media.js';
 import { ArrowUpRight, CalendarDays, Heart, Ticket, Star } from 'lucide-react';
 import { FLAGS } from '../constants.js';
@@ -22,7 +23,7 @@ export default function MatchRow({ match, favorite, onToggleFavorite }) {
     <div className="match-right">
       <span className="match-date"><CalendarDays size={12}/>{m.date_window_start && m.date_window_end ? `${formatDay(m.date_window_start)} – ${formatDay(m.date_window_end)}` : formatDay(m.date)}</span>
       <span className="time">{formatTime(m.time)}</span>
-      <span className={'reliability ' + (m.provisional ? 'uncertain' : '')}>{m.date_window_start && m.date_window_end ? 'Jour et heure à confirmer' : m.provisional ? 'Date provisoire' : 'À vérifier'}</span>
+      <FixtureStatus match={m}/>
     </div>
     <div className="match-actions">
       {ticketUrl && <a className="ticket-link" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`Billetterie officielle : ${m.home}`} aria-label={`Billetterie officielle ${m.home}`}><Ticket size={15}/><span>Billetterie</span></a>}

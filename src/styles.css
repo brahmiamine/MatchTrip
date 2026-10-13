@@ -50,3 +50,15 @@ footer{padding:55px 0 40px;margin-top:35px;border-top:1px solid #28394b;display:
 a.hub-distance{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 a.hub-distance:hover{color:#e9ffbf}
 @media(max-width:760px){.ticket-link{padding:0 7px!important}.ticket-link span{display:none}.group-destination{font-size:14px}}
+
+/* Créneau libre et statut de vérification */
+.time-range{margin-top:10px}
+.time-range input{font-variant-numeric:tabular-nums}
+.fixture-status{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:750;line-height:1.35;padding:4px 7px;border:1px solid #8c774a;border-radius:6px;color:#ffcf8a;background:#392e22}
+.fixture-status.verified{border-color:#567951;color:#d4f2c1;background:#1a352a}
+.fixture-source{color:#a2b7ce;font-size:10px;text-decoration:underline;text-underline-offset:2px}
+.weekend-fixture-status{margin-top:5px;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+@media(max-width:760px){.segment button{font-size:9px}}
+
+.match-verification{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.fixture-source{display:inline-flex;align-items:center;gap:3px}

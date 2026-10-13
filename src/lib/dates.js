@@ -10,11 +10,14 @@ export const weekdayOf = iso => toDate(iso).getUTCDay();
 
 export const addDays = (iso, n) => { const d = toDate(iso); d.setUTCDate(d.getUTCDate() + n); return toIso(d); };
 export const nextDate = iso => addDays(iso, 1);
+export const weekendFriday = sat => addDays(sat, -1);
+export const weekendSunday = sat => addDays(sat, 1);
+export const isWeekendDay = iso => [5, 6, 0].includes(weekdayOf(iso));
 
-/** Samedi du week-end contenant la date (le dimanche renvoie la veille, les jours de semaine le samedi précédent). */
+/** Clé historique = samedi ; le vendredi appartient au week-end qui commence ce vendredi. */
 export function getWeekend(iso) {
   const wd = weekdayOf(iso);
-  return addDays(iso, -(wd === 6 ? 0 : (wd + 1) % 7));
+  return wd === 5 ? addDays(iso, 1) : addDays(iso, -(wd === 6 ? 0 : (wd + 1) % 7));
 }
 
 /** « sam. 18 oct. » → « sam 18 oct » */
@@ -44,4 +47,4 @@ export function monthRange(ym) {
   return [first, addDays(next, -1)];
 }
 /** Libellé d'un week-end indisponible : « sam 31 oct – dim 1 nov » */
-export const formatWeekendRange = sat => `${formatDay(sat)} – ${formatDay(nextDate(sat))}`;
+export const formatWeekendRange = sat => `${formatDay(weekendFriday(sat))} – ${formatDay(weekendSunday(sat))}`;

@@ -3,9 +3,10 @@ import { defaultFilters } from './filters.js';
 const LISTS = { c: 'countries', z: 'zones', cl: 'clubs', lg: 'leagues', w: 'weekends' };
 const FLAGS = { hl: 'onlyHighlights', ok: 'onlyCertain', fav: 'onlyFav' };
 const ENUMS = {
-  d: ['all', 'samedi', 'dimanche'], slot: ['all', 'day', 'evening', 'unknown'],
+  d: ['all', 'vendredi', 'samedi', 'dimanche'], slot: ['all', 'day', 'evening', 'unknown'],
   v: ['weekends', 'matches'], sort: ['asc', 'desc', 'highlights', 'country'], g: ['date', 'zone', 'zone-date', 'zone-weekend'],
 };
+const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
 export const defaultView = () => ({ view: 'weekends', sort: 'asc', group: 'date' });
@@ -19,6 +20,8 @@ export function encodeState(filters, { view, sort, group }) {
   if (filters.dateTo) p.set('to', filters.dateTo);
   if (filters.day !== 'all') p.set('d', filters.day);
   if (filters.slot !== 'all') p.set('slot', filters.slot);
+  if (filters.timeFrom) p.set('tf', filters.timeFrom);
+  if (filters.timeTo) p.set('tt', filters.timeTo);
   Object.entries(FLAGS).forEach(([k, f]) => { if (filters[f]) p.set(k, '1'); });
   filters.excluded.forEach(d => p.append('excl', d));
   if (view !== 'weekends') p.set('v', view);
@@ -38,6 +41,8 @@ export function decodeState(search) {
   if (to && ISO.test(to)) filters.dateTo = to;
   const pick = (k, fallback) => (ENUMS[k].includes(p.get(k)) ? p.get(k) : fallback);
   filters.day = pick('d', 'all'); filters.slot = pick('slot', 'all');
+  if (TIME.test(p.get('tf') || '')) filters.timeFrom = p.get('tf');
+  if (TIME.test(p.get('tt') || '')) filters.timeTo = p.get('tt');
   Object.entries(FLAGS).forEach(([k, f]) => { filters[f] = p.get(k) === '1'; });
   const excluded = p.has('excl') ? [...new Set(p.getAll('excl').filter(d => ISO.test(d)))].sort() : null;
   const dv = defaultView();

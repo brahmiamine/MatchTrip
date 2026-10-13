@@ -1,8 +1,8 @@
 import { formatDay, formatWeekendRange } from './dates.js';
 
 const SLOTS = { day: 'Avant 18h', evening: 'À partir de 18h', unknown: 'Heure non confirmée' };
-const DAYS = { samedi: 'Samedi', dimanche: 'Dimanche' };
-const FLAGS = { onlyHighlights: 'Grandes affiches', onlyCertain: 'Date et heure confirmées', onlyFav: 'Favoris' };
+const DAYS = { vendredi: 'Vendredi', samedi: 'Samedi', dimanche: 'Dimanche' };
+const FLAGS = { onlyHighlights: 'Grandes affiches', onlyCertain: 'Date et heure vérifiées', onlyFav: 'Favoris' };
 const LISTS = [['countries', ''], ['zones', ''], ['clubs', ''], ['leagues', ''], ['weekends', 'Week-end ']];
 
 /** Critères actifs sous forme de pastilles : [{ id, key, value?, label }]. */
@@ -16,6 +16,7 @@ export function describeActiveFilters(f) {
   }
   if (f.day !== 'all') items.push({ id: 'day', key: 'day', label: DAYS[f.day] });
   if (f.slot !== 'all') items.push({ id: 'slot', key: 'slot', label: SLOTS[f.slot] });
+  if (f.timeFrom || f.timeTo) items.push({ id: 'timeRange', key: 'timeRange', label: `Heures : ${f.timeFrom || '00:00'}–${f.timeTo || '24:00'} (fin exclue)` });
   Object.entries(FLAGS).forEach(([key, label]) => { if (f[key]) items.push({ id: key, key, label }); });
   return items;
 }
@@ -24,6 +25,7 @@ export function describeActiveFilters(f) {
 export function removeFilter(f, item) {
   if (Array.isArray(f[item.key])) return { ...f, [item.key]: f[item.key].filter(v => v !== item.value) };
   if (item.key === 'period') return { ...f, dateFrom: '', dateTo: '' };
+  if (item.key === 'timeRange') return { ...f, timeFrom: '', timeTo: '' };
   if (item.key === 'search') return { ...f, search: '' };
   if (item.key === 'day' || item.key === 'slot') return { ...f, [item.key]: 'all' };
   return { ...f, [item.key]: false };

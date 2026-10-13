@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown, MapPin } from 'lucide-react';
 import { MATCHES_PAGE_STEP } from '../constants.js';
-import { formatDay, formatFull, nextDate } from '../lib/dates.js';
+import { formatDay, formatFull, weekendFriday, weekendSunday } from '../lib/dates.js';
 import { groupMatches } from '../lib/sorting.js';
 import Empty from './Empty.jsx';
 import MatchRow from './MatchRow.jsx';
@@ -15,7 +15,7 @@ function groupDateLabel(group, key) {
   if (group === 'zone-date') return formatDay(key.split('|')[0]);
   if (group === 'zone-weekend') {
     const sat = key.split('|')[0];
-    return `${formatFull(sat)} – ${formatFull(nextDate(sat))}`;
+    return `${formatFull(weekendFriday(sat))} – ${formatFull(weekendSunday(sat))}`;
   }
   return null;
 }

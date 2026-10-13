@@ -2,7 +2,7 @@
 
 Application React + Vite sur GitHub Pages pour trouver un week-end de football depuis Paris.
 
-**214 matchs de championnat** du 17 octobre au 31 décembre 2026, répartis dans **6 pays** : France (25), Belgique (8), Pays-Bas (55), Espagne (39), Italie (53) et Allemagne (34). Les matchs à domicile et leurs calendriers sont issus des recherches du 13 octobre 2026 ; dates susceptibles d'évoluer.
+**226 matchs de championnat** du 17 octobre au 31 décembre 2026, répartis dans **6 pays** : France (28), Belgique (8), Pays-Bas (60), Espagne (39), Italie (55) et Allemagne (36). Les matchs à domicile et leurs calendriers sont issus des recherches du 13 octobre 2026 ; dates susceptibles d'évoluer.
 
 ## Application
 - Filtres combinables : pays, zones, clubs à domicile, adversaires, texte/stade, dates, compétitions, samedi/dimanche, horaire, grandes affiches, favoris, week-ends indisponibles.
@@ -36,7 +36,7 @@ Site : https://brahmiamine.github.io/matches/
 
 ## Supabase (base utilisée en production)
 MatchTrip utilise maintenant le projet Supabase partagé **Test** (`nkcvffmgosvipnxcttms`). Le projet initial `arbitres` n'est pas modifié. Les données sont lues dans deux tables publiques avec RLS :
-- `public.matchtrip_fixtures` : 214 matchs, clé unique `fixture_key`, événements et fenêtres de dates provisoires ;
+- `public.matchtrip_fixtures` : 226 matchs, clé unique `fixture_key`, événements et fenêtres de dates provisoires ;
 - `public.matchtrip_club_media` : 104 fiches club, logo, stade, photo et sources.
 
 L'application utilise une clé publique **anon** (jamais une clé `service_role`) ; les écritures sont interdites aux visiteurs et réservées à l'administration de la base. Le workflow de déploiement fixe la connexion publique de MatchTrip sur le projet Test. La clé publique est visible dans le navigateur ; aucune clé service_role ne doit y être employée.
@@ -67,3 +67,22 @@ Le calcul est purement dans le frontend : aucune modification de la base Supabas
 Chaque rencontre dispose d'un accès à la billetterie **officielle du club recevant** lorsque sa page a été identifiée (`src/lib/ticketing.js`). Aucun lien tiers ou URL inventée : si la billetterie officielle est inconnue, le bouton n'est pas affiché. La présence du lien ne signifie pas que les billets sont en vente.
 
 Le texte de distance (ex. Lens · ≈ 178 km de Paris) est désormais cliquable : il ouvre Google Maps **Itinéraires** entre la ville de référence touristique et la ville du club, avec la conduite comme mode initial. Le kilométrage affiché sur la carte reste une approximation **à vol d'oiseau** ; Maps calcule son propre trajet. Les en-têtes affichent distinctement le pays, la destination et les dates.
+
+## Week-end vendredi–dimanche et créneau horaire
+
+Les groupes, options de filtre « Week-ends », week-ends exclus, URL partageable et navigation « Examiner ce week-end » couvrent maintenant le **vendredi, le samedi et le dimanche**. Par compatibilité avec les URL existantes, la clé technique d'un week-end reste le samedi ; le vendredi est rattaché au samedi suivant.
+
+Les filtres proposent un jour « Vendredi » et une plage horaire indépendante **[heure de début incluse, heure de fin exclue)**. Par exemple 10:00–19:00 accepte 10:00 et 18:59, mais **pas 19:00**, ni les rencontres sans heure. Les anciens filtres (pays, destination, club, compétition, favoris, dates, horaires inconnus) restent cumulables.
+
+## Contrôle documentaire des calendriers (13 octobre 2026)
+
+Le catalogue initial de 214 rencontres n'était pas un export de calendrier officiel synchronisé. En conséquence, il serait incorrect de considérer toutes ses dates et heures comme vérifiées. **55 rencontres existantes** ont été rapprochées par clé de match des calendriers d'organisateurs (Ligue 1, LaLiga, KNVB, Bundesliga/DFB, Lega Serie A), et **12 rencontres du vendredi** ont été ajoutées après consultation de publications officielles. L'historique des sources et les dates/horaires rapprochés sont conservés dans `src/data/verifiedSchedule.js` et `supabase/verified-schedule-seed.sql`. Les **159 rencontres non rapprochées** gardent un état `date_confirmed=false`, `time_confirmed=false`; l'interface affiche donc « Date et heure à confirmer » plutôt que d'inventer une confirmation. Une date/heure affichée sans preuve est un **repère à revalider**. Le badge « Date et heure vérifiées » n'apparaît que lorsqu'une source officielle correspond explicitement à la rencontre ; pour une date seule, le badge indique « Heure à confirmer ».
+
+Base Supabase partagée **Test** (`nkcvffmgosvipnxcttms`) : migration additive `supabase/fixture-verification.sql`, puis `supabase/verified-schedule-seed.sql` (rejouable, sans suppression). Le projet `arbitres` demeure inchangé. Ce contrôle est un **audit partiel et daté** : les organisateurs peuvent encore décaler les horaires. Le site ne prétend pas une vérification exhaustive ni une mise à jour en temps réel.
+
+Sources primaires :
+- Ligue 1 : https://ligue1.com/fr/articles/l1_article_5797- , https://ligue1.com/fr/articles/l1_article_5805- , https://ligue1.com/fr/articles/l1_article_5839- , https://ligue1.com/fr/articles/l1_article_5843-
+- LaLiga : https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-9 et https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-10
+- KNVB : https://www.knvb.nl/competities/eredivisie/programma
+- DFB : https://datencenter.dfb.de/competitions/12/seasons/current
+- Lega Serie A : https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata
