@@ -36,3 +36,17 @@ footer{padding:55px 0 40px;margin-top:35px;border-top:1px solid #28394b;display:
 .distance-explainer{font-size:10px;line-height:1.5;color:#8b9fb1;margin:4px 0 13px}
 .hub-distance{display:inline-flex;align-items:center;gap:5px;color:#b6dca8;font-size:10px;line-height:1.5;margin-top:7px;flex-wrap:wrap}
 .hub-distance.compact{display:flex;font-size:10px;margin-top:5px}
+
+/* Pays, destination et période : informations distinctes */
+.weekend-destination-label{margin-top:14px;color:#91a4ba;font-size:10px;text-transform:uppercase;letter-spacing:1.1px;font-weight:750}
+.weekend-card .weekend-destination-label+h3{margin-top:4px}
+.group-country{font:700 11px 'DM Sans',sans-serif;color:#a8bbcb;background:#243447;border-radius:6px;padding:5px 8px;white-space:nowrap}
+.group-destination{font:700 16px 'Space Grotesk',sans-serif;color:#eef6ff}
+.group-period{font:500 11px 'DM Sans',sans-serif;color:#aabaca;white-space:normal}
+.group-title{flex-wrap:wrap}
+.ticket-link{display:inline-flex!important;align-items:center;gap:5px!important;width:auto!important;padding:0 10px;white-space:nowrap;font-size:10px;font-weight:800;border-color:#627f54!important;color:#d9fc96!important}
+.ticket-link:hover,.weekend-ticket-link:hover{background:#2f443b!important;border-color:#d9fc96!important}
+.weekend-ticket-link{display:inline-flex;align-items:center;gap:6px;border:1px solid #4b6948;border-radius:6px;background:#1c2e29;color:#d7f5b6;font-weight:700;font-size:10px;padding:5px 8px;margin-top:7px}
+a.hub-distance{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+a.hub-distance:hover{color:#e9ffbf}
+@media(max-width:760px){.ticket-link{padding:0 7px!important}.ticket-link span{display:none}.group-destination{font-size:14px}}
