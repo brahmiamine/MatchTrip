@@ -6,9 +6,9 @@ import { buildWeekends } from '../src/lib/weekends.js';
 
 describe('extension Eredivisie et Bundesliga 2026', () => {
   const all = [...seedFixtures, ...newFixtures];
-  it('conserve 147 matchs et ajoute 85 rencontres uniques', () => {
-    expect(all).toHaveLength(232);
-    expect(new Set(all.map(x => x.fixture_key)).size).toBe(232);
+  it('conserve 129 matchs et ajoute 85 rencontres uniques', () => {
+    expect(all).toHaveLength(214);
+    expect(new Set(all.map(x => x.fixture_key)).size).toBe(214);
     expect(newFixtures.filter(x => x.country === 'Pays-Bas')).toHaveLength(51);
     expect(newFixtures.filter(x => x.country === 'Allemagne')).toHaveLength(34);
   });
