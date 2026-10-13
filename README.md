@@ -39,7 +39,7 @@ MatchTrip utilise maintenant le projet Supabase partagé **Test** (`nkcvffmgosvi
 - `public.matchtrip_fixtures` : 214 matchs, clé unique `fixture_key`, événements et fenêtres de dates provisoires ;
 - `public.matchtrip_club_media` : 104 fiches club, logo, stade, photo et sources.
 
-L'application utilise une clé publique **anon** (jamais une clé `service_role`) ; les écritures sont interdites aux visiteurs et réservées à l'administration de la base. Le workflow de déploiement fixe la connexion publique de MatchTrip sur le projet Test. Les clés publieuses sont visibles dans le navigateur ; aucune clé service_role ne doit y être employée.
+L'application utilise une clé publique **anon** (jamais une clé `service_role`) ; les écritures sont interdites aux visiteurs et réservées à l'administration de la base. Le workflow de déploiement fixe la connexion publique de MatchTrip sur le projet Test. La clé publique est visible dans le navigateur ; aucune clé service_role ne doit y être employée.
 
 Scripts SQL rejouables dans un nouveau projet : `supabase/schema.sql`, `supabase/seed.sql`, `supabase/seed-expansion.sql`, `supabase/media-schema.sql`, `supabase/media-seed.sql`, `supabase/media-seed-expansion.sql`. Le catalogue `src/data/fixtures.js` + `src/data/newFixtures.js` sert de secours en cas d'indisponibilité de Supabase.
 
