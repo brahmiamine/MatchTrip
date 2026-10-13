@@ -1,4 +1,4 @@
--- Catalogue initial de 147 rencontres, établi à partir des calendriers discutés le 13 octobre 2026.
+-- Catalogue initial de 129 rencontres, établi à partir des calendriers discutés le 13 octobre 2026.
 -- Ne remplace pas une API de résultats en direct. Dates provisoires explicitement marquées.
 INSERT INTO public.matchtrip_fixtures (fixture_key,country,zone,cluster,city,league,home,away,date,time,provisional,highlight,source_url)
 VALUES
@@ -130,23 +130,5 @@ VALUES
 ('2026-10-25-udinese-ac-milan','Italie','Venise / Udine','Venise & Udine','Venise','Serie A','Udinese','AC Milan','2026-10-25','20:45',false,true,'https://www.legaseriea.it/serie-a/calendario-risultati'),
 ('2026-10-31-udinese-as-roma','Italie','Venise / Udine','Venise & Udine','Venise','Serie A','Udinese','AS Roma','2026-10-31','18:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
 ('2026-11-29-udinese-fiorentina','Italie','Venise / Udine','Venise & Udine','Venise','Serie A','Udinese','Fiorentina','2026-11-29','12:30',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-20-venezia-monza','Italie','Venise / Udine','Venise & Udine','Venise','Serie A','Venezia','Monza','2026-12-20','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-10-18-fiorentina-como','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Fiorentina','Como','2026-10-18','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-10-24-cagliari-bologna','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Cagliari','Bologna','2026-10-24','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-10-24-napoli-as-roma','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Napoli','AS Roma','2026-10-24','18:00',false,true,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-10-25-genoa-venezia','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Genoa','Venezia','2026-10-25','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-10-25-lecce-juventus','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Lecce','Juventus','2026-10-25','18:00',false,true,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-01-lecce-genoa','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Lecce','Genoa','2026-11-01','18:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-07-cagliari-frosinone','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Cagliari','Frosinone','2026-11-07','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-08-napoli-lazio','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Napoli','Lazio','2026-11-08','12:30',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-08-genoa-ac-milan','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Genoa','AC Milan','2026-11-08','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-08-fiorentina-juventus','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Fiorentina','Juventus','2026-11-08','20:45',false,true,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-11-21-napoli-torino','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Napoli','Torino','2026-11-21','20:45',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-05-napoli-lecce','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Napoli','Lecce','2026-12-05','20:45',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-06-genoa-torino','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Genoa','Torino','2026-12-06','12:30',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-12-cagliari-venezia','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Cagliari','Venezia','2026-12-12','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-12-lecce-sassuolo','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Lecce','Sassuolo','2026-12-12','18:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-13-napoli-ac-milan','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Napoli','AC Milan','2026-12-13','20:45',false,true,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-20-fiorentina-bologna','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Fiorentina','Bologna','2026-12-20','12:30',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati'),
-('2026-12-20-genoa-udinese','Italie','Autres villes italiennes','','Plusieurs villes','Serie A','Genoa','Udinese','2026-12-20','18:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati')
+('2026-12-20-venezia-monza','Italie','Venise / Udine','Venise & Udine','Venise','Serie A','Venezia','Monza','2026-12-20','15:00',false,false,'https://www.legaseriea.it/serie-a/calendario-risultati')
 ON CONFLICT (fixture_key) DO UPDATE SET country=excluded.country,zone=excluded.zone,cluster=excluded.cluster,city=excluded.city,league=excluded.league,home=excluded.home,away=excluded.away,date=excluded.date,time=excluded.time,provisional=excluded.provisional,highlight=excluded.highlight,source_url=excluded.source_url;
