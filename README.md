@@ -53,3 +53,11 @@ Scripts SQL rejouables dans un nouveau projet : `supabase/schema.sql`, `supabase
 - https://www.proleague.be/
 
 Toujours vérifier les dates, les billets et les horaires sur les sites des clubs avant de réserver. Le site ne connaît pas la disponibilité des billets et ne calcule pas les prix de transport.
+
+## Villes de séjour et distances aux matchs
+
+Toutes les vues « Par destination » regroupent désormais **Paris** et **Autour de Paris** sous **France / Paris & alentours** (y compris les 28–29 novembre). Les filtres restent distincts pour permettre une sélection fine des rencontres.
+
+Chaque zone dispose d'une **ville de séjour touristique** (`src/lib/destinations.js`), par exemple Madrid pour Espagne / Madrid, Paris pour Paris & alentours ou Valence pour Valence / Villarreal. Chaque match affiche la ville du club recevant et une distance en kilomètres par rapport à cette ville de référence. Les valeurs sont arrondies et calculées **à vol d'oiseau entre centres-villes**, pas à partir du stade et **jamais** en distance routière ou en temps de trajet. Une ville non reconnue donne « Distance indisponible » ; il n'y a pas de géocodage ou de requête payante. Pour « Autres villes italiennes », Naples est un repère touristique indicatif, et les matchs peuvent être très éloignés.
+
+Le calcul est purement dans le frontend : aucune modification de la base Supabase n'est nécessaire. Ajout de tests de regroupement et couverture du catalogue dans `tests/destinations.test.js`.
