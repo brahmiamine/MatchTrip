@@ -1,16 +1,23 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { removeFilter } from '../lib/activeFilters.js';
 import { addExcludedWeekend, defaultFilters, pruneSelection } from '../lib/filters.js';
 import { toggleItem } from '../lib/collections.js';
 import { weekendFriday, weekendSunday } from '../lib/dates.js';
 import { usePersistentList } from './usePersistentList.js';
 import { EXCLUDED_DEFAULT } from '../constants.js';
+import { useStoredPreference } from './useStoredPreference.js';
 
 /** État des filtres + actions. `all` sert à purger les sélections devenues incohérentes. */
 /** `initial` : { filters, excluded } issu de l'URL ; excluded null → valeur mémorisée localement. */
 export function useFilters(all, initial) {
   const [excluded, setExcluded] = usePersistentList('matchtrip-blocked', EXCLUDED_DEFAULT, initial?.excluded);
-  const [filters, setFilters] = useState(() => ({ ...defaultFilters(), ...initial?.filters }));
+  const fromUrl = typeof window !== 'undefined' && window.location.search ? { ...defaultFilters(), ...initial?.filters } : null;
+  const [filters, setFilters] = useStoredPreference('matchtrip-filters', defaultFilters(), {
+    override: fromUrl,
+    valid: value => value && Object.entries(defaultFilters()).every(([key, expected]) => Array.isArray(expected)
+      ? Array.isArray(value[key]) && value[key].every(item => typeof item === 'string')
+      : typeof value[key] === typeof expected)
+  });
   const merged = useMemo(() => ({ ...filters, excluded }), [filters, excluded]);
 
   const set = useCallback((key, value) => setFilters(f => ({ ...f, [key]: value })), []);

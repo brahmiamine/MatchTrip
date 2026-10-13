@@ -5,7 +5,10 @@
     "stadium": "Parc des Princes",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/fd/Paris_Le_Parc_des_Princes.jpg/960px-Paris_Le_Parc_des_Princes.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Parc_des_Princes",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.psg.fr/le-club/installations/parc-des-princes",
+    "ticket_url": "https://billetterie.psg.fr/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Paris FC": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Paris_FCLogo_11-24.png",
@@ -14,31 +17,43 @@
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/a/ad/Paris_Stade_Jean-Bouin_%28cropped%29.jpg/960px-Paris_Stade_Jean-Bouin_%28cropped%29.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Jean-Bouin_(Paris)",
     "verified_at": "2026-10-13",
-    "stadium_official_url": "https://parisfc.fr/infos-pratiques/"
+    "stadium_official_url": "https://parisfc.fr/infos-pratiques/",
+    "ticket_url": "https://billetterie.parisfc.fr/fr/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Rennes": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/9/9e/Stade_Rennais_FC.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Stade_Rennais_FC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Roazhon Park",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Roazhon_Park_20190814.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Roazhon_Park",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Roazhon_Park_20190814.jpg",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "EL Loko Foto"
   },
   "Lyon": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/1/1c/Olympique_Lyonnais_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Olympique_Lyonnais",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Parc Olympique Lyonnais",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Olympique_lyonnais_-_Stade_rennais%2C_demi-finale_de_Coupe_de_France_2019.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Parc_Olympique_Lyonnais",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Olympique_lyonnais_-_Stade_rennais,_demi-finale_de_Coupe_de_France_2019.jpg",
+    "stadium_official_url": "https://www.groupama-stadium.com/",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Sebleouf"
   },
   "Monaco": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/cf/LogoASMonacoFC2021.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/AS_Monaco_FC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade Louis II",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Panoramio_-_V%26A_Dudush_-_stade_Louis_II.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Louis_II",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Panoramio_-_V%26A_Dudush_-_stade_Louis_II.jpg",
+    "stadium_image_license": "CC BY 3.0",
+    "stadium_image_author": "V&amp;A Dudush"
   },
   "Troyes": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/ESTAC_Troyes_Logo.svg",
@@ -46,23 +61,32 @@
     "stadium": "Stade de l’Aube",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/fr/thumb/a/a2/Fa%C3%A7ade_du_stade_de_l%27Aube.jpeg/960px-Fa%C3%A7ade_du_stade_de_l%27Aube.jpeg",
     "stadium_source_url": "https://fr.wikipedia.org/wiki/Stade_de_l%27Aube",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.estac.fr/le-club/stade-de-laube/",
+    "ticket_url": "https://ticket.estac.fr/fr",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Angers": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Angers_Sporting_Club_de_l%27Ouest_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Angers_SCO",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade Raymond Kopa",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Stade_Jean_Bouin_Angers_2.JPG",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Raymond_Kopa",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stade_Jean_Bouin_Angers_2.JPG",
+    "stadium_image_license": "Public domain",
+    "stadium_image_author": "M. Mouchoir"
   },
   "Lorient": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/4/4c/FC_Lorient_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/FC_Lorient",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade du Moustoir",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Stade_du_Moustoir.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_du_Moustoir",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stade_du_Moustoir.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "NORMOTE"
   },
   "Le Mans": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/5/57/Le_Mans_FC_logo.svg",
@@ -70,7 +94,9 @@
     "stadium": "Stade Marie-Marvingt",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/20110514163046089_ULM.jpg/960px-20110514163046089_ULM.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Marie-Marvingt",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "ticket_url": "https://billetterie.lemansfc.fr/fr",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Lens": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/cc/RC_Lens_logo.svg",
@@ -78,7 +104,11 @@
     "stadium": "Stade Bollaert-Delelis",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Logo_Stade_Bollaert_delelis.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Bollaert-Delelis",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Logo_Stade_Bollaert_delelis.jpg",
+    "stadium_image_license": "CC0",
+    "ticket_url": "https://billetterie.rclens.fr/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Le Havre": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/fc/Le_Havre_AC_logo.svg",
@@ -86,7 +116,12 @@
     "stadium": "Stade Océane",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Br%C3%A9sil_Ghana_au_Havre.jpg/960px-Br%C3%A9sil_Ghana_au_Havre.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Oc%C3%A9ane",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Br%C3%A9sil_Ghana_au_Havre.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "AxelCFC",
+    "ticket_url": "https://billetterie.hac.football/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Auxerre": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/5/51/AJAuxerreLogo.svg",
@@ -94,39 +129,57 @@
     "stadium": "Stade de l’Abbé-Deschamps",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Panorama_du_Stade_de_l%27Abb%C3%A9_Deschamps.png/960px-Panorama_du_Stade_de_l%27Abb%C3%A9_Deschamps.png",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_de_l%27Abb%C3%A9-Deschamps",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Panorama_du_Stade_de_l%27Abb%C3%A9_Deschamps.png",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "YoyoAJA89",
+    "ticket_url": "https://billetterie.aja.fr/",
+    "ticket_source_url": "https://www.aja.fr/",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "shop",
+    "stadium_official_url": "https://www.aja.fr/le-stade-abbe-deschamps/"
   },
   "Marseille": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Olympique_de_Marseille_2026_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Olympique_de_Marseille",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade Vélodrome",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/en/7/73/Stade_V%C3%A9lodrome.png",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_V%C3%A9lodrome",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stade_V%C3%A9lodrome.png"
   },
   "Toulouse": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/6/63/Toulouse_FC_2018_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Toulouse_FC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stadium de Toulouse",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Stadium-Lory.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stadium_de_Toulouse",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadium-Lory.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Laurie Laberinto"
   },
   "Strasbourg": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/8/80/Racing_Club_de_Strasbourg_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/RC_Strasbourg_Alsace",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade de la Meinau",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/La_Meinau_en_National.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_de_la_Meinau",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:La_Meinau_en_National.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Xaviyeah"
   },
   "Lille": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/3/3f/Lille_OSC_2018_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Lille_OSC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade Pierre-Mauroy",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lille_vs_PSG_2019_-_Stade_Pierre_Mauroy.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_Pierre-Mauroy",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Lille_vs_PSG_2019_-_Stade_Pierre_Mauroy.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Liondartois"
   },
   "Union SG": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/1/11/Royale_Union_Saint-Gilloise_logo.svg",
@@ -134,15 +187,23 @@
     "stadium": "Stade Joseph Marien",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Stade_Joseph_Marien.JPG/960px-Stade_Joseph_Marien.JPG",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Joseph_Marien_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stade_Joseph_Marien.JPG",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "MM1912",
+    "ticket_url": "https://ticketing.rusg.brussels/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Cercle Bruges": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/7/7c/Cercle_Brugge_KSV_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Cercle_Brugge_KSV",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Jan Breydel Stadium",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Janbreydel.png",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Jan_Breydel_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Janbreydel.png",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Zergori"
   },
   "Anderlecht": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/7/77/R.S.C._Anderlecht.svg",
@@ -150,63 +211,89 @@
     "stadium": "Lotto Park",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Stade_Constant_Vanden_Stock.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Constant_Vanden_Stock_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stade_Constant_Vanden_Stock.jpg",
+    "stadium_image_license": "CC BY-SA 3.0",
+    "stadium_image_author": "Олександр Осіпов",
+    "ticket_url": "https://ticketing.rsca.be/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Westerlo": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/0/0b/KVC_Westerlo_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/KVC_Westerlo",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Het Kuipje",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/%27t_Kuipje_KVC_Westerlo.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Het_Kuipje",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:%27t_Kuipje_KVC_Westerlo.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "PitchdGroundhopping"
   },
   "Genk": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/5/53/KRC_Genk_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/KRC_Genk",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Cegeka Arena",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Cristal_Arena_Stadionplein_Genk_-_panoramio.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Cegeka_Arena",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Cristal_Arena_Stadionplein_Genk_-_panoramio.jpg",
+    "stadium_image_license": "CC BY 3.0",
+    "stadium_image_author": "Geert Budenaerts"
   },
   "OH Louvain": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/OH_LEUVEN.png",
     "club_source_url": "https://en.wikipedia.org/wiki/Oud-Heverlee_Leuven",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Den Dreef",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/King_Power_at_Den_Dreef_Stadion.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Den_Dreef",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:King_Power_at_Den_Dreef_Stadion.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Joliennoens"
   },
   "La Gantoise": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f4/KAA_Gent_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/KAA_Gent",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Planet Group Arena",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Planet_Group_arena_-_aerial_night_view.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Planet_Group_Arena",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Planet_Group_arena_-_aerial_night_view.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Cvanuffel"
   },
   "Charleroi": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/e/e1/Royal_Charleroi_Sporting_Club_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Royal_Charleroi_SC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stade du Pays de Charleroi",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Charleroi_Stade_du_Pays_de_Charleroi_1.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stade_du_Pays_de_Charleroi",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Charleroi_Stade_du_Pays_de_Charleroi_1.jpg",
+    "stadium_image_license": "CC BY 3.0",
+    "stadium_image_author": "Валерий Дед"
   },
   "Club Bruges": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/d/d0/Club_Brugge_KV_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Club_Brugge_KV",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Jan Breydel Stadium",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Janbreydel.png",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Jan_Breydel_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Janbreydel.png",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Zergori"
   },
   "Saint-Trond": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/6/60/Sint-Truidense_VV_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Sint-Truidense_VV",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Stayen",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Stvv_stadion_Sint-truiden.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stayen",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stvv_stadion_Sint-truiden.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Kjen373"
   },
   "Ajax": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Logo_AFC_Ajax_%281928-1991%2C_2025-%29.png",
@@ -214,39 +301,62 @@
     "stadium": "Johan Cruyff Arena",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Arena%2C_Ajax_stadion%2C_Amsterdam.JPG/960px-Arena%2C_Ajax_stadion%2C_Amsterdam.JPG",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Johan_Cruyff_Arena",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.johancruijffarena.nl/en",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Arena,_Ajax_stadion,_Amsterdam.JPG",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Alf van Beem",
+    "ticket_url": "https://tickets.ajax.nl/list/events",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "AZ Alkmaar": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/AZ_Alkmaar.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/AZ_Alkmaar",
     "stadium": "AFAS Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Vooraanzicht_AFAS_Stadion_april2022.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/AFAS_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Vooraanzicht_AFAS_Stadion_april2022.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Jesperverbruggen",
+    "ticket_url": "https://www.az.nl/wedstrijden/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "ADO La Haye": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/a/ad/ADO_Den_Haag_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/ADO_Den_Haag",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Werktalent Stadion",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Cars_Jeans_Stadion_%2836995264265%29.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/ADO_Den_Haag_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Cars_Jeans_Stadion_(36995264265).jpg",
+    "stadium_image_license": "CC BY 2.0",
+    "stadium_image_author": "FaceMePLS from The Hague, The Netherlands"
   },
   "FC Utrecht": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_FC_Utrecht.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/FC_Utrecht",
     "stadium": "Stadion Galgenwaard",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Galgenwaard_vanuit_de_lucht.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stadion_Galgenwaard",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Galgenwaard_vanuit_de_lucht.jpg",
+    "stadium_image_license": "CC BY 2.0",
+    "stadium_image_author": "THMS.nl at Flickr.com"
   },
   "SC Cambuur": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/cb/SC_Cambuur_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/SC_Cambuur",
     "stadium": "Kooi Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Kooi_Stadion_west_-_Leeuwarden_2025.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Kooi_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Kooi_Stadion_west_-_Leeuwarden_2025.jpg",
+    "stadium_official_url": "https://cambuur.nl/stadion058/bereikbaarheid/",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "Condor3d",
+    "ticket_url": "https://tickets.cambuur.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Real Madrid": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
@@ -254,15 +364,24 @@
     "stadium": "Santiago Bernabéu Stadium",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg/960px-Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Bernab%C3%A9u_(stadium)",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://bernabeu.realmadrid.com/en-US",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "Zoser",
+    "ticket_url": "https://www.realmadrid.com/fr-FR/billetterie",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Séville": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Sevilla_FC",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Estadio Ramón Sánchez-Pizjuán",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2022-10-25_1_Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizju%C3%A1n_%28Sevilla_FC%29.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Ram%C3%B3n_S%C3%A1nchez-Pizju%C3%A1n_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:2022-10-25_1_Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizju%C3%A1n_(Sevilla_FC).jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Niels98"
   },
   "Rayo Vallecano": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/d/d8/Rayo_Vallecano_logo.svg",
@@ -270,15 +389,26 @@
     "stadium": "Campo de Fútbol de Vallecas",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Estadio_de_Vallecas.jpg/960px-Estadio_de_Vallecas.jpg",
     "stadium_source_url": "https://fr.wikipedia.org/wiki/Stade_de_Vallecas",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadio_de_Vallecas.jpg",
+    "stadium_image_license": "CC BY 2.5 es",
+    "stadium_image_author": "K3T0",
+    "ticket_url": "https://www.rayovallecano.es/",
+    "ticket_source_url": "https://www.rayovallecano.es/",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "information",
+    "stadium_official_url": "https://www.rayovallecano.es/estadio"
   },
   "Elche": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/a/a7/Elche_CF_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Elche_CF",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Estadio Martínez Valero",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Panor%C3%A1mica_del_estadio_Mart%C3%ADnez_Valero.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_Mart%C3%ADnez_Valero",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_del_estadio_Mart%C3%ADnez_Valero.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Magicloren"
   },
   "Atlético Madrid": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f9/Atletico_Madrid_Logo_2024.svg",
@@ -286,23 +416,35 @@
     "stadium": "Metropolitano Stadium",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Atleti_vs_Villarreal_-_September_2025.jpg/960px-Atleti_vs_Villarreal_-_September_2025.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Metropolitano_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.riyadhairmetropolitano.com/en",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Atleti_vs_Villarreal_-_September_2025.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Elwin594",
+    "ticket_url": "https://www.atleticodemadrid.com/entradas",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Deportivo": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/5/56/RC_Deportivo_A_Coru%C3%B1a_logo_2026.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Deportivo_de_A_Coru%C3%B1a",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Riazor",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Estadioriazor2023.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_Riazor",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadioriazor2023.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Lisímaco de Egipto"
   },
   "Celta Vigo": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/1/12/RC_Celta_de_Vigo_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/RC_Celta_de_Vigo",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Balaídos",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Balaidos_hoy.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Bala%C3%ADdos_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Balaidos_hoy.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "BandidoBanderas"
   },
   "Getafe": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/4/46/Getafe_logo.svg",
@@ -310,7 +452,12 @@
     "stadium": "Estadio Coliseum",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Getafe0-0Lega2018.jpg/960px-Getafe0-0Lega2018.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_Coliseum",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Getafe0-0Lega2018.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Miguelazo84",
+    "ticket_url": "https://www.getafecf.com/entradas",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "FC Barcelone": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
@@ -319,15 +466,24 @@
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Camp_Nou_aerial.jpg/960px-Camp_Nou_aerial.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Camp_Nou",
     "verified_at": "2026-10-13",
-    "stadium_official_url": "https://www.fcbarcelona.com/en/football/first-team/schedule"
+    "stadium_official_url": "https://www.fcbarcelona.com/en/football/first-team/schedule",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Camp_Nou_aerial.jpg",
+    "stadium_image_license": "CC BY 2.0",
+    "stadium_image_author": "Oh-Barcelona.com from Barcelona, Spain",
+    "ticket_url": "https://www.fcbarcelona.com/en/entrades",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Valence": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Valencia_CF",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Mestalla",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Mestalla_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg",
+    "stadium_official_url": "https://www.valenciacf.com/es/club/facilities/mestalla",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Anidae"
   },
   "Valencia CF": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg",
@@ -335,23 +491,33 @@
     "stadium": "Mestalla Stadium",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg/960px-Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Mestalla_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.valenciacf.com/es/club/facilities/mestalla",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Anidae",
+    "ticket_url": "https://www.valenciacf.com/entradas",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Alavés": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f8/Deportivo_Alaves_logo_%282020%29.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Deportivo_Alav%C3%A9s",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Mendizorroza",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Mendizorrotza_diciembre_2021.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Mendizorrotza_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Mendizorrotza_diciembre_2021.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "MarcosMarinM"
   },
   "Betis Séville": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/2/2f/Real_Betis_2022_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Real_Betis",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Estadio La Cartuja",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/en/e/eb/Estadio_de_La_Cartuja_logo.png",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_de_La_Cartuja",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadio_de_La_Cartuja_logo.png"
   },
   "Levante": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/7/7b/Levante_Uni%C3%B3n_Deportiva%2C_S.A.D._logo.svg",
@@ -359,23 +525,34 @@
     "stadium": "Estadi Ciutat de València",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Estadi_Ciutat_de_Val%C3%A8ncia_-_nocturna.jpg/960px-Estadi_Ciutat_de_Val%C3%A8ncia_-_nocturna.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Estadi_Ciutat_de_Val%C3%A8ncia",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadi_Ciutat_de_Val%C3%A8ncia_-_nocturna.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Francesc Fort",
+    "ticket_url": "https://ticketing.levanteud.com/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Osasuna": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/3/38/CA_Osasuna_2024_crest.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/CA_Osasuna",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Estadio El Sadar",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Estadio_El_Sadar.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/El_Sadar_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Estadio_El_Sadar.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Visma17"
   },
   "Málaga": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/6/6d/M%C3%A1laga_CF.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/M%C3%A1laga_CF",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "La Rosaleda",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/IMG-20220228-WA0055.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_La_Rosaleda",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:IMG-20220228-WA0055.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Meloptido"
   },
   "Espanyol": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/9/92/RCD_Espanyol_crest.svg",
@@ -383,7 +560,13 @@
     "stadium": "RCDE Stadium",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Stage_Front_Stadium.jpg/960px-Stage_Front_Stadium.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/RCDE_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://www.rcdestadium.com/en",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stage_Front_Stadium.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "RCD Espanyol de Barcelona",
+    "ticket_url": "https://tickets.rcdespanyol.com/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Villarreal": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/b/b9/Villarreal_CF_logo-en.svg",
@@ -391,31 +574,45 @@
     "stadium": "Estadio de la Cerámica",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/ESTADIO3.jpg/960px-ESTADIO3.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Estadio_de_la_Cer%C3%A1mica",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:ESTADIO3.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Frank94Rock",
+    "ticket_url": "https://villarrealcf.es/es/venta-de-entradas/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Real Sociedad": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f1/Real_Sociedad_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Real_Sociedad",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Reale Arena",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Anoeta_estadioa_31%2C_Donostia%2C_Gipuzkoa%2C_Euskal_Herria.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Anoeta_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Anoeta_estadioa_31,_Donostia,_Gipuzkoa,_Euskal_Herria.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Bhgh543bgf"
   },
   "Athletic Bilbao": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Athletic_Bilbao",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "Estadio San Mamés",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Panorama_im_San_Mam%C3%A9s_Stadion.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/San_Mam%C3%A9s_Stadium_%282013%29",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Panorama_im_San_Mam%C3%A9s_Stadion.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Marco Almbauer"
   },
   "Racing Santander": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f5/Racing_de_Santander_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/Racing_de_Santander",
-    "stadium": null,
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium": "El Sardinero",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Fotograf%C3%ADa_Eduardo_Berm%C3%BAdez_para_los_Campos_de_Sport_de_El_Sardinero.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Campos_de_Sport_de_El_Sardinero",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Fotograf%C3%ADa_Eduardo_Berm%C3%BAdez_para_los_Campos_de_Sport_de_El_Sardinero.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Edubermu99"
   },
   "AC Milan": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
@@ -423,7 +620,12 @@
     "stadium": "San Siro",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stadio_Meazza_2021_3.jpg/960px-Stadio_Meazza_2021_3.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/San_Siro",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Meazza_2021_3.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Prelvini",
+    "ticket_url": "https://booking.acmilan.com/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Atalanta": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f2/Atalanta_BC_new_logo.svg",
@@ -431,7 +633,12 @@
     "stadium": "Stadio Atleti Azzurri d’Italia",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/The_outside_of_the_Gewiss_Stadium_in_2020.jpg/960px-The_outside_of_the_Gewiss_Stadium_in_2020.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_di_Bergamo",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:The_outside_of_the_Gewiss_Stadium_in_2020.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Vincenzo.togni",
+    "ticket_url": "https://www.atalanta.it/biglietteria",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Como": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Calcio_Como_-_logo_%28Italy%2C_2019-%29.svg",
@@ -439,7 +646,12 @@
     "stadium": "Stadio Giuseppe Sinigaglia",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Stadio_Sinigaglia_Como_16-07-2025.jpg/960px-Stadio_Sinigaglia_Como_16-07-2025.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Giuseppe_Sinigaglia",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Sinigaglia_Como_16-07-2025.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Vale93b",
+    "ticket_url": "https://comofootball.com/matches-and-tickets/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Sassuolo": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/1/1c/US_Sassuolo_Calcio_logo.svg",
@@ -447,7 +659,12 @@
     "stadium": "Mapei Stadium – Città del Tricolore",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Das_Mapei_Stadium_von_Reggio_nell%60Emilia_%282026%29.jpg/960px-Das_Mapei_Stadium_von_Reggio_nell%60Emilia_%282026%29.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Mapei_Stadium_%E2%80%93_Citt%C3%A0_del_Tricolore",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Das_Mapei_Stadium_von_Reggio_nell%60Emilia_(2026).jpg",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "Vincenzo.togni",
+    "ticket_url": "https://www.sassuolocalcio.it/categoria/biglietteria/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Inter Milan": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
@@ -455,7 +672,12 @@
     "stadium": "San Siro",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stadio_Meazza_2021_3.jpg/960px-Stadio_Meazza_2021_3.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/San_Siro",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Meazza_2021_3.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Prelvini",
+    "ticket_url": "https://www.inter.it/en/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Fiorentina": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/ACF_Fiorentina_-_logo_%28Italy%2C_2022%29.svg",
@@ -463,7 +685,10 @@
     "stadium": "Stadio Artemio Franchi",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Firenze%2C_stadio_artemio_franchi%2C_campo_da_gioco%2C_10%2C0.jpg/960px-Firenze%2C_stadio_artemio_franchi%2C_campo_da_gioco%2C_10%2C0.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Artemio_Franchi",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Firenze,_stadio_artemio_franchi,_campo_da_gioco,_10,0.jpg",
+    "stadium_image_license": "CC BY 3.0",
+    "stadium_image_author": "Sailko"
   },
   "Frosinone": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/0/0b/Frosinone_Calcio_logo.svg",
@@ -471,7 +696,12 @@
     "stadium": "Stadio Benito Stirpe",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Benito_Stirpe_brescia_panoramica_ternana_sud_ospiti_main_notturna.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Benito_Stirpe",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Benito_Stirpe_brescia_panoramica_ternana_sud_ospiti_main_notturna.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Roberto Celani",
+    "ticket_url": "https://www.frosinonecalcio.com/biglietti/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Venezia": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/3/39/Venezia_FC_crest.svg",
@@ -479,7 +709,12 @@
     "stadium": "Stadio Pier Luigi Penzo",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Stadio_Pierluigi_Penzo.jpg/960px-Stadio_Pierluigi_Penzo.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Pier_Luigi_Penzo",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Pierluigi_Penzo.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "kallerna",
+    "ticket_url": "https://www.veneziafc.it/tickets/biglietteria",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Monza": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/a/a7/AC_Monza_logo_%282021%29.svg",
@@ -487,7 +722,12 @@
     "stadium": "Stadio Brianteo",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Stadio_Brianteo_2024_%28cropped%29.jpg/960px-Stadio_Brianteo_2024_%28cropped%29.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Brianteo",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Brianteo_2024_(cropped).jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Simonemb",
+    "ticket_url": "https://www.acmonza.com/it/ticketing/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Cagliari": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/6/61/Cagliari_Calcio_1920.svg",
@@ -495,7 +735,10 @@
     "stadium": "Unipol Domus",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Unipol_Domus_from_Distinti_2026.jpg/960px-Unipol_Domus_from_Distinti_2026.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Unipol_Domus",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Unipol_Domus_from_Distinti_2026.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Sandrino 14"
   },
   "Genoa": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/2/2c/Genoa_CFC_crest.svg",
@@ -503,7 +746,10 @@
     "stadium": "Stadio Luigi Ferraris",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Stadio_Luigi_Ferraris_di_Genova_con_il_quartiere_Marassi_%28cropped%29.jpg/960px-Stadio_Luigi_Ferraris_di_Genova_con_il_quartiere_Marassi_%28cropped%29.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Luigi_Ferraris",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Luigi_Ferraris_di_Genova_con_il_quartiere_Marassi_(cropped).jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Gabriel Rinaldi"
   },
   "Juventus": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg",
@@ -511,7 +757,12 @@
     "stadium": "Juventus Stadium",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/2021%E2%80%9322_UEFA_Women%27s_Champions_League_Final_in_Turin%2C_Italy_1.jpg/960px-2021%E2%80%9322_UEFA_Women%27s_Champions_League_Final_in_Turin%2C_Italy_1.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Juventus_Stadium",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:2021%E2%80%9322_UEFA_Women%27s_Champions_League_Final_in_Turin,_Italy_1.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Sebleouf",
+    "ticket_url": "https://www.juventus.com/en/tickets/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Parma": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Parma_Calcio_1913_%28adozione_2016%29.svg",
@@ -519,7 +770,12 @@
     "stadium": "Stadio Ennio Tardini",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Stadio_Ennio_Tardini_2026.jpg/960px-Stadio_Ennio_Tardini_2026.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Ennio_Tardini",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Ennio_Tardini_2026.jpg",
+    "stadium_image_license": "CC0",
+    "stadium_image_author": "Brodolò1",
+    "ticket_url": "https://www.parmacalcio1913.com/tickets/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Bologna": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bologna_F.C._1909_logo.svg",
@@ -527,7 +783,12 @@
     "stadium": "Stadio Renato Dall’Ara",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Stadio_Dall%27Ara_01-02-2020.jpg/960px-Stadio_Dall%27Ara_01-02-2020.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Renato_Dall%27Ara",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Dall%27Ara_01-02-2020.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Beric Dondarrion",
+    "ticket_url": "https://www.bolognafc.it/biglietti/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Torino": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/2/2e/Torino_FC_Logo.svg",
@@ -535,7 +796,12 @@
     "stadium": "Stadio Olimpico Grande Torino",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Stadio_Olimpico_Torino_2017_cropped.jpg/960px-Stadio_Olimpico_Torino_2017_cropped.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Olimpico_Grande_Torino",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Olimpico_Torino_2017_cropped.jpg",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "Original photo by Asgaw, cropped by Blackcat",
+    "ticket_url": "https://www.torinofc.it/en/biglietteria/faq",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Napoli": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/SSC_Napoli_2025_%28white_and_azure%29.svg",
@@ -543,7 +809,10 @@
     "stadium": "Stadio Diego Armando Maradona",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Stadio_Maradona_Serie_A.jpg/960px-Stadio_Maradona_Serie_A.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Diego_Armando_Maradona",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Maradona_Serie_A.jpg",
+    "stadium_image_license": "CC BY 4.0",
+    "stadium_image_author": "Gaetano Capaldo"
   },
   "AS Roma": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg",
@@ -551,7 +820,12 @@
     "stadium": "Stadio Olimpico",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Stadio_Olimpico_2024.jpg/960px-Stadio_Olimpico_2024.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Olimpico",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Olimpico_2024.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Messapi, cropped by Blackcat",
+    "ticket_url": "https://www.asroma.com/en/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Lazio": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/ce/S.S._Lazio_badge.svg",
@@ -559,7 +833,12 @@
     "stadium": "Stadio Olimpico",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Stadio_Olimpico_2024.jpg/960px-Stadio_Olimpico_2024.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Olimpico",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadio_Olimpico_2024.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Messapi, cropped by Blackcat",
+    "ticket_url": "https://www.sslazio.it/en/biglietteria/matches",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Lecce": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/2/23/US_Lecce_crest.svg",
@@ -567,7 +846,10 @@
     "stadium": "Stadio Via del mare",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Via_Del_Mare_stadium_in_Lecce_during_a_Serie_A_match_between_Lecce_and_SPAL_Ferrara_in_February_2020.jpg/960px-The_Via_Del_Mare_stadium_in_Lecce_during_a_Serie_A_match_between_Lecce_and_SPAL_Ferrara_in_February_2020.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Via_del_mare",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:The_Via_Del_Mare_stadium_in_Lecce_during_a_Serie_A_match_between_Lecce_and_SPAL_Ferrara_in_February_2020.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Vincenzo.togni"
   },
   "Udinese": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/ce/Udinese_Calcio_logo.svg",
@@ -575,39 +857,62 @@
     "stadium": "Stadio Friuli",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/DaciArena.jpg/960px-DaciArena.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Friuli",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:DaciArena.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Matteo.favi",
+    "ticket_url": "https://www.udinese.it/biglietti/vendita-biglietti",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "ADO Den Haag": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBGY74K",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "WerkTalent Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Cars_Jeans_Stadion_%2836995264265%29.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/ADO_Den_Haag_Stadium",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Cars_Jeans_Stadion_(36995264265).jpg",
+    "stadium_image_license": "CC BY 2.0",
+    "stadium_image_author": "FaceMePLS from The Hague, The Netherlands",
+    "ticket_url": "https://adodenhaag.nl/en/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Excelsior Rotterdam": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=FTRN05U",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Stadion Woudestein",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Rotterdam_stadion_woudestein.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Stadion_Woudestein",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Rotterdam_stadion_woudestein.jpg",
+    "stadium_image_license": "Public domain",
+    "stadium_image_author": "Wikifrits",
+    "ticket_url": "https://tickets.excelsiorrotterdam.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "FC Groningen": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBBG59U",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Euroborg",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Euroborg.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Euroborg",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Euroborg.jpg",
+    "stadium_image_license": "CC BY-SA 3.0",
+    "stadium_image_author": "Kevster at Dutch Wikipedia",
+    "ticket_url": "https://tickets.fcgroningen.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "FC Twente": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWCB19A",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "De Grolsch Veste",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Enschede%2C_de_Grolsch_veste_-_voetbalstadion_van_FC_Twenthe_IMG_8861_2021-04-26_11.11.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/De_Grolsch_Veste",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Enschede,_de_Grolsch_veste_-_voetbalstadion_van_FC_Twenthe_IMG_8861_2021-04-26_11.11.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Michielverbeek"
   },
   "Feyenoord": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBFC26Q",
@@ -615,39 +920,57 @@
     "stadium": "Stadion Feijenoord (De Kuip)",
     "stadium_image_url": "https://cdn.sanity.io/images/2hlolhb1/production/36bacdd5aeb15d79f5cf67816be2743fbf1eb127-5902x3934.jpg?h=630&rect=0%2C418%2C5902%2C3099&w=1200",
     "stadium_source_url": "https://www.feyenoord.com/",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "ticket_url": "https://tickets.feyenoord.com/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Fortuna Sittard": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBJW59U",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Fortuna Sittard Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/20150312_Sittard%3B_Stadium_of_Fortuna_Sittard_03.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Fortuna_Sittard_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:20150312_Sittard;_Stadium_of_Fortuna_Sittard_03.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Mark Ahsmann"
   },
   "Go Ahead Eagles": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBKY386",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "De Adelaarshorst",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Stadion_de_Adelaarshorst.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/De_Adelaarshorst",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stadion_de_Adelaarshorst.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "FrankKowet",
+    "ticket_url": "https://gaeagles.tmtickets.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "NEC": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWBZ40V",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Goffertstadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Goffertstadion_N.E.C._Nijmegen.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Goffertstadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Goffertstadion_N.E.C._Nijmegen.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Roger Veringmeier"
   },
   "PEC Zwolle": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBKV81X",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "MAC³PARK Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/PEC_Zwolle_2022.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/MAC3PARK_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:PEC_Zwolle_2022.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "UserBWA",
+    "ticket_url": "https://tickets.peczwolle.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "PSV": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBJG81J",
@@ -655,15 +978,22 @@
     "stadium": "Philips Stadion",
     "stadium_image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Philips_Stadion.jpg?width=960",
     "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Philips_Stadion.jpg",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "ticket_url": "https://www.psv.nl/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "sc Heerenveen": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBBF10E",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Abe Lenstra Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Abe_Lenstra_Stadion_08c.JPG",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Abe_Lenstra_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Abe_Lenstra_Stadion_08c.JPG",
+    "stadium_image_license": "CC BY 2.5",
+    "stadium_image_author": "Udo Ockema",
+    "ticket_url": "https://tickets.sc-heerenveen.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Sparta Rotterdam": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBFC723",
@@ -671,23 +1001,42 @@
     "stadium": "Sparta Stadion Het Kasteel",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Sparta_Stadion_Het_Kasteel_05.jpg",
     "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Sparta_Stadion_Het_Kasteel_05.jpg",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Sparta_Stadion_Het_Kasteel_05.jpg",
+    "stadium_image_license": "CC BY-SA 2.0",
+    "stadium_image_author": "Dick Aalders",
+    "ticket_url": "https://www.spartakaartje.nl/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Telstar": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWBQ01T",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "BUKO Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/02_juni_2025_IP_Images_-Telstar-01.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Sportpark_Schoonenberg",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:02_juni_2025_IP_Images_-Telstar-01.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "IPimages.nl",
+    "ticket_url": "https://tickets.sctelstar.nl/",
+    "ticket_source_url": "https://sctelstar.nl/tickets-informatie/tickets-prijzen",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "shop"
   },
   "Willem II": {
     "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=LZZG02M",
     "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
     "stadium": "Koning Willem II Stadion",
-    "stadium_image_url": null,
-    "stadium_source_url": null,
-    "verified_at": "2026-10-13"
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Willem_II_stadion.jpg",
+    "stadium_source_url": "https://en.wikipedia.org/wiki/Koning_Willem_II_Stadion",
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Willem_II_stadion.jpg",
+    "stadium_image_license": "Public domain",
+    "stadium_image_author": "Maarten van Esch",
+    "ticket_url": "https://ticketshop.willem-ii.nl/",
+    "ticket_source_url": "https://vraag.willem-ii.nl/hc/nl-nl/articles/36085703916562-Hoe-koop-ik-een-ticket-op-de-Kaartenmarkt",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "shop"
   },
   "Bayern Munich": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
@@ -695,7 +1044,13 @@
     "stadium": "Allianz Arena",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Allianz-Arena-M%C3%BCnchen.jpg/1280px-Allianz-Arena-M%C3%BCnchen.jpg",
     "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Allianz-Arena-M%C3%BCnchen.jpg",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_official_url": "https://allianz-arena.com",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Allianz-Arena-M%C3%BCnchen.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Tobias Alt, Tobi 87",
+    "ticket_url": "https://fcbayern.com/en/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Borussia Dortmund": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg",
@@ -703,31 +1058,55 @@
     "stadium": "Signal Iduna Park",
     "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Signal_iduna_park_stadium_dortmund_4.jpg/960px-Signal_iduna_park_stadium_dortmund_4.jpg",
     "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Signal_iduna_park_stadium_dortmund_4.jpg",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Signal_iduna_park_stadium_dortmund_4.jpg",
+    "stadium_image_license": "CC BY-SA 3.0 de",
+    "stadium_image_author": "Arne Müseler / www.arne-mueseler.com",
+    "ticket_url": "https://www.bvb.de/de/de/tickets.html",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Bayer Leverkusen": {
     "logo_url": "https://media.dfl.de/sites/2/2025/09/B04_Standard_Logo_RGB.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "BayArena",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Bayarena_Leverkusen_2020.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Bayarena_Leverkusen_2020.jpg",
+    "stadium_official_url": "https://www.bayer04.de/en-us/page/bayarena",
+    "stadium_image_license": "CC BY-SA 3.0 de",
+    "stadium_image_author": "Arne Müseler",
+    "ticket_url": "https://www.bayer04.de/en-us/page/service/tickets",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Borussia Mönchengladbach": {
     "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borussia_M%C3%B6nchengladbach_logo.svg",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "ista-BORUSSIA-PARK",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/M%C3%B6nchengladbach_stadion.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:M%C3%B6nchengladbach_stadion.jpg",
+    "stadium_image_license": "CC BY-SA 3.0 de",
+    "stadium_image_author": "Arne Müseler",
+    "ticket_url": "https://www.borussia.de/tickets",
+    "ticket_source_url": "https://www.borussia.de/tickets",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "shop"
   },
   "1. FC Cologne": {
     "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/1._FC_Koeln_Logo_2014%E2%80%93.svg",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "RheinEnergieSTADION",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/RheinEnergieSTADION_Logo.svg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:RheinEnergieSTADION_Logo.svg",
+    "stadium_official_url": "https://www.rheinenergiestadion.de/",
+    "stadium_image_license": "Public domain",
+    "stadium_image_author": "Kölner Sportstätten GmbH",
+    "ticket_url": "https://fc.de/service/stadionerlebnis/ticketing",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "Schalke 04": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/FC_Schalke_04_Logo.svg",
@@ -735,102 +1114,151 @@
     "stadium": "VELTINS-Arena",
     "stadium_image_url": "https://veltins-arena.de/app/uploads/2021/08/210813_arena_aussen.jpg",
     "stadium_source_url": "https://veltins-arena.de/",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "ticket_url": "https://tickets.schalke04.de/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js",
+    "stadium_official_url": "https://veltins-arena.de/"
   },
   "Eintracht Frankfurt": {
     "logo_url": "https://crests.football-data.org/19.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Deutsche Bank Park",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Deutsche_bank_park.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Deutsche_bank_park.jpg",
+    "stadium_official_url": "https://www.deutschebankpark.de/",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Patrik Meyer",
+    "ticket_url": "https://stores.eintracht.de/tickets/info-service/ticketinformation/",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "FSV Mainz 05": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_Mainz_05.svg",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "MEWA ARENA",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mewa_Arena1.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Mewa_Arena1.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Atirador",
+    "ticket_url": "https://www.mainz05.de/tickets/heimspiele/",
+    "ticket_source_url": "https://www.mainz05.de/tickets/heimspiele/",
+    "ticket_checked_at": "2026-10-13T18:36:29Z",
+    "ticket_kind": "shop",
+    "stadium_official_url": "https://www.mainz05.de/arena"
   },
   "FC Augsburg": {
     "logo_url": "https://crests.football-data.org/16.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "WWK ARENA",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Germany_augsburg_stadium_wwk_arena.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Germany_augsburg_stadium_wwk_arena.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Arne Müseler",
+    "ticket_url": "https://tickets.fcaugsburg.de/fcaugsburg/heimtickets.htm",
+    "ticket_source_url": "https://github.com/brahmiamine/matches/blob/d65bdc2c5f898e554051b2c15e0a19d122183c9a/src/lib/ticketing.js"
   },
   "RB Leipzig": {
     "logo_url": "https://crests.football-data.org/721.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Red Bull Arena",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Leipzig_stadium.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Leipzig_stadium.jpg"
   },
   "SC Freiburg": {
     "logo_url": "https://crests.football-data.org/17.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Europa-Park Stadion",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Europa_Park_Stadion_logo.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Europa_Park_Stadion_logo.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Andreas Schwarzkopf"
   },
   "TSG Hoffenheim": {
     "logo_url": "https://crests.football-data.org/2.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "SNP Arena",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/PreZero_Arena_wiki.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:PreZero_Arena_wiki.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "PreZero"
   },
   "VfB Stuttgart": {
     "logo_url": "https://crests.football-data.org/10.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "MHPArena",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Stuttgart_stadium.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Stuttgart_stadium.jpg",
+    "stadium_official_url": "https://www.mhparena-stuttgart.de/",
+    "stadium_image_license": "CC BY-SA 3.0 de",
+    "stadium_image_author": "Arne Müseler"
   },
   "SC Paderborn 07": {
     "logo_url": "https://crests.football-data.org/29.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Home Deluxe Arena",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Paderborn_paragon_arena_2.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Paderborn_paragon_arena_2.jpg",
+    "stadium_image_license": "CC BY 2.0 de",
+    "stadium_image_author": "Zefram"
   },
   "Hamburger SV": {
     "logo_url": "https://crests.football-data.org/7.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Volksparkstadion",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/RK_1009_9831_Volksparkstadion.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:RK_1009_9831_Volksparkstadion.jpg",
+    "stadium_official_url": "https://www.hsv.de/en/volksparkstadion/how-to-get-to-the-ground",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Reinhard Kraasch"
   },
   "SV Elversberg": {
     "logo_url": "https://crests.football-data.org/803.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "URSAPHARM-Arena an der Kaiserlinde",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/UrsapharmArena.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:UrsapharmArena.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "MüllerFrankElversberg"
   },
   "Union Berlin": {
     "logo_url": "https://crests.football-data.org/28.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Stadion An der Alten Försterei",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Berlin_alte_f%C3%B6rsterei.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Berlin_alte_f%C3%B6rsterei.jpg",
+    "stadium_image_license": "CC BY-SA 3.0 de",
+    "stadium_image_author": "Arne Müseler"
   },
   "Werder Bremen": {
     "logo_url": "https://crests.football-data.org/12.png",
     "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
     "stadium": "Weserstadion",
-    "stadium_image_url": null,
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Germany_bremen_stadium.jpg",
     "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
-    "verified_at": "2026-10-13"
+    "verified_at": "2026-10-13",
+    "stadium_image_page_url": "https://commons.wikimedia.org/wiki/File:Germany_bremen_stadium.jpg",
+    "stadium_image_license": "CC BY-SA 4.0",
+    "stadium_image_author": "Arne Müseler"
   }
 }

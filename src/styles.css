@@ -24,6 +24,9 @@ button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visi
 .top-origin{white-space:nowrap;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .pill-button{white-space:nowrap;height:38px;padding:0 14px;border-radius:19px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:600}
+.account-sync{position:relative}.account-panel{position:absolute;right:0;top:46px;width:min(340px,calc(100vw - 32px));padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 35px #0003;font-size:14px}
+.account-panel p{margin:0 0 12px;overflow-wrap:anywhere}.account-panel label{display:grid;gap:6px;margin-bottom:12px}.account-panel input{width:100%;min-height:40px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}.account-buttons{display:flex;gap:8px;flex-wrap:wrap}.account-status{position:absolute;right:0;top:44px;width:300px;padding:8px;background:var(--surface);border:1px solid var(--line);font-size:12px}
+@media(max-width:560px){.top-actions{gap:6px}.top-actions .pill-button{padding:0 9px;font-size:11px}.logo-word{font-size:17px}.account-panel{position:fixed;right:16px;top:68px}}
 
 /* Accueil */
 .main{padding-top:48px}

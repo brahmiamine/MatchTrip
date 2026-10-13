@@ -6,7 +6,7 @@
  * EXCEPTION DEMANDÉE : Paris et « Autour de Paris » restent un SEUL groupe.
  * Aucun temps de trajet n'est garanti par cette classification.
  */
-export const WEEKEND_ZONE_GROUPS = Object.freeze({
+export let WEEKEND_ZONE_GROUPS = Object.freeze({
   France: Object.freeze({
     Paris: 'Paris & alentours',
     'Autour de Paris': 'Paris & alentours',
@@ -46,3 +46,4 @@ export function getWeekendGroup(match) {
   if (!match.cluster) return null;
   return WEEKEND_ZONE_GROUPS[match.country]?.[match.zone] ?? null;
 }
+export function configureZoneGroups(groups) { WEEKEND_ZONE_GROUPS = groups; }

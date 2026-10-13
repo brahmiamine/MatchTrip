@@ -5,7 +5,7 @@ import DistanceFromHub from './DistanceFromHub.jsx';
 import FixtureStatus from './FixtureStatus.jsx';
 import FavoriteButton from './FavoriteButton.jsx';
 import { matchDateLabel } from './MatchRow.jsx';
-import { getTicketUrl } from '../lib/ticketing.js';
+import { getTicketUrl, getTicketLabel } from '../lib/ticketing.js';
 import { getDestinationName } from '../lib/destinations.js';
 import { FLAGS } from '../constants.js';
 import { formatTime } from '../lib/dates.js';
@@ -26,6 +26,6 @@ export default function MatchCard({ match: m, favorite, onToggleFavorite }) {
       <DistanceFromHub match={m}/>
       {m.source_url && <a className="meta-link" href={m.source_url} target="_blank" rel="noreferrer">Calendrier officiel ↗</a>}
     </div>
-    {ticketUrl && <a className="outline-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`Billetterie officielle : ${m.home}`}>Billetterie officielle</a>}
+    {ticketUrl && <a className="outline-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`${getTicketLabel(m.home)} : ${m.home}`}>{getTicketLabel(m.home)}</a>}
   </article>;
 }

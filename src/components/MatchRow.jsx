@@ -4,7 +4,7 @@ import Stadium from './Stadium.jsx';
 import DistanceFromHub from './DistanceFromHub.jsx';
 import FixtureStatus from './FixtureStatus.jsx';
 import FavoriteButton from './FavoriteButton.jsx';
-import { getTicketUrl } from '../lib/ticketing.js';
+import { getTicketUrl, getTicketLabel } from '../lib/ticketing.js';
 import { getDestinationName } from '../lib/destinations.js';
 import { FLAGS } from '../constants.js';
 import { formatDay, formatTime } from '../lib/dates.js';
@@ -27,7 +27,7 @@ export default function MatchRow({ match: m, favorite, onToggleFavorite }) {
       </div>
     </div>
     <div className="row-actions">
-      {ticketUrl && <a className="ghost-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`Billetterie officielle : ${m.home}`}>Billetterie</a>}
+      {ticketUrl && <a className="ghost-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`${getTicketLabel(m.home)} : ${m.home}`}>{getTicketLabel(m.home)}</a>}
       {m.source_url && <a className="icon-button" href={m.source_url} target="_blank" rel="noreferrer" title="Calendrier officiel" aria-label="Calendrier officiel">↗</a>}
       <FavoriteButton active={favorite} onToggle={() => onToggleFavorite(m.fixture_key)}/>
     </div>

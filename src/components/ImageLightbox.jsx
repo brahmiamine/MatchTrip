@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 /** Image en plein écran ; Échap, clic sur le fond ou le bouton ferment. */
-export default function ImageLightbox({ src, alt, sourceUrl, onError, onClose }) {
+export default function ImageLightbox({ src, alt, sourceUrl, license, author, onError, onClose }) {
   useEffect(() => {
     const onKey = e => e.key === 'Escape' && onClose();
     document.addEventListener('keydown', onKey);
@@ -16,7 +16,7 @@ export default function ImageLightbox({ src, alt, sourceUrl, onError, onClose })
       <button className="lightbox-close" aria-label="Fermer" onClick={onClose}><X size={22}/></button>
       <figure onClick={e => e.stopPropagation()}>
         <img src={src} alt={alt} onError={onError}/>
-        <figcaption>{alt}{sourceUrl && <> · <a href={sourceUrl} target="_blank" rel="noreferrer">Source de la photo</a></>}</figcaption>
+        <figcaption>{alt}{author && <> · {author}</>}{license && <> · {license}</>}{sourceUrl && <> · <a href={sourceUrl} target="_blank" rel="noreferrer">Source de la photo</a></>}</figcaption>
       </figure>
     </div>, document.body);
 }

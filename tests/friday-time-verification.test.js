@@ -82,13 +82,16 @@ describe('audit de fiabilité des matchs', () => {
     expect(fixtureVerification({ date_confirmed:true,time_confirmed:false,time:'20:45' }).label).toBe('Heure à confirmer');
     expect(fixtureVerification({date_confirmed:true,time_confirmed:true,time:'20:45'}).kind).toBe('verified');
   });
-  it('55 anciennes rencontres auditables et 12 nouveaux vendredis sourcés', () => {
-    expect(Object.keys(VERIFIED_SCHEDULE)).toHaveLength(55);
+  it('le catalogue et les vendredis conservent leurs sources après complément des horaires', () => {
+    expect(Object.keys(VERIFIED_SCHEDULE)).toHaveLength(57);
     expect(VERIFIED_FRIDAY_FIXTURES).toHaveLength(12);
     expect(VERIFIED_FRIDAY_FIXTURES.every(m => getWeekend(m.date) && isWeekendDay(m.date) && m.date_confirmed && m.verified_source_url.startsWith('https://'))).toBe(true);
     const keys = new Set([...seedFixtures,...newFixtures,...VERIFIED_FRIDAY_FIXTURES].map(m=>m.fixture_key));
     expect(keys.size).toBe(226);
     expect([...seedFixtures,...newFixtures].filter(m=>VERIFIED_SCHEDULE[m.fixture_key]).length).toBe(55);
+    for (const key of ['2026-10-25-udinese-ac-milan','2026-10-23-torino-monza','2026-11-06-venezia-udinese']) {
+      expect(VERIFIED_SCHEDULE[key]).toMatchObject({time:'20:45',time_confirmed:true});
+    }
   });
   it('un horaire non vérifié ne rend pas combinables 2 matchs du même jour', () => {
     expect(compatible(mk({time_confirmed:false,time:'13:00'}), mk({time_confirmed:true,time:'19:00'}))).toBe(false);

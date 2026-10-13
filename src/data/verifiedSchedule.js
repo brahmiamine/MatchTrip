@@ -362,10 +362,10 @@ export const VERIFIED_SCHEDULE = Object.freeze({
   },
   "2026-10-25-udinese-ac-milan": {
     "date": "2026-10-25",
-    "time": null,
-    "source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
+    "time": "20:45",
+    "source_url": "https://www.acmilan.com/it/news/articoli/agenda/2026-10-01/ottobre-mese-di-calendari-intensi",
     "date_confirmed": true,
-    "time_confirmed": false
+    "time_confirmed": true
   },
   "2026-10-31-ac-milan-inter-milan": {
     "date": "2026-10-31",
@@ -385,6 +385,20 @@ export const VERIFIED_SCHEDULE = Object.freeze({
     "date": "2026-10-31",
     "time": "18:00",
     "source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
+    "date_confirmed": true,
+    "time_confirmed": true
+  },
+  "2026-10-23-torino-monza": {
+    "date": "2026-10-23",
+    "time": "20:45",
+    "source_url": "https://www.torinofc.it/",
+    "date_confirmed": true,
+    "time_confirmed": true
+  },
+  "2026-11-06-venezia-udinese": {
+    "date": "2026-11-06",
+    "time": "20:45",
+    "source_url": "https://udinese.cdn.xpl.io/news/squadra/il-calendario-dei-bianconeri-a-ottobre-e-novembre",
     "date_confirmed": true,
     "time_confirmed": true
   }
@@ -514,14 +528,14 @@ export const VERIFIED_FRIDAY_FIXTURES = Object.freeze([
     "home": "Torino",
     "away": "Monza",
     "date": "2026-10-23",
-    "time": null,
+    "time": "20:45",
     "highlight": false,
     "source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
     "date_confirmed": true,
-    "time_confirmed": false,
-    "verified_source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
+    "time_confirmed": true,
+    "verified_source_url": "https://www.torinofc.it/",
     "verified_at": "2026-10-13",
-    "provisional": true
+    "provisional": false
   },
   {
     "fixture_key": "2026-11-06-venezia-udinese",
@@ -533,14 +547,14 @@ export const VERIFIED_FRIDAY_FIXTURES = Object.freeze([
     "home": "Venezia",
     "away": "Udinese",
     "date": "2026-11-06",
-    "time": null,
+    "time": "20:45",
     "highlight": false,
     "source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
     "date_confirmed": true,
-    "time_confirmed": false,
-    "verified_source_url": "https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata",
+    "time_confirmed": true,
+    "verified_source_url": "https://udinese.cdn.xpl.io/news/squadra/il-calendario-dei-bianconeri-a-ottobre-e-novembre",
     "verified_at": "2026-10-13",
-    "provisional": true
+    "provisional": false
   },
   {
     "fixture_key": "2026-11-06-willem-ii-pec-zwolle",

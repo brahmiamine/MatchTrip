@@ -52,8 +52,21 @@ export const OFFICIAL_TICKET_URLS = Object.freeze({
   "Sassuolo": "https://www.sassuolocalcio.it/categoria/biglietteria/",
   "Frosinone": "https://www.frosinonecalcio.com/biglietti/",
   "Monza": "https://www.acmonza.com/it/ticketing/",
-  "Go Ahead Eagles": "https://gaeagles.tmtickets.nl/"
+  "Go Ahead Eagles": "https://gaeagles.tmtickets.nl/",
+  "Auxerre": "https://billetterie.aja.fr/",
+  "Rayo Vallecano": "https://www.rayovallecano.es/",
+  "Telstar": "https://tickets.sctelstar.nl/",
+  "Willem II": "https://ticketshop.willem-ii.nl/",
+  "Borussia Mönchengladbach": "https://www.borussia.de/tickets",
+  "FSV Mainz 05": "https://www.mainz05.de/tickets/heimspiele/"
 });
 export function getTicketUrl(homeClub) {
-  return OFFICIAL_TICKET_URLS[homeClub] ?? null;
+  return ticketUrls[homeClub] ?? null;
+}
+let ticketUrls = OFFICIAL_TICKET_URLS;
+let ticketKinds = { 'Rayo Vallecano': 'information' };
+export function getTicketLabel(homeClub) { return ticketKinds[homeClub] === 'information' ? 'Infos billets' : 'Billetterie'; }
+export function configureTicketing(clubs) {
+  ticketUrls = Object.fromEntries(clubs.filter(c => c.ticket_url).map(c => [c.club, c.ticket_url]));
+  ticketKinds = Object.fromEntries(clubs.map(c => [c.club, c.ticket_kind]));
 }

@@ -1,8 +1,5 @@
-import { useEffect, useState } from 'react';
-import { restoreList, saveList } from '../lib/storage.js';
+import { useStoredPreference } from './useStoredPreference.js';
 
 export function usePersistentList(key, fallback, override = null) {
-  const [value, setValue] = useState(() => override ?? restoreList(key, fallback));
-  useEffect(() => { saveList(key, value); }, [key, value]);
-  return [value, setValue];
+  return useStoredPreference(key, fallback, { valid: value => Array.isArray(value) && value.every(x => typeof x === 'string'), override });
 }

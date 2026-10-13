@@ -4,7 +4,7 @@
  * PAS des trajets routiers, distances de stade à stade ou durées de transport.
  * En cas de club inconnu, ne pas inventer de kilométrage.
  */
-export const DESTINATION_HUBS = Object.freeze({
+export let DESTINATION_HUBS = Object.freeze({
   France: { Paris: 'Paris', 'Autour de Paris': 'Paris' },
   Belgique: { Bruxelles: 'Bruxelles' },
   Espagne: { Madrid: 'Madrid', Barcelone: 'Barcelone', 'Valence / Villarreal': 'Valence' },
@@ -26,7 +26,7 @@ export const DESTINATION_HUBS = Object.freeze({
 });
 
 /** Coordonnées approximatives en degrés décimaux des centres-villes. */
-export const CITY_COORDINATES = Object.freeze({
+export let CITY_COORDINATES = Object.freeze({
   Paris: [48.8566, 2.3522], Troyes: [48.2973, 4.0744],
   'Le Havre': [49.4944, 0.1079], Lens: [50.4289, 2.8318],
   Auxerre: [47.7982, 3.567], 'Le Mans': [48.0061, 0.1996],
@@ -58,7 +58,7 @@ export const CITY_COORDINATES = Object.freeze({
 });
 
 /** Le champ « city » du catalogue désigne parfois la région, pas le stade. */
-export const HOME_CITIES = Object.freeze({
+export let HOME_CITIES = Object.freeze({
   'Paris FC': 'Paris', PSG: 'Paris', Troyes: 'Troyes', 'Le Havre': 'Le Havre',
   Lens: 'Lens', Auxerre: 'Auxerre', 'Le Mans': 'Le Mans',
   'Union SG': 'Bruxelles', Anderlecht: 'Bruxelles',
@@ -119,4 +119,10 @@ export function getMatchDistance(match) {
   const city = HOME_CITIES[match.home] ?? match.city;
   if (!hub || !CITY_COORDINATES[city]) return null;
   return { hub, city, km: Math.round(haversineKm(CITY_COORDINATES[hub], CITY_COORDINATES[city])) };
+}
+
+export function configureDestinations({ hubs, coordinates, homeCities }) {
+  DESTINATION_HUBS = hubs;
+  CITY_COORDINATES = coordinates;
+  HOME_CITIES = homeCities;
 }

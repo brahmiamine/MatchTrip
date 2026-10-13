@@ -86,3 +86,20 @@ Sources primaires :
 - KNVB : https://www.knvb.nl/competities/eredivisie/programma
 - DFB : https://datencenter.dfb.de/competitions/12/seasons/current
 - Lega Serie A : https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata
+
+### Catalogue et préférences dans Supabase
+
+La base active de MatchTrip est `nkcvffmgosvipnxcttms` (projet « abonnement »). La copie historique dans « arbitres » n'est pas utilisée et ne doit pas servir de source de mise à jour.
+
+- `matchtrip_fixtures` : rencontres, dates, heures, fenêtres de dates et preuves de vérification ; `venue_override` permet de préciser le stade réel d'une rencontre avec `venue_confirmed` et `venue_source_url`.
+- `matchtrip_club_media` : logos, stades habituels, photos, sources, crédits des images et liens de billetterie. `ticket_kind=information` identifie une page d'information officielle (Rayo Vallecano) plutôt qu'une boutique.
+- `matchtrip_catalog_config`, clé `catalogue` : villes de séjour, coordonnées indicatives des centres-villes, correspondances clubs/villes, regroupements de zones et paramètres du catalogue.
+- `matchtrip_preferences` : favoris, week-ends exclus, filtres, thème et affichage. Clé primaire `(user_id,key)` ; les politiques RLS réservent lecture et écriture au compte propriétaire.
+
+L'application lit ces tables au chargement. Les statuts de confirmation de Supabase sont prioritaires ; une ancienne confirmation intégrée au code ne remplace pas une incertitude enregistrée en base. Les données intégrées restent une copie de secours en cas d'indisponibilité, signalée dans l'interface.
+
+Le bouton « Sauvegarder mes choix » permet de créer un compte ou de se connecter. À la première connexion sans préférences enregistrées, les choix de ce navigateur sont importés ; les sessions suivantes restaurent les données du compte. Le cache local reste disponible hors connexion. Les choix d'un visiteur non connecté restent locaux jusqu'à sa connexion. Aucun favori existant dans un navigateur ne peut être importé par une migration exécutée à distance.
+
+Les scripts `supabase/catalog-storage.sql` et `supabase/catalog-data-seed.sql` documentent les ajouts appliqués le 13 octobre 2026. Les 30 noms de stades et 59 photos manquants ont été complétés ; les trois horaires italiens ont été confirmés à 20:45 avec leurs sources officielles. Les 42 heures restantes inconnues et les liens officiels de stade sans preuve restent vides. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre.
+
+Validation : tests du catalogue distant et de sa pagination, restauration hors connexion, synchronisation des préférences, isolation entre comptes, lectures REST publiques et politiques RLS testées dans une transaction annulée. Aucune donnée de test n'est conservée dans la base.
