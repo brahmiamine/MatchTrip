@@ -27,16 +27,15 @@ export default function App() {
   const [favorites, setFavorites] = usePersistentList('matchtrip-favorites', []);
   const [theme, setTheme] = usePersistentValue('matchtrip-theme', 'dark', ['dark', 'light']);
   const [mode, setMode] = usePersistentValue('matchtrip-display', 'cards', ['cards', 'list']);
-  const [sort, setSort] = useState(initial.view.sort);
   const [group, setGroup] = useState(initial.view.group);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
   useEffect(() => {
-    const qs = encodeState(filters, { view: 'weekends', sort, group });
+    const qs = encodeState(filters, { view: 'weekends', sort: 'asc', group });
     const url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
     if (url !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(null, '', url);
-  }, [filters, sort, group]);
+  }, [filters, group]);
   // Tiroir de filtres mobile : Échap le ferme, la page derrière ne défile pas.
   useEffect(() => {
     if (!filtersOpen) return undefined;
@@ -48,7 +47,7 @@ export default function App() {
 
   const options = useMemo(() => buildOptions(all, filters), [all, filters.countries, filters.zones]);
   const filtered = useMemo(() => applyFilters(all, filters, favorites), [all, filters, favorites]);
-  const ordered = useMemo(() => sortMatches(filtered, sort), [filtered, sort]);
+  const ordered = useMemo(() => sortMatches(filtered, 'asc'), [filtered]);
   const active = useMemo(() => describeActiveFilters(filters), [filters]);
   const summary = loading ? 'Chargement…' : plural(filtered.length, 'match');
 
@@ -56,7 +55,7 @@ export default function App() {
     <Header origin={origin} theme={theme} onToggleTheme={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}/>
     <main className="wrap main">
       <Hero all={all} filteredCount={filtered.length}/>
-      <Toolbar mode={mode} onMode={setMode} sort={sort} onSort={setSort} group={group} onGroup={setGroup} filterCount={active.length} onOpenFilters={() => setFiltersOpen(true)}/>
+      <Toolbar mode={mode} onMode={setMode} group={group} onGroup={setGroup} filterCount={active.length} onOpenFilters={() => setFiltersOpen(true)}/>
       <div className="content-grid">
         {filtersOpen && <div className="drawer-overlay" onClick={() => setFiltersOpen(false)}/>}
         <FilterSidebar open={filtersOpen} onClose={() => setFiltersOpen(false)} resultCount={filtered.length} favoritesCount={favorites.length} filters={filters} options={options} set={set} toggleIn={toggleIn} addExcluded={addExcluded} removeExcluded={removeExcluded} reset={reset}/>
