@@ -13,7 +13,7 @@ describe('état dans l’URL', () => {
     expect(s.view).toEqual(defaultView());
   });
   it('aller-retour complet', () => {
-    const f = { ...defaultFilters(), countries: ['Pays-Bas', 'Espagne'], zones: ['Paris & alentours'], clubs: ['Paris FC', 'Atlético, Madrid'], leagues: ['Ligue 1'], weekends: ['2026-11-14', '2026-10-31'], search: 'été & plus', dateFrom: '2026-11-01', dateTo: '2026-12-10', day: 'dimanche', slot: 'evening', onlyHighlights: true, onlyCertain: true, onlyFav: true, excluded: ['2026-11-14', '2026-10-31'] };
+    const f = { ...defaultFilters(), countries: ['Pays-Bas', 'Espagne'], zones: ['Paris & alentours'], clubs: ['Paris FC', 'Atlético, Madrid'], leagues: ['Ligue 1'], weekends: ['2026-11-14', '2026-10-31'], search: 'été & plus', dateFrom: '2026-11-01', dateTo: '2026-12-10', day: 'dimanche', slot: 'evening', timeFrom: '10:00', timeTo: '19:00', onlyHighlights: true, onlyCertain: true, onlyFav: true, excluded: ['2026-11-14', '2026-10-31'] };
     const v = { view: 'matches', sort: 'highlights', group: 'zone-weekend' };
     const s = rt(f, v);
     expect(s.filters).toEqual({ ...f, excluded: [] });
