@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
+import { removeFilter } from '../lib/activeFilters.js';
 import { addExcludedWeekend, defaultFilters, pruneSelection } from '../lib/filters.js';
 import { toggleItem } from '../lib/collections.js';
 import { nextDate } from '../lib/dates.js';
@@ -14,6 +15,7 @@ export function useFilters(all, initial) {
 
   const set = useCallback((key, value) => setFilters(f => ({ ...f, [key]: value })), []);
   const toggleIn = useCallback((key, value) => setFilters(f => pruneSelection(all, { ...f, [key]: toggleItem(f[key], value) })), [all]);
+  const remove = useCallback(item => setFilters(f => pruneSelection(all, removeFilter(f, item))), [all]);
   const addExcluded = useCallback(date => setExcluded(p => addExcludedWeekend(p, date)), [setExcluded]);
   const removeExcluded = useCallback(sat => setExcluded(p => p.filter(x => x !== sat)), [setExcluded]);
   /** Les week-ends indisponibles sont des contraintes personnelles : la réinitialisation les conserve. */
@@ -23,5 +25,5 @@ export function useFilters(all, initial) {
     setExcluded(p => p.filter(x => x !== w.weekend));
   }, [setExcluded]);
 
-  return { filters: merged, set, toggleIn, addExcluded, removeExcluded, reset, focusWeekend };
+  return { filters: merged, set, toggleIn, remove, addExcluded, removeExcluded, reset, focusWeekend };
 }

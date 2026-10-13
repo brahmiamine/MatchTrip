@@ -3,6 +3,7 @@ import { Check, Heart, RotateCcw, Search, SlidersHorizontal, Star, X } from 'luc
 import { FLAGS } from '../constants.js';
 import { formatMonth, formatWeekendRange, monthRange } from '../lib/dates.js';
 import MultiSelect from './MultiSelect.jsx';
+import ActiveFilters from './ActiveFilters.jsx';
 import ExcludedWeekends from './ExcludedWeekends.jsx';
 
 const DAYS = [['all', 'Tous'], ['samedi', 'Samedi'], ['dimanche', 'Dimanche']];
@@ -11,10 +12,11 @@ function Segment({ items, value, onChange }) {
   return <div className="segment">{items.map(([k, n]) => <button key={k} className={value === k ? 'active' : ''} onClick={() => onChange(k)}>{n}</button>)}</div>;
 }
 
-export default function FilterSidebar({ open, filters: f, options, set, toggleIn, addExcluded, removeExcluded, reset }) {
+export default function FilterSidebar({ open, filters: f, options, active, set, toggleIn, remove, addExcluded, removeExcluded, reset }) {
   return <aside className={'sidebar ' + (open ? 'sidebar-open' : '')}>
     <div className="sidebar-head"><div><SlidersHorizontal size={19}/><h2>Vos critères</h2></div><button className="reset" onClick={reset}><RotateCcw size={14}/> Réinitialiser</button></div>
     <div className="filters-body">
+      {active.length > 0 && <div className="field"><label>Filtres actifs <span className="field-count">{active.length}</span></label><ActiveFilters items={active} onRemove={remove} onReset={reset}/></div>}
       <div className="field"><label>Recherche libre</label><div className="search-field"><Search size={17}/><input value={f.search} onChange={e => set('search', e.target.value)} placeholder="Club, adversaire, ville…"/>{f.search && <button aria-label="Effacer" onClick={() => set('search', '')}><X size={15}/></button>}</div></div>
       <div className="field"><label>Pays <span className="field-count">choix multiples</span></label><div className="country-grid">{options.countries.map(c => <button className={'country-chip ' + (f.countries.includes(c) ? 'selected' : '')} key={c} onClick={() => toggleIn('countries', c)}><span>{FLAGS[c]}</span>{c}{f.countries.includes(c) && <Check size={13}/>}</button>)}</div></div>
       <div className="field"><label>Destinations et clubs</label>
