@@ -27,6 +27,8 @@ export function matchesFilters(m, f, favorites = []) {
   const [from, to] = normalizeRange(f.dateFrom, f.dateTo);
   if ((from && m.date < from) || (to && m.date > to)) return false;
   if (f.day !== 'all') {
+    // Date provisoire vendredi–dimanche : ne pas prétendre que le match est samedi.
+    if (m.date_window_start && m.date_window_end) return false;
     const wd = weekdayOf(m.date);
     if (f.day === 'samedi' ? wd !== 6 : wd !== 0) return false;
   }
