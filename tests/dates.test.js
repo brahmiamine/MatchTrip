@@ -14,7 +14,7 @@ describe('dates', () => {
   });
   it.each([
     ['2026-10-17', '2026-10-17'], ['2026-10-18', '2026-10-17'], ['2026-10-19', '2026-10-17'],
-    ['2026-10-23', '2026-10-17'], ['2026-10-24', '2026-10-24'], ['2026-11-01', '2026-10-31'],
+    ['2026-10-23', '2026-10-24'], ['2026-10-24', '2026-10-24'], ['2026-11-01', '2026-10-31'],
   ])('getWeekend(%s) = %s', (d, w) => expect(getWeekend(d)).toBe(w));
   it('formatTime', () => {
     expect(formatTime('17:15')).toBe('17h15');
@@ -48,6 +48,6 @@ describe('dates', () => {
   });
   it('formatMonth / formatWeekendRange', () => {
     expect(formatMonth('2026-10')).toBe('oct. 2026');
-    expect(formatWeekendRange('2026-10-31')).toBe('sam 31 oct – dim 1 nov');
+    expect(formatWeekendRange('2026-10-31')).toBe('ven 30 oct – dim 1 nov');
   });
 });
