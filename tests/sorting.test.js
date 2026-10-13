@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compareChrono, groupMatches, sortMatches } from '../src/lib/sorting.js';
+import { compareChrono, groupByZoneThenDate, groupMatches, sortMatches } from '../src/lib/sorting.js';
 import { mk } from './helpers.js';
 
 const a = mk({ home: 'A', date: '2026-10-18', time: '15:00' });
@@ -24,6 +24,14 @@ describe('regroupement', () => {
   it('par destination', () => {
     const g = groupMatches([a, mk({ country: 'Italie', zone: 'Milan' })], 'zone');
     expect(g.map(([k]) => k)).toEqual(['France / Paris', 'Italie / Milan']);
+  });
+  it('destination puis date', () => {
+    const it1 = mk({ home: 'X', date: '2026-10-18', country: 'Italie', zone: 'Milan' });
+    const g = groupByZoneThenDate(sortMatches([a, b, it1, d], 'asc'));
+    expect(g.map(([z, days]) => [z, days.map(([dt, ms]) => dt + ':' + names(ms))])).toEqual([
+      ['France / Paris', ['2026-10-17:DB', '2026-10-18:A']],
+      ['Italie / Milan', ['2026-10-18:X']],
+    ]);
   });
   it('liste vide', () => expect(groupMatches([], 'date')).toEqual([]));
 });

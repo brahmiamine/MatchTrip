@@ -17,3 +17,8 @@ export function groupMatches(list, group) {
   });
   return [...map.entries()];
 }
+
+/** Destination puis date : [[« Pays / Zone », [[date, matchs]]]]. Destinations par ordre d'apparition. */
+export function groupByZoneThenDate(list) {
+  return groupMatches(list, 'zone').map(([zone, ms]) => [zone, groupMatches(ms, 'date')]);
+}
