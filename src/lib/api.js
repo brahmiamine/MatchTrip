@@ -5,8 +5,8 @@ import { newFixtures } from '../data/newFixtures.js';
 const embedded = [...seedFixtures, ...newFixtures];
 
 // Public anon key: read-only tables protected by Row-Level Security.
-const url = import.meta.env.VITE_SUPABASE_URL || 'https://ewswqwmaejddwqiwaspq.supabase.co';
-const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3c3dxd21hZWpkZHdxaXdhc3BxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1OTIwMDMsImV4cCI6MjA3ODE2ODAwM30.7KGg8oQSD70Wvoi6h82xGY6VEpnyDw91VDj_xknN0bU';
+const url = import.meta.env.VITE_SUPABASE_URL || 'https://nkcvffmgosvipnxcttms.supabase.co';
+const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_mqqFN222VJ58VHFvdgYZRA_MvwrzLlB';
 export const configured = Boolean(url && key);
 const supabase = configured ? createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}) : null;
 
@@ -28,7 +28,7 @@ export async function loadFixtures() {
       return enrichFixture({ ...row, home_logo_url: row.home_logo_url || home.logo_url, away_logo_url: row.away_logo_url || away.logo_url,
         stadium: row.stadium || home.stadium, stadium_image_url: row.stadium_image_url || home.stadium_image_url, stadium_source_url: row.stadium_source_url || home.stadium_source_url });
     };
-    const unique = [...new Map(all.map(row => [row.fixture_key, row])).values()];
+    const unique = [...new Map(all.filter(row => row.zone !== 'Autres villes italiennes').map(row => [row.fixture_key, row])).values()];
     return {fixtures:unique.map(row=>withMedia({...row,time:row.time?row.time.slice(0,5):null})),origin:'Supabase',error:null};
   } catch(err) {
     return {fixtures:embedded.map(enrichFixture),origin:'catalogue intégré',error:'Supabase inaccessible : données intégrées affichées. '+(err?.message??'')};
