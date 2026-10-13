@@ -219,7 +219,7 @@
   "AZ Alkmaar": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/AZ_Alkmaar.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/AZ_Alkmaar",
-    "stadium": null,
+    "stadium": "AFAS Stadion",
     "stadium_image_url": null,
     "stadium_source_url": null,
     "verified_at": "2026-10-13"
@@ -235,7 +235,7 @@
   "FC Utrecht": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_FC_Utrecht.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/FC_Utrecht",
-    "stadium": null,
+    "stadium": "Stadion Galgenwaard",
     "stadium_image_url": null,
     "stadium_source_url": null,
     "verified_at": "2026-10-13"
@@ -243,7 +243,7 @@
   "SC Cambuur": {
     "logo_url": "https://upload.wikimedia.org/wikipedia/en/c/cb/SC_Cambuur_logo.svg",
     "club_source_url": "https://en.wikipedia.org/wiki/SC_Cambuur",
-    "stadium": null,
+    "stadium": "Kooi Stadion",
     "stadium_image_url": null,
     "stadium_source_url": null,
     "verified_at": "2026-10-13"
@@ -575,6 +575,262 @@
     "stadium": "Stadio Friuli",
     "stadium_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/DaciArena.jpg/960px-DaciArena.jpg",
     "stadium_source_url": "https://en.wikipedia.org/wiki/Stadio_Friuli",
+    "verified_at": "2026-10-13"
+  },
+  "ADO Den Haag": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBGY74K",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "WerkTalent Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Excelsior Rotterdam": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=FTRN05U",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Stadion Woudestein",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "FC Groningen": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBBG59U",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Euroborg",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "FC Twente": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWCB19A",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "De Grolsch Veste",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Feyenoord": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBFC26Q",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Stadion Feijenoord (De Kuip)",
+    "stadium_image_url": "https://cdn.sanity.io/images/2hlolhb1/production/36bacdd5aeb15d79f5cf67816be2743fbf1eb127-5902x3934.jpg?h=630&rect=0%2C418%2C5902%2C3099&w=1200",
+    "stadium_source_url": "https://www.feyenoord.com/",
+    "verified_at": "2026-10-13"
+  },
+  "Fortuna Sittard": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBJW59U",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Fortuna Sittard Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Go Ahead Eagles": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBKY386",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "De Adelaarshorst",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "NEC": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWBZ40V",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Goffertstadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "PEC Zwolle": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBKV81X",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "MAC³PARK Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "PSV": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBJG81J",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Philips Stadion",
+    "stadium_image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Philips_Stadion.jpg?width=960",
+    "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Philips_Stadion.jpg",
+    "verified_at": "2026-10-13"
+  },
+  "sc Heerenveen": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBBF10E",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Abe Lenstra Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Sparta Rotterdam": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=BBFC723",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Sparta Stadion Het Kasteel",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Sparta_Stadion_Het_Kasteel_05.jpg",
+    "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Sparta_Stadion_Het_Kasteel_05.jpg",
+    "verified_at": "2026-10-13"
+  },
+  "Telstar": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=SWBQ01T",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "BUKO Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Willem II": {
+    "logo_url": "https://logoapi.voetbal.nl/logo.php?clubcode=LZZG02M",
+    "club_source_url": "https://www.knvb.nl/competities/eredivisie/programma",
+    "stadium": "Koning Willem II Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": null,
+    "verified_at": "2026-10-13"
+  },
+  "Bayern Munich": {
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Allianz Arena",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Allianz-Arena-M%C3%BCnchen.jpg/1280px-Allianz-Arena-M%C3%BCnchen.jpg",
+    "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Allianz-Arena-M%C3%BCnchen.jpg",
+    "verified_at": "2026-10-13"
+  },
+  "Borussia Dortmund": {
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Signal Iduna Park",
+    "stadium_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Signal_iduna_park_stadium_dortmund_4.jpg/960px-Signal_iduna_park_stadium_dortmund_4.jpg",
+    "stadium_source_url": "https://commons.wikimedia.org/wiki/File:Signal_iduna_park_stadium_dortmund_4.jpg",
+    "verified_at": "2026-10-13"
+  },
+  "Bayer Leverkusen": {
+    "logo_url": "https://media.dfl.de/sites/2/2025/09/B04_Standard_Logo_RGB.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "BayArena",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "Borussia Mönchengladbach": {
+    "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borussia_M%C3%B6nchengladbach_logo.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "ista-BORUSSIA-PARK",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "1. FC Cologne": {
+    "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/1._FC_Koeln_Logo_2014%E2%80%93.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "RheinEnergieSTADION",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "Schalke 04": {
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/FC_Schalke_04_Logo.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "VELTINS-Arena",
+    "stadium_image_url": "https://veltins-arena.de/app/uploads/2021/08/210813_arena_aussen.jpg",
+    "stadium_source_url": "https://veltins-arena.de/",
+    "verified_at": "2026-10-13"
+  },
+  "Eintracht Frankfurt": {
+    "logo_url": "https://crests.football-data.org/19.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Deutsche Bank Park",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "FSV Mainz 05": {
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_Mainz_05.svg",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "MEWA ARENA",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "FC Augsburg": {
+    "logo_url": "https://crests.football-data.org/16.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "WWK ARENA",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "RB Leipzig": {
+    "logo_url": "https://crests.football-data.org/721.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Red Bull Arena",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "SC Freiburg": {
+    "logo_url": "https://crests.football-data.org/17.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Europa-Park Stadion",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "TSG Hoffenheim": {
+    "logo_url": "https://crests.football-data.org/2.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "SNP Arena",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "VfB Stuttgart": {
+    "logo_url": "https://crests.football-data.org/10.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "MHPArena",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "SC Paderborn 07": {
+    "logo_url": "https://crests.football-data.org/29.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Home Deluxe Arena",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "Hamburger SV": {
+    "logo_url": "https://crests.football-data.org/7.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Volksparkstadion",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "SV Elversberg": {
+    "logo_url": "https://crests.football-data.org/803.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "URSAPHARM-Arena an der Kaiserlinde",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "Union Berlin": {
+    "logo_url": "https://crests.football-data.org/28.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Stadion An der Alten Försterei",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "verified_at": "2026-10-13"
+  },
+  "Werder Bremen": {
+    "logo_url": "https://crests.football-data.org/12.png",
+    "club_source_url": "https://www.bundesliga.com/en/bundesliga/clubs",
+    "stadium": "Weserstadion",
+    "stadium_image_url": null,
+    "stadium_source_url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
     "verified_at": "2026-10-13"
   }
 }
