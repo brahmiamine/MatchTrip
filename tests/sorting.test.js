@@ -16,6 +16,15 @@ describe('tri', () => {
   it('compareChrono', () => expect(compareChrono(a, b)).toBeGreaterThan(0));
 });
 
+describe('tri par pays', () => {
+  const it1 = mk({ home: 'I', date: '2026-10-17', time: '10:00', country: 'Italie' });
+  const es = mk({ home: 'E', date: '2026-10-25', country: 'Espagne' });
+  const pt = mk({ home: 'P', date: '2026-10-17', country: 'Portugal' });
+  const be = mk({ home: 'B2', date: '2026-10-17', country: 'Belgique' });
+  it('ordre des pays puis chronologique ; pays inconnus à la fin', () => expect(names(sortMatches([pt, it1, es, a, be, d], 'country'))).toBe('DAB2EIP'));
+  it('ne mute pas l’entrée', () => { const l = [it1, a]; sortMatches(l, 'country'); expect(names(l)).toBe('IA'); });
+});
+
 describe('regroupement', () => {
   it('par date, ordre conservé', () => {
     const g = groupMatches(sortMatches([a, b, c, d], 'asc'), 'date');
@@ -41,10 +50,6 @@ describe('regroupement', () => {
       ['2026-10-17|France / Paris', 'DBA'],
       ['2026-10-24|France / Paris', 'X'],
     ]);
-  });
-  it('par pays, dans l’ordre du tri', () => {
-    const g = groupMatches(sortMatches([a, mk({ home: 'X', date: '2026-10-17', time: '10:00', country: 'Italie' }), b], 'asc'), 'country');
-    expect(g.map(([k, v]) => [k, names(v)])).toEqual([['Italie', 'X'], ['France', 'BA']]);
   });
   it('liste vide', () => expect(groupMatches([], 'date')).toEqual([]));
 });

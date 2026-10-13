@@ -1,6 +1,6 @@
 import { MIN_GAP_MINUTES } from '../constants.js';
 import { getWeekend, minutesOf } from './dates.js';
-import { compareChrono } from './sorting.js';
+import { compareChrono, compareCountry } from './sorting.js';
 import { getWeekendGroup } from './zoneGroups.js';
 
 /** Deux matchs sont combinables s'ils sont sur des jours différents, ou le même jour avec ≥ 4 h d'écart. */
@@ -32,6 +32,7 @@ export function buildWeekends(matches, sort = 'asc') {
     return { ...w, items, zones: [...w.zones], pairs: buildPairs(items).filter(([a, b]) => a.home !== b.home), score: items.filter(x => x.highlight).length * 10 + items.length };
   }).filter(w => w.pairs.length > 0);
   return list.sort((a, b) => {
+    if (sort === 'country') return compareCountry(a, b) || a.weekend.localeCompare(b.weekend) || a.cluster.localeCompare(b.cluster, 'fr');
     if (sort === 'desc') return b.weekend.localeCompare(a.weekend);
     if (sort === 'highlights') return b.score - a.score || a.weekend.localeCompare(b.weekend);
     return a.weekend.localeCompare(b.weekend) || b.score - a.score;

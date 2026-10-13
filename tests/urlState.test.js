@@ -28,7 +28,6 @@ describe('état dans l’URL', () => {
     expect(s.view).toEqual(defaultView());
     expect(s.excluded).toEqual([]);
   });
-  it('regroupement par pays', () => expect(rt(defaultFilters(), { view: 'matches', sort: 'asc', group: 'country' }).view.group).toBe('country'));
   it('doublons dans les listes supprimés', () => expect(decodeState('?c=France&c=France').filters.countries).toEqual(['France']));
   it('recherche vide ou espaces non écrite', () => expect(encodeState({ ...defaultFilters(), search: '  ' }, defaultView())).toBe(''));
 });

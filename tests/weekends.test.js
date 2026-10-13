@@ -35,6 +35,11 @@ describe('week-ends', () => {
     expect(buildWeekends(all, 'desc').map(w => w.weekend)).toEqual(['2026-10-24', '2026-10-17']);
     expect(buildWeekends(all, 'highlights').map(w => w.weekend)).toEqual(['2026-10-24', '2026-10-17']);
   });
+  it('tri par pays puis date', () => {
+    const mkW = (home, country, zone, d) => [mk({ home, country, zone, date: d, time: '15:00' }), mk({ home: home + '2', country, zone, date: d.replace(/17$/, '18').replace(/24$/, '25'), time: '15:00' })];
+    const all = [...mkW('I', 'Italie', 'Milan / Lombardie', '2026-10-17'), ...mkW('F2', 'France', 'Paris', '2026-10-24'), ...mkW('F1', 'France', 'Paris', '2026-10-17')];
+    expect(buildWeekends(all, 'country').map(w => w.country + w.weekend)).toEqual(['France2026-10-17', 'France2026-10-24', 'Italie2026-10-17']);
+  });
   it('score = affiches * 10 + matchs', () => expect(buildWeekends([mk({ highlight: true }), sun])[0].score).toBe(12));
 });
 
