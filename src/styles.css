@@ -59,3 +59,6 @@ a.hub-distance:hover{color:#e9ffbf}
 .fixture-source{color:#a2b7ce;font-size:10px;text-decoration:underline;text-underline-offset:2px}
 .weekend-fixture-status{margin-top:5px;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
 @media(max-width:760px){.segment button{font-size:9px}}
+
+.match-verification{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.fixture-source{display:inline-flex;align-items:center;gap:3px}
