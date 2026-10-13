@@ -33,7 +33,18 @@ export const OFFICIAL_TICKET_URLS = Object.freeze({
   "Borussia Dortmund": "https://www.bvb.de/de/de/tickets.html",
   "Bayer Leverkusen": "https://www.bayer04.de/en-us/page/service/tickets",
   "FC Augsburg": "https://tickets.fcaugsburg.de/fcaugsburg/heimtickets.htm",
-  "Eintracht Frankfurt": "https://stores.eintracht.de/tickets/info-service/ticketinformation/"
+  "Eintracht Frankfurt": "https://stores.eintracht.de/tickets/info-service/ticketinformation/",
+  "Atlético Madrid": "https://www.atleticodemadrid.com/entradas",
+  "Villarreal": "https://villarrealcf.es/es/venta-de-entradas/",
+  "Como": "https://comofootball.com/matches-and-tickets/",
+  "Venezia": "https://www.veneziafc.it/tickets/biglietteria",
+  "SC Cambuur": "https://tickets.cambuur.nl/",
+  "sc Heerenveen": "https://tickets.sc-heerenveen.nl/",
+  "Excelsior Rotterdam": "https://tickets.excelsiorrotterdam.nl/",
+  "FC Groningen": "https://tickets.fcgroningen.nl/",
+  "PEC Zwolle": "https://tickets.peczwolle.nl/",
+  "Udinese": "https://www.udinese.it/biglietti/vendita-biglietti",
+  "Lazio": "https://www.sslazio.it/en/biglietteria/matches"
 });
 export function getTicketUrl(homeClub) {
   return OFFICIAL_TICKET_URLS[homeClub] ?? null;
