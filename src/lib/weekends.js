@@ -19,6 +19,8 @@ export function buildPairs(items) {
 export function buildWeekends(matches, sort = 'asc') {
   const map = new Map();
   matches.forEach(m => {
+    // Bundesliga December game dates are unconfirmed within a Friday–Sunday window.
+    if (m.date_window_start && m.date_window_end) return;
     const cluster = getWeekendGroup(m);
     if (!cluster) return;
     const weekend = getWeekend(m.date);
