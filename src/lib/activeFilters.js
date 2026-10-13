@@ -2,7 +2,7 @@ import { formatDay, formatWeekendRange } from './dates.js';
 
 const SLOTS = { day: 'Avant 18h', evening: 'À partir de 18h', unknown: 'Heure non confirmée' };
 const DAYS = { vendredi: 'Vendredi', samedi: 'Samedi', dimanche: 'Dimanche' };
-const FLAGS = { onlyHighlights: 'Grandes affiches', onlyCertain: 'Date et heure confirmées', onlyFav: 'Favoris' };
+const FLAGS = { onlyHighlights: 'Grandes affiches', onlyCertain: 'Date et heure vérifiées', onlyFav: 'Favoris' };
 const LISTS = [['countries', ''], ['zones', ''], ['clubs', ''], ['leagues', ''], ['weekends', 'Week-end ']];
 
 /** Critères actifs sous forme de pastilles : [{ id, key, value?, label }]. */
