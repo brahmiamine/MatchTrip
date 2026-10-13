@@ -35,7 +35,7 @@ export function matchesFilters(m, f, favorites = []) {
   const t = timeKey(m);
   if (f.slot === 'day' && (!t || t >= EVENING_FROM)) return false;
   if (f.slot === 'evening' && (!t || t < EVENING_FROM)) return false;
-  if (f.slot === 'unknown' && t) return false;
+  if (f.slot === 'unknown' && t && m.time_confirmed === true) return false;
   if (f.timeFrom && (!t || t < f.timeFrom)) return false;
   if (f.timeTo && (!t || t >= f.timeTo)) return false; // borne haute EXCLUE
   if (f.timeFrom && f.timeTo && f.timeFrom >= f.timeTo) return false;
