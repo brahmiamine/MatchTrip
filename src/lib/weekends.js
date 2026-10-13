@@ -7,7 +7,7 @@ import { getWeekendGroup } from './zoneGroups.js';
 export function compatible(a, b) {
   if (a.date !== b.date) return true;
   const ta = minutesOf(a.time), tb = minutesOf(b.time);
-  return ta !== null && tb !== null && Math.abs(ta - tb) >= MIN_GAP_MINUTES;
+  return ta !== null && tb !== null && a.time_confirmed === true && b.time_confirmed === true && Math.abs(ta - tb) >= MIN_GAP_MINUTES;
 }
 
 export function buildPairs(items) {
