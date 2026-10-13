@@ -1,5 +1,5 @@
 import { MIN_GAP_MINUTES } from '../constants.js';
-import { getWeekend, minutesOf } from './dates.js';
+import { getWeekend, isWeekendDay, minutesOf } from './dates.js';
 import { compareChrono, compareCountry } from './sorting.js';
 import { getWeekendGroup } from './zoneGroups.js';
 
@@ -21,6 +21,7 @@ export function buildWeekends(matches, sort = 'asc') {
   matches.forEach(m => {
     // Bundesliga December game dates are unconfirmed within a Friday–Sunday window.
     if (m.date_window_start && m.date_window_end) return;
+    if (!isWeekendDay(m.date)) return;
     const cluster = getWeekendGroup(m);
     if (!cluster) return;
     const weekend = getWeekend(m.date);
