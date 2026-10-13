@@ -1,6 +1,6 @@
 import { defaultFilters } from './filters.js';
 
-const LISTS = { c: 'countries', z: 'zones', cl: 'clubs', lg: 'leagues' };
+const LISTS = { c: 'countries', z: 'zones', cl: 'clubs', lg: 'leagues', w: 'weekends' };
 const FLAGS = { hl: 'onlyHighlights', ok: 'onlyCertain', fav: 'onlyFav' };
 const ENUMS = {
   d: ['all', 'samedi', 'dimanche'], slot: ['all', 'day', 'evening', 'unknown'],
@@ -31,7 +31,7 @@ export function encodeState(filters, { view, sort, group }) {
 export function decodeState(search) {
   const p = new URLSearchParams(search);
   const filters = defaultFilters();
-  Object.entries(LISTS).forEach(([k, f]) => { filters[f] = [...new Set(p.getAll(k).filter(Boolean))]; });
+  Object.entries(LISTS).forEach(([k, f]) => { filters[f] = [...new Set(p.getAll(k).filter(Boolean))].filter(v => k !== 'w' || ISO.test(v)); });
   filters.search = p.get('q') || '';
   const from = p.get('from'), to = p.get('to');
   if (from && ISO.test(from)) filters.dateFrom = from;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check, Heart, RotateCcw, Search, SlidersHorizontal, Star, X } from 'lucide-react';
 import { FLAGS } from '../constants.js';
-import { formatMonth, monthRange } from '../lib/dates.js';
+import { formatMonth, formatWeekendRange, monthRange } from '../lib/dates.js';
 import MultiSelect from './MultiSelect.jsx';
 import ExcludedWeekends from './ExcludedWeekends.jsx';
 
@@ -20,6 +20,7 @@ export default function FilterSidebar({ open, filters: f, options, set, toggleIn
       <div className="field"><label>Destinations et clubs</label>
         <MultiSelect label="Zones géographiques" values={options.zones} chosen={f.zones} onToggle={z => toggleIn('zones', z)}/>
         <MultiSelect label="Clubs à domicile" values={options.clubs} chosen={f.clubs} onToggle={c => toggleIn('clubs', c)}/>
+        <MultiSelect label="Week-ends" values={options.weekends} chosen={f.weekends} onToggle={w => toggleIn('weekends', w)} format={formatWeekendRange}/>
         <MultiSelect label="Compétitions" values={options.leagues} chosen={f.leagues} onToggle={l => toggleIn('leagues', l)}/></div>
       <div className="line"/>
       <div className="field"><label>Période</label><div className="date-row">

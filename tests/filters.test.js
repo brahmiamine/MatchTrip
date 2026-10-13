@@ -19,6 +19,12 @@ describe('filtres', () => {
   it('pays', () => expect(run({ countries: ['Espagne', 'Italie'] })).toEqual(['Real', 'Inter']));
   it('zone', () => expect(run({ zones: ['Madrid'] })).toEqual(['Real']));
   it('club', () => expect(run({ clubs: ['PSG'] })).toEqual(['PSG']));
+  it('week-end (samedi + dimanche)', () => {
+    expect(run({ weekends: ['2026-10-17'] })).toEqual(['PSG', 'Paris FC']);
+    expect(run({ weekends: ['2026-10-31', '2026-12-05'] })).toEqual(['Lille', 'Inter']);
+    expect(run({ weekends: ['2026-10-17'], day: 'dimanche' })).toEqual(['Paris FC']);
+  });
+  it('week-end : combiné aux week-ends indisponibles', () => expect(run({ weekends: ['2026-10-17'], excluded: ['2026-10-17'] })).toEqual([]));
   it('compétition', () => expect(run({ leagues: ['Serie A'] })).toEqual(['Inter']));
   it('recherche insensible à la casse et aux accents', () => {
     expect(run({ search: 'ATLÉTICO' })).toEqual(['Real']);
@@ -99,11 +105,16 @@ describe('options en cascade', () => {
     expect(o.clubs).toEqual(['Real']);
     expect(o.leagues).toEqual(['LaLiga']);
   });
+  it('week-ends proposés = ceux des données, filtrés par pays', () => {
+    expect(buildOptions(data, defaultFilters()).weekends).toEqual(['2026-10-17', '2026-10-31', '2026-11-14', '2026-12-05']);
+    expect(buildOptions(data, { ...defaultFilters(), countries: ['Italie'] }).weekends).toEqual(['2026-12-05']);
+  });
   it('une zone restreint clubs', () => expect(buildOptions(data, { ...defaultFilters(), zones: ['Paris'] }).clubs).toEqual(['Paris FC', 'PSG']));
   it('pruneSelection retire les valeurs orphelines', () => {
-    const f = pruneSelection(data, { ...defaultFilters(), countries: ['Espagne'], zones: ['Paris', 'Madrid'], clubs: ['PSG', 'Real'], leagues: ['Ligue 1'] });
+    const f = pruneSelection(data, { ...defaultFilters(), countries: ['Espagne'], zones: ['Paris', 'Madrid'], clubs: ['PSG', 'Real'], leagues: ['Ligue 1'], weekends: ['2026-10-17', '2026-12-05'] });
     expect(f.zones).toEqual(['Madrid']);
     expect(f.clubs).toEqual(['Real']);
     expect(f.leagues).toEqual([]);
+    expect(f.weekends).toEqual([]);
   });
 });

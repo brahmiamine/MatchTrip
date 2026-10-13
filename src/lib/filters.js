@@ -3,7 +3,7 @@ import { getWeekend, weekdayOf } from './dates.js';
 import { normalize, uniqueSorted } from './collections.js';
 
 export const defaultFilters = () => ({
-  countries: [], zones: [], clubs: [], leagues: [], search: '',
+  countries: [], zones: [], clubs: [], leagues: [], weekends: [], search: '',
   dateFrom: '', dateTo: '', day: 'all', slot: 'all',
   onlyHighlights: false, onlyCertain: false, onlyFav: false,
   excluded: [...EXCLUDED_DEFAULT],
@@ -22,6 +22,7 @@ export function matchesFilters(m, f, favorites = []) {
   if (f.zones.length && !f.zones.includes(m.zone)) return false;
   if (f.clubs.length && !f.clubs.includes(m.home)) return false;
   if (f.leagues.length && !f.leagues.includes(m.league)) return false;
+  if (f.weekends.length && !f.weekends.includes(getWeekend(m.date))) return false;
   if (f.search && !searchText(m).includes(normalize(f.search.trim()))) return false;
   const [from, to] = normalizeRange(f.dateFrom, f.dateTo);
   if ((from && m.date < from) || (to && m.date > to)) return false;
@@ -44,7 +45,7 @@ export const applyFilters = (all, f, favorites) => all.filter(m => matchesFilter
 
 /** Nombre de critères personnalisés actifs (hors période et week-ends exclus). */
 export function countActiveFilters(f) {
-  const lists = [f.countries, f.zones, f.clubs, f.leagues].filter(x => x.length).length;
+  const lists = [f.countries, f.zones, f.clubs, f.leagues, f.weekends].filter(x => x.length).length;
   const flags = [f.search.trim(), f.day !== 'all', f.slot !== 'all', f.onlyHighlights, f.onlyCertain, f.onlyFav, Boolean(f.dateFrom), Boolean(f.dateTo)];
   return lists + flags.filter(Boolean).length;
 }
@@ -72,6 +73,7 @@ export function buildOptions(all, f) {
     zones: uniqueSorted(present(inCountries.map(x => x.zone))),
     clubs: uniqueSorted(present(inZones.map(x => x.home))),
     leagues: uniqueSorted(present(inZones.map(x => x.league))),
+    weekends: [...new Set(present(inZones.map(x => x.date)).map(getWeekend))].sort(),
     months: [...new Set(dates.map(d => d.slice(0, 7)))],
     dateBounds: { min: dates[0] || '', max: dates[dates.length - 1] || '' },
   };
@@ -81,5 +83,5 @@ export function buildOptions(all, f) {
 export function pruneSelection(all, f) {
   const o = buildOptions(all, f);
   const keep = (sel, avail) => sel.filter(v => avail.includes(v));
-  return { ...f, zones: keep(f.zones, o.zones), clubs: keep(f.clubs, o.clubs), leagues: keep(f.leagues, o.leagues) };
+  return { ...f, zones: keep(f.zones, o.zones), clubs: keep(f.clubs, o.clubs), leagues: keep(f.leagues, o.leagues), weekends: keep(f.weekends, o.weekends) };
 }
