@@ -1,13 +1,14 @@
 import React from 'react';
-import { ArrowDown, Sparkles } from 'lucide-react';
-import { WEEKENDS_PAGE_STEP } from '../constants.js';
-import Empty from './Empty.jsx';
-import WeekendCard from './WeekendCard.jsx';
+import WeekendCard, { WeekendRow } from './WeekendCard.jsx';
 
-export default function WeekendsView({ weekends, pageLimit, onMore, onExamine, onReset }) {
+export default function WeekendsView({ weekends, mode }) {
+  const key = w => w.country + w.cluster + w.weekend;
   return <>
-    <div className="section-intro"><Sparkles size={16}/><span>Des vendredis–dimanches avec <strong>au moins deux matchs compatibles sur le papier</strong> dans une même zone de voyage. Ville de séjour indiquée pour chaque destination ; kilomètres à vol d'oiseau entre centres-villes. Temps de trajet et billets à vérifier.</span></div>
-    {weekends.length === 0 ? <Empty onReset={onReset}/> : <div className="weekends-grid">{weekends.slice(0, pageLimit).map(w => <WeekendCard key={w.country + w.cluster + w.weekend} weekend={w} onExamine={onExamine}/>)}</div>}
-    {weekends.length > pageLimit && <button className="load-more" onClick={() => onMore(WEEKENDS_PAGE_STEP)}>Voir plus de week-ends <ArrowDown size={16}/></button>}
+    <div className="section-head" id="combinaisons"><h2>Combinaisons de week-ends</h2><span>{weekends.length} week-end{weekends.length > 1 ? 's' : ''}</span></div>
+    {weekends.length === 0
+      ? <div className="note">Aucune combinaison possible avec ces critères : il faut deux matchs compatibles le même week-end (jours différents, ou 4 h d’écart avec horaires confirmés). Les matchs sont listés ci-dessous.</div>
+      : mode === 'list'
+        ? <div className="list-box">{weekends.map(w => <WeekendRow key={key(w)} weekend={w}/>)}</div>
+        : <div className="card-grid">{weekends.map(w => <WeekendCard key={key(w)} weekend={w}/>)}</div>}
   </>;
 }

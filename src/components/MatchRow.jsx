@@ -1,34 +1,35 @@
 import React from 'react';
-import ClubLogo from './ClubLogo.jsx';
+import { CrestPair } from './ClubLogo.jsx';
 import Stadium from './Stadium.jsx';
-import { getTicketUrl } from '../lib/ticketing.js';
 import DistanceFromHub from './DistanceFromHub.jsx';
 import FixtureStatus from './FixtureStatus.jsx';
-import { enrichFixture } from '../lib/media.js';
-import { ArrowUpRight, CalendarDays, Heart, Ticket, Star } from 'lucide-react';
+import FavoriteButton from './FavoriteButton.jsx';
+import { getTicketUrl } from '../lib/ticketing.js';
+import { getDestinationName } from '../lib/destinations.js';
 import { FLAGS } from '../constants.js';
 import { formatDay, formatTime } from '../lib/dates.js';
 
-export default function MatchRow({ match, favorite, onToggleFavorite }) {
-  const m = enrichFixture(match);
+export const matchDateLabel = m => (m.date_window_start && m.date_window_end ? `${formatDay(m.date_window_start)} – ${formatDay(m.date_window_end)}` : formatDay(m.date));
+
+/** Rencontre affichée en ligne (affichage « Liste »). */
+export default function MatchRow({ match: m, favorite, onToggleFavorite }) {
   const ticketUrl = getTicketUrl(m.home);
-  return <div className={'match-row ' + (m.highlight ? 'featured' : '')}>
-    <ClubLogo club={m.home} url={m.home_logo_url}/>
-    <div className="match-details">
-      <div className="match-teams"><strong>{m.home}</strong><span>vs</span><ClubLogo club={m.away} url={m.away_logo_url} small/><strong>{m.away}</strong></div>
-      <div className="match-sub"><span>{FLAGS[m.country]} {m.zone}</span><span className="dot-sep">·</span><span>{m.league}</span>{m.highlight && <span className="hot-label"><Star size={11}/> Affiche</span>}</div>
-      <Stadium match={m}/>
-      <DistanceFromHub match={m}/>
+  return <div className={'match-row' + (m.highlight ? ' featured' : '')}>
+    <div className="mono when"><div className="muted">{matchDateLabel(m)}</div><div>{formatTime(m.time)}</div></div>
+    <div className="match-main">
+      <CrestPair match={m}/>
+      <div className="match-info">
+        <div className="teams">{m.home} <span className="vs">vs</span> {m.away}{m.highlight && ' ★'}</div>
+        <div className="sub">{FLAGS[m.country]} {getDestinationName(m)} · {m.league}</div>
+        <Stadium match={m}/>
+        <DistanceFromHub match={m}/>
+        <FixtureStatus match={m}/>
+      </div>
     </div>
-    <div className="match-right">
-      <span className="match-date"><CalendarDays size={12}/>{m.date_window_start && m.date_window_end ? `${formatDay(m.date_window_start)} – ${formatDay(m.date_window_end)}` : formatDay(m.date)}</span>
-      <span className="time">{formatTime(m.time)}</span>
-      <FixtureStatus match={m}/>
-    </div>
-    <div className="match-actions">
-      {ticketUrl && <a className="ticket-link" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`Billetterie officielle : ${m.home}`} aria-label={`Billetterie officielle ${m.home}`}><Ticket size={15}/><span>Billetterie</span></a>}
-      <button title={favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} aria-label={favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} className={favorite ? 'is-fav' : ''} onClick={() => onToggleFavorite(m.fixture_key)}><Heart size={17} fill={favorite ? 'currentColor' : 'none'}/></button>
-      <a title="Calendrier officiel" aria-label="Calendrier officiel" target="_blank" rel="noreferrer" href={m.source_url}><ArrowUpRight size={17}/></a>
+    <div className="row-actions">
+      {ticketUrl && <a className="ghost-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`Billetterie officielle : ${m.home}`}>Billetterie</a>}
+      {m.source_url && <a className="icon-button" href={m.source_url} target="_blank" rel="noreferrer" title="Calendrier officiel" aria-label="Calendrier officiel">↗</a>}
+      <FavoriteButton active={favorite} onToggle={() => onToggleFavorite(m.fixture_key)}/>
     </div>
   </div>;
 }
