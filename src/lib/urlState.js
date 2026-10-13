@@ -6,7 +6,7 @@ const ENUMS = {
   d: ['all', 'vendredi', 'samedi', 'dimanche'], slot: ['all', 'day', 'evening', 'unknown'],
   v: ['weekends', 'matches'], sort: ['asc', 'desc', 'highlights', 'country'], g: ['date', 'zone', 'zone-date', 'zone-weekend'],
 };
-const TIME = /^([01]\\d|2[0-3]):[0-5]\\d$/;
+const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
 export const defaultView = () => ({ view: 'weekends', sort: 'asc', group: 'date' });
