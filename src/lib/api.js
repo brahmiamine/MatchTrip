@@ -2,7 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 import { enrichFixture } from './media.js';
 import { seedFixtures } from '../data/fixtures.js';
 import { newFixtures } from '../data/newFixtures.js';
-const embedded = [...seedFixtures, ...newFixtures];
+import { VERIFIED_FRIDAY_FIXTURES, markFixtureVerification } from '../data/verifiedSchedule.js';
+const embedded = [...seedFixtures, ...newFixtures, ...VERIFIED_FRIDAY_FIXTURES].map(markFixtureVerification);
 
 // Public anon key: read-only tables protected by Row-Level Security.
 const url = import.meta.env.VITE_SUPABASE_URL || 'https://nkcvffmgosvipnxcttms.supabase.co';
@@ -29,7 +30,7 @@ export async function loadFixtures() {
         stadium: row.stadium || home.stadium, stadium_image_url: row.stadium_image_url || home.stadium_image_url, stadium_source_url: row.stadium_source_url || home.stadium_source_url });
     };
     const unique = [...new Map(all.filter(row => row.zone !== 'Autres villes italiennes').map(row => [row.fixture_key, row])).values()];
-    return {fixtures:unique.map(row=>withMedia({...row,time:row.time?row.time.slice(0,5):null})),origin:'Supabase',error:null};
+    return {fixtures:unique.map(row=>withMedia(markFixtureVerification({...row,time:row.time?row.time.slice(0,5):null}))),origin:'Supabase',error:null};
   } catch(err) {
     return {fixtures:embedded.map(enrichFixture),origin:'catalogue intégré',error:'Supabase inaccessible : données intégrées affichées. '+(err?.message??'')};
   }
