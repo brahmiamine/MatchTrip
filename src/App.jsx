@@ -27,15 +27,14 @@ export default function App() {
   const [favorites, setFavorites] = usePersistentList('matchtrip-favorites', []);
   const [theme, setTheme] = usePersistentValue('matchtrip-theme', 'dark', ['dark', 'light']);
   const [mode, setMode] = usePersistentValue('matchtrip-display', 'cards', ['cards', 'list']);
-  const [group, setGroup] = useState(initial.view.group);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
   useEffect(() => {
-    const qs = encodeState(filters, { view: 'weekends', sort: 'asc', group });
+    const qs = encodeState(filters, { view: 'weekends', sort: 'asc', group: 'date' });
     const url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
     if (url !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(null, '', url);
-  }, [filters, group]);
+  }, [filters]);
   // Tiroir de filtres mobile : Échap le ferme, la page derrière ne défile pas.
   useEffect(() => {
     if (!filtersOpen) return undefined;
@@ -55,7 +54,7 @@ export default function App() {
     <Header origin={origin} theme={theme} onToggleTheme={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}/>
     <main className="wrap main">
       <Hero all={all} filteredCount={filtered.length}/>
-      <Toolbar mode={mode} onMode={setMode} group={group} onGroup={setGroup} filterCount={active.length} onOpenFilters={() => setFiltersOpen(true)}/>
+      <Toolbar mode={mode} onMode={setMode} filterCount={active.length} onOpenFilters={() => setFiltersOpen(true)}/>
       <div className="content-grid">
         {filtersOpen && <div className="drawer-overlay" onClick={() => setFiltersOpen(false)}/>}
         <FilterSidebar open={filtersOpen} onClose={() => setFiltersOpen(false)} resultCount={filtered.length} favoritesCount={favorites.length} filters={filters} options={options} set={set} toggleIn={toggleIn} addExcluded={addExcluded} removeExcluded={removeExcluded} reset={reset}/>
@@ -65,7 +64,7 @@ export default function App() {
           <ActiveFilters items={active} onRemove={remove} summary={summary} excludedCount={filters.excluded.length}/>
           {loading ? <Skeletons/>
             : filtered.length === 0 ? <Empty onReset={reset} noFavorites={filters.onlyFav && favorites.length === 0}/>
-              : <MatchesView ordered={ordered} group={group} mode={mode} favorites={favorites} onToggleFavorite={k => setFavorites(p => toggleItem(p, k))}/>}
+              : <MatchesView ordered={ordered} group="zone-weekend" mode={mode} favorites={favorites} onToggleFavorite={k => setFavorites(p => toggleItem(p, k))}/>}
         </section>
       </div>
       <Footer/>
