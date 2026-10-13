@@ -5,6 +5,7 @@ import { applyFilters, buildOptions, countActiveFilters } from './lib/filters.js
 import { sortMatches } from './lib/sorting.js';
 import { buildWeekends } from './lib/weekends.js';
 import { PAGE_SIZE } from './constants.js';
+import { decodeState, encodeState } from './lib/urlState.js';
 import { toggleItem } from './lib/collections.js';
 import { useFixtures } from './hooks/useFixtures.js';
 import { useFilters } from './hooks/useFilters.js';
@@ -20,14 +21,20 @@ import Footer from './components/Footer.jsx';
 
 export default function App() {
   const { fixtures: all, origin, error, loading } = useFixtures();
-  const { filters, set, toggleIn, toggleExcluded, reset, focusWeekend } = useFilters(all);
+  const [initial] = useState(() => decodeState(window.location.search));
+  const { filters, set, toggleIn, toggleExcluded, reset, focusWeekend } = useFilters(all, initial);
   const [favorites, setFavorites] = usePersistentList('matchtrip-favorites', []);
-  const [view, setView] = useState('weekends');
-  const [sort, setSort] = useState('asc');
-  const [group, setGroup] = useState('date');
+  const [view, setView] = useState(initial.view.view);
+  const [sort, setSort] = useState(initial.view.sort);
+  const [group, setGroup] = useState(initial.view.group);
   const [pageLimit, setPageLimit] = useState(PAGE_SIZE);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
+  useEffect(() => {
+    const qs = encodeState(filters, { view, sort, group });
+    const url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+    if (url !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(null, '', url);
+  }, [filters, view, sort, group]);
   useEffect(() => { setPageLimit(PAGE_SIZE); }, [filters, view, sort, group]);
 
   const options = useMemo(() => buildOptions(all, filters), [all, filters.countries, filters.zones]);

@@ -6,9 +6,10 @@ import { usePersistentList } from './usePersistentList.js';
 import { EXCLUDED_DEFAULT } from '../constants.js';
 
 /** État des filtres + actions. `all` sert à purger les sélections devenues incohérentes. */
-export function useFilters(all) {
-  const [excluded, setExcluded] = usePersistentList('matchtrip-blocked', EXCLUDED_DEFAULT);
-  const [filters, setFilters] = useState(() => ({ ...defaultFilters(), excluded }));
+/** `initial` : { filters, excluded } issu de l'URL ; excluded null → valeur mémorisée localement. */
+export function useFilters(all, initial) {
+  const [excluded, setExcluded] = usePersistentList('matchtrip-blocked', EXCLUDED_DEFAULT, initial?.excluded);
+  const [filters, setFilters] = useState(() => ({ ...defaultFilters(), ...initial?.filters }));
   const merged = useMemo(() => ({ ...filters, excluded }), [filters, excluded]);
 
   const set = useCallback((key, value) => setFilters(f => ({ ...f, [key]: value })), []);
