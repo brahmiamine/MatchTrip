@@ -39,3 +39,10 @@ Le schéma applique RLS et autorise **SELECT uniquement** aux rôles `anon` et `
 - L'algorithme de week-end exclut les chevauchements flagrants mais ne calcule **ni trajets, ni prix, ni disponibilité de billets**.
 
 Sources sportives à consulter : https://ligue1.com/ · https://www.laliga.com/ · https://www.legaseriea.it/serie-a/ · https://www.proleague.be/ · https://eredivisie.nl/.
+
+## Logos et stades
+Le catalogue de médias contient **72 noms de clubs**, **39 stades habituels** et leurs photos. Logos visibles pour les deux équipes, photos dans la liste des matchs, noms dans les combinaisons ; la recherche inclut le stade. Les images sont chargées à la demande, avec repli en cas d’échec.
+
+Sources : API MediaWiki / Wikipedia, relevées le 13 octobre 2026. Chaque entrée conserve les liens vers les pages du club et du stade. Ces pages donnent accès aux descriptions des fichiers, auteurs et conditions de réutilisation ; les logos restent la propriété de leurs titulaires. Les photos peuvent montrer une configuration antérieure du stade. Le stade habituel ne constitue pas une confirmation du lieu exact d’une rencontre. Paris FC : https://parisfc.fr/infos-pratiques/ ; FC Barcelone : https://www.fcbarcelona.com/en/football/first-team/schedule.
+
+La table indépendante `matchtrip_club_media` a été créée et alimentée dans le projet Supabase connecté. `supabase/media-schema.sql` et `supabase/media-seed.sql` permettent de la recréer dans un futur projet dédié (exécuter le schéma une fois, puis le seed). L’application fusionne ces médias avec les matchs lorsqu’elle est connectée à Supabase, et utilise le catalogue intégré en secours. La table existante `matches` du projet « arbitres » possède un autre schéma : elle n’est pas la base du catalogue MatchTrip.

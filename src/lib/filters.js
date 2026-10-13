@@ -10,7 +10,7 @@ export const defaultFilters = () => ({
 });
 
 const timeKey = m => (m.time ? m.time.slice(0, 5) : null);
-const searchText = m => normalize([m.home, m.away, m.country, m.zone, m.city, m.league].join(' '));
+const searchText = m => normalize([m.home, m.away, m.country, m.zone, m.city, m.league, m.stadium].join(' '));
 
 /** Entrée de plage de dates : borne manquante → défaut, bornes inversées → échangées. */
 export function normalizeRange(from, to) {

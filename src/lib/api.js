@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { enrichFixture } from './media.js';
 import { seedFixtures } from '../data/fixtures.js';
 
 const url = import.meta.env.VITE_SUPABASE_URL;
@@ -7,7 +8,7 @@ export const configured = Boolean(url && key);
 const supabase = configured ? createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}) : null;
 
 export async function loadFixtures() {
-  if (!supabase) return { fixtures: seedFixtures, origin: 'catalogue intégré', error: null };
+  if (!supabase) return { fixtures: seedFixtures.map(enrichFixture), origin: 'catalogue intégré', error: null };
   try {
     // Pagination pour ne jamais dépendre de la limite par défaut du Data API.
     const all=[];
@@ -17,8 +18,15 @@ export async function loadFixtures() {
       all.push(...(data??[]));
       if((data??[]).length<500)break;
     }
-    return {fixtures:all.map(row=>({...row,time:row.time?row.time.slice(0,5):null})),origin:'Supabase',error:null};
+    const { data: media } = await supabase.from('matchtrip_club_media').select('*');
+    const clubs = new Map((media ?? []).map(row => [row.club, row]));
+    const withMedia = row => {
+      const home = clubs.get(row.home) ?? {}, away = clubs.get(row.away) ?? {};
+      return enrichFixture({ ...row, home_logo_url: row.home_logo_url || home.logo_url, away_logo_url: row.away_logo_url || away.logo_url,
+        stadium: row.stadium || home.stadium, stadium_image_url: row.stadium_image_url || home.stadium_image_url, stadium_source_url: row.stadium_source_url || home.stadium_source_url });
+    };
+    return {fixtures:all.map(row=>withMedia({...row,time:row.time?row.time.slice(0,5):null})),origin:'Supabase',error:null};
   } catch(err) {
-    return {fixtures:seedFixtures,origin:'catalogue intégré',error:'Supabase inaccessible : données intégrées affichées. '+(err?.message??'')};
+    return {fixtures:seedFixtures.map(enrichFixture),origin:'catalogue intégré',error:'Supabase inaccessible : données intégrées affichées. '+(err?.message??'')};
   }
 }
