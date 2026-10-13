@@ -4,7 +4,7 @@ const LISTS = { c: 'countries', z: 'zones', cl: 'clubs', lg: 'leagues', w: 'week
 const FLAGS = { hl: 'onlyHighlights', ok: 'onlyCertain', fav: 'onlyFav' };
 const ENUMS = {
   d: ['all', 'samedi', 'dimanche'], slot: ['all', 'day', 'evening', 'unknown'],
-  v: ['weekends', 'matches'], sort: ['asc', 'desc', 'highlights'], g: ['date', 'zone', 'zone-date', 'zone-weekend'],
+  v: ['weekends', 'matches'], sort: ['asc', 'desc', 'highlights'], g: ['date', 'country', 'zone', 'zone-date', 'zone-weekend'],
 };
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 

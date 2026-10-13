@@ -11,7 +11,7 @@ export function sortMatches(list, sort) {
 export function groupMatches(list, group) {
   const map = new Map();
   list.forEach(m => {
-    const k = group === 'zone-weekend' ? `${getWeekend(m.date)}|${m.country} / ${m.zone}` : group === 'date' ? m.date : group === 'zone-date' ? `${m.date}|${m.country} / ${m.zone}` : `${m.country} / ${m.zone}`;
+    const k = group === 'country' ? m.country : group === 'zone-weekend' ? `${getWeekend(m.date)}|${m.country} / ${m.zone}` : group === 'date' ? m.date : group === 'zone-date' ? `${m.date}|${m.country} / ${m.zone}` : `${m.country} / ${m.zone}`;
     if (!map.has(k)) map.set(k, []);
     map.get(k).push(m);
   });

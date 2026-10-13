@@ -42,5 +42,9 @@ describe('regroupement', () => {
       ['2026-10-24|France / Paris', 'X'],
     ]);
   });
+  it('par pays, dans l’ordre du tri', () => {
+    const g = groupMatches(sortMatches([a, mk({ home: 'X', date: '2026-10-17', time: '10:00', country: 'Italie' }), b], 'asc'), 'country');
+    expect(g.map(([k, v]) => [k, names(v)])).toEqual([['Italie', 'X'], ['France', 'BA']]);
+  });
   it('liste vide', () => expect(groupMatches([], 'date')).toEqual([]));
 });
