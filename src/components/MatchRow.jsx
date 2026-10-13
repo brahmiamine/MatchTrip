@@ -16,9 +16,9 @@ export default function MatchRow({ match, favorite, onToggleFavorite }) {
       <Stadium match={m}/>
     </div>
     <div className="match-right">
-      <span className="match-date"><CalendarDays size={12}/>{formatDay(m.date)}</span>
+      <span className="match-date"><CalendarDays size={12}/>{m.date_window_start && m.date_window_end ? `${formatDay(m.date_window_start)} – ${formatDay(m.date_window_end)}` : formatDay(m.date)}</span>
       <span className="time">{formatTime(m.time)}</span>
-      <span className={'reliability ' + (m.provisional ? 'uncertain' : '')}>{m.provisional ? 'Date provisoire' : 'À vérifier'}</span>
+      <span className={'reliability ' + (m.provisional ? 'uncertain' : '')}>{m.date_window_start && m.date_window_end ? 'Jour et heure à confirmer' : m.provisional ? 'Date provisoire' : 'À vérifier'}</span>
     </div>
     <div className="match-actions">
       <button title={favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} aria-label={favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} className={favorite ? 'is-fav' : ''} onClick={() => onToggleFavorite(m.fixture_key)}><Heart size={17} fill={favorite ? 'currentColor' : 'none'}/></button>
