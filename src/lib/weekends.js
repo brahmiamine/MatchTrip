@@ -1,6 +1,7 @@
 import { MIN_GAP_MINUTES } from '../constants.js';
 import { getWeekend, minutesOf } from './dates.js';
 import { compareChrono } from './sorting.js';
+import { getWeekendGroup } from './zoneGroups.js';
 
 /** Deux matchs sont combinables s'ils sont sur des jours différents, ou le même jour avec ≥ 4 h d'écart. */
 export function compatible(a, b) {
@@ -18,16 +19,17 @@ export function buildPairs(items) {
 export function buildWeekends(matches, sort = 'asc') {
   const map = new Map();
   matches.forEach(m => {
-    if (!m.cluster) return;
+    const cluster = getWeekendGroup(m);
+    if (!cluster) return;
     const weekend = getWeekend(m.date);
-    const k = `${m.country}|${m.cluster}|${weekend}`;
-    if (!map.has(k)) map.set(k, { weekend, cluster: m.cluster, country: m.country, items: [], zones: new Set() });
+    const k = `${m.country}|${cluster}|${weekend}`;
+    if (!map.has(k)) map.set(k, { weekend, cluster, country: m.country, items: [], zones: new Set() });
     const w = map.get(k);
     w.items.push(m); w.zones.add(m.zone);
   });
   const list = [...map.values()].map(w => {
     const items = w.items.sort(compareChrono);
-    return { ...w, items, zones: [...w.zones], pairs: buildPairs(items), score: items.filter(x => x.highlight).length * 10 + items.length };
+    return { ...w, items, zones: [...w.zones], pairs: buildPairs(items).filter(([a, b]) => a.home !== b.home), score: items.filter(x => x.highlight).length * 10 + items.length };
   }).filter(w => w.pairs.length > 0);
   return list.sort((a, b) => {
     if (sort === 'desc') return b.weekend.localeCompare(a.weekend);

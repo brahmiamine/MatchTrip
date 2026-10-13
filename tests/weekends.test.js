@@ -37,3 +37,43 @@ describe('week-ends', () => {
   });
   it('score = affiches * 10 + matchs', () => expect(buildWeekends([mk({ highlight: true }), sun])[0].score).toBe(12));
 });
+
+describe('zones de déplacement admissibles', () => {
+  const italy = (home, zone, date, cluster) => mk({ country: 'Italie', home, zone, date, cluster, time: '15:00' });
+
+  it('ne regroupe plus Venise et Udine même avec un ancien cluster en base', () => {
+    const matches = [italy('Venezia', 'Venise / Udine', '2026-10-17', 'Venise & Udine'), italy('Udinese', 'Venise / Udine', '2026-10-18', 'Venise & Udine')];
+    expect(buildWeekends(matches)).toEqual([]);
+  });
+  it('ne propose jamais les « Autres villes italiennes », même si la base a un cluster erroné', () => {
+    const matches = [italy('Napoli', 'Autres villes italiennes', '2026-10-24', 'Italie'), italy('Genoa', 'Autres villes italiennes', '2026-10-25', 'Italie')];
+    expect(buildWeekends(matches)).toEqual([]);
+  });
+  it('conserve explicitement Paris + Autour de Paris dans un même groupe', () => {
+    const matches = [
+      mk({ home: 'Lens', zone: 'Autour de Paris', cluster: 'Paris & alentours', date: '2026-10-24' }),
+      mk({ home: 'PSG', zone: 'Paris', cluster: 'Paris & alentours', date: '2026-10-25' }),
+    ];
+    const w = buildWeekends(matches);
+    expect(w).toHaveLength(1);
+    expect(w[0].cluster).toBe('Paris & alentours');
+    expect(w[0].zones).toEqual(['Autour de Paris', 'Paris']);
+    expect(w[0].pairs).toHaveLength(1);
+  });
+  it('conserve Milan/Côme et Bologne/Parme parmi les groupes régionaux', () => {
+    const matches = [
+      italy('AC Milan', 'Milan / Lombardie', '2026-10-24', 'Lombardie'),
+      italy('Como', 'Milan / Lombardie', '2026-10-25', 'Lombardie'),
+      italy('Bologna', 'Bologne / Émilie-Romagne', '2026-10-24', 'Émilie-Romagne'),
+      italy('Parma', 'Bologne / Émilie-Romagne', '2026-10-25', 'Émilie-Romagne'),
+    ];
+    expect(buildWeekends(matches)).toHaveLength(2);
+  });
+  it('ne propose pas deux rencontres du même club comme regroupement de clubs', () => {
+    const matches = [
+      mk({ home: 'PSG', away: 'Lyon', date: '2026-10-24' }),
+      mk({ home: 'PSG', away: 'Monaco', date: '2026-10-25' }),
+    ];
+    expect(buildWeekends(matches)).toEqual([]);
+  });
+});

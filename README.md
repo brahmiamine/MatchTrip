@@ -32,6 +32,15 @@ Un seul projet Supabase existant était connecté (« arbitres »). Il n'a pas �
 
 Le schéma applique RLS et autorise **SELECT uniquement** aux rôles `anon` et `authenticated` ; les écritures depuis un navigateur sont interdites. Les scripts SQL servent au provisioning côté propriétaire de la base.
 
+## Zones autorisées pour la vue « Combinaisons »
+- France : **Paris + Autour de Paris** regroupés dans « Paris & alentours », conservés volontairement même si les villes sont éloignées.
+- Belgique : Bruxelles.
+- Espagne : Madrid, Barcelone, Valence / Villarreal.
+- Italie : Milan / Lombardie, Rome / Latium, Bologne / Émilie-Romagne, Turin / Piémont.
+- **Non regroupés : Venise / Udine (~128 km) et Autres villes italiennes (villes dispersées)**. Amsterdam est accessible dans la liste mais ne forme pas de regroupement multi-clubs à lui seul.
+- La logique est une **liste blanche** dans `src/lib/zoneGroups.js`, appliquée aussi aux données chargées depuis Supabase. Pour créer une suggestion, il faut des matchs de **deux clubs à domicile différents**. Les 147 rencontres restent disponibles dans **Tous les matchs**.
+- La proximité régionale est indicative : pas de calcul de durée réelle ou de correspondances. Les déplacements à travers « Paris & alentours » peuvent être longs.
+
 ## Important : fiabilité
 - Les données proviennent des matchs réunis lors de la conversation le **13 octobre 2026** : pas de scores live ni de mise à jour automatique des calendriers.
 - Dates espagnoles fin novembre/décembre et françaises décembre marquées **provisoires** ; horaires inconnus non inventés.
