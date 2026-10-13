@@ -44,7 +44,10 @@ export const OFFICIAL_TICKET_URLS = Object.freeze({
   "FC Groningen": "https://tickets.fcgroningen.nl/",
   "PEC Zwolle": "https://tickets.peczwolle.nl/",
   "Udinese": "https://www.udinese.it/biglietti/vendita-biglietti",
-  "Lazio": "https://www.sslazio.it/en/biglietteria/matches"
+  "Lazio": "https://www.sslazio.it/en/biglietteria/matches",
+  "Espanyol": "https://tickets.rcdespanyol.com/",
+  "PSV": "https://www.psv.nl/tickets",
+  "1. FC Cologne": "https://fc.de/service/stadionerlebnis/ticketing"
 });
 export function getTicketUrl(homeClub) {
   return OFFICIAL_TICKET_URLS[homeClub] ?? null;
