@@ -82,12 +82,12 @@ describe('audit de fiabilité des matchs', () => {
     expect(fixtureVerification({ date_confirmed:true,time_confirmed:false,time:'20:45' }).label).toBe('Heure à confirmer');
     expect(fixtureVerification({date_confirmed:true,time_confirmed:true,time:'20:45'}).kind).toBe('verified');
   });
-  it('55 anciennes rencontres auditables et 8 nouveaux vendredis sourcés', () => {
+  it('55 anciennes rencontres auditables et 12 nouveaux vendredis sourcés', () => {
     expect(Object.keys(VERIFIED_SCHEDULE)).toHaveLength(55);
-    expect(VERIFIED_FRIDAY_FIXTURES).toHaveLength(8);
+    expect(VERIFIED_FRIDAY_FIXTURES).toHaveLength(12);
     expect(VERIFIED_FRIDAY_FIXTURES.every(m => getWeekend(m.date) && isWeekendDay(m.date) && m.date_confirmed && m.verified_source_url.startsWith('https://'))).toBe(true);
     const keys = new Set([...seedFixtures,...newFixtures,...VERIFIED_FRIDAY_FIXTURES].map(m=>m.fixture_key));
-    expect(keys.size).toBe(222);
+    expect(keys.size).toBe(226);
     expect([...seedFixtures,...newFixtures].filter(m=>VERIFIED_SCHEDULE[m.fixture_key]).length).toBe(55);
   });
   it('un horaire non vérifié ne rend pas combinables 2 matchs du même jour', () => {
