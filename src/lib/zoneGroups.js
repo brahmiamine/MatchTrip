@@ -1,7 +1,7 @@
 /** 
  * Zones admises dans les suggestions de combinaisons de week-ends.
- * Les groupes étendus (Venise/Udine, villes italiennes dispersées) sont exclus,
- * sans retirer leurs rencontres du catalogue et de la vue « Tous les matchs ».
+ * Venise/Udine reste exclue des suggestions ; la zone italienne non localisée
+ * a été supprimée du catalogue et ne doit plus être réimportée.
  *
  * EXCEPTION DEMANDÉE : Paris et « Autour de Paris » restent un SEUL groupe.
  * Aucun temps de trajet n'est garanti par cette classification.
