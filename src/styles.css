@@ -25,3 +25,14 @@ footer{padding:55px 0 40px;margin-top:35px;border-top:1px solid #28394b;display:
 .excluded-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}.excluded-list li{display:inline-flex;align-items:center;gap:6px;background:#25354b;border-radius:999px;padding:4px 6px 4px 10px;font-size:11px;color:#dbe7f3}.excluded-list button{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;border:0;background:#344760;color:#fff;padding:0}
 .excluded-add input{background:#0c1523;color:#d9e2ee;border:1px solid #304155;border-radius:8px;padding:8px;font-size:11px;color-scheme:dark}
 .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;border:1px solid #3b5559;background:#1c3437;color:#d5f3a2;border-radius:999px;padding:4px 8px 4px 10px;font-size:11px;font-weight:600}.chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chip:hover{background:#244246}.chip-clear{background:transparent;border-color:#3b4f66;color:#9db3c7;padding:4px 10px}
+
+/* Ville touristique de référence et distances indicatives */
+.weekend-hub,.group-hub{display:flex;align-items:center;flex-wrap:wrap;gap:5px;font-size:11px;color:#a9c3d6;margin-top:8px}
+.weekend-hub svg,.group-hub svg,.hub-distance svg{color:#d9fc96;flex-shrink:0}
+.weekend-hub strong,.group-hub strong{color:#e1f5c0}
+.group-head{margin-bottom:10px}
+.group-head .group-title{margin-bottom:4px}
+.group-hub{margin:0 0 0 13px}
+.distance-explainer{font-size:10px;line-height:1.5;color:#8b9fb1;margin:4px 0 13px}
+.hub-distance{display:inline-flex;align-items:center;gap:5px;color:#b6dca8;font-size:10px;line-height:1.5;margin-top:7px;flex-wrap:wrap}
+.hub-distance.compact{display:flex;font-size:10px;margin-top:5px}
