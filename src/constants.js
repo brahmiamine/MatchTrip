@@ -1,0 +1,11 @@
+export const FLAGS = { France: '🇫🇷', Belgique: '🇧🇪', 'Pays-Bas': '🇳🇱', Espagne: '🇪🇸', Italie: '🇮🇹' };
+export const COUNTRY_ORDER = ['France', 'Belgique', 'Pays-Bas', 'Espagne', 'Italie'];
+export const START = '2026-10-17';
+export const END = '2026-12-31';
+export const EXCLUDED_DEFAULT = ['2026-10-31', '2026-11-07'];
+export const EXCLUDED_LABELS = { '2026-10-31': '31 oct. – 1 nov.', '2026-11-07': '7 – 8 novembre' };
+export const EVENING_FROM = '18:00';
+export const MIN_GAP_MINUTES = 240;
+export const PAGE_SIZE = 40;
+export const WEEKENDS_PAGE_STEP = 30;
+export const MATCHES_PAGE_STEP = 40;
