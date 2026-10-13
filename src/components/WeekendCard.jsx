@@ -1,6 +1,5 @@
 import React from 'react';
 import ClubLogo from './ClubLogo.jsx';
-import DistanceInfo from './DistanceInfo.jsx';
 import Stadium from './Stadium.jsx';
 import { enrichFixture } from '../lib/media.js';
 import { ArrowRight, CalendarDays, Star } from 'lucide-react';
@@ -12,7 +11,6 @@ export default function WeekendCard({ weekend: w, onExamine }) {
     <div className="weekend-top"><span className="country-small">{FLAGS[w.country]} {w.country}</span><span className="weekend-count">{w.items.length} matchs</span></div>
     <h3>{w.cluster}</h3>
     <div className="weekend-date"><CalendarDays size={15}/>{formatFull(w.weekend)} — {formatFull(nextDate(w.weekend))}</div>
-    <DistanceInfo matches={w.items}/>
     <div className="weekend-events">
       {w.items.slice(0, 4).map(enrichFixture).map(m => <div className="weekend-event" key={m.fixture_key}>
         <span className="weekend-event-day">{dayLabel(m.date)}</span>
