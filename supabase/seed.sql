@@ -1,6 +1,6 @@
 -- Catalogue initial de 147 rencontres, établi à partir des calendriers discutés le 13 octobre 2026.
 -- Ne remplace pas une API de résultats en direct. Dates provisoires explicitement marquées.
-INSERT INTO public.matches (fixture_key,country,zone,cluster,city,league,home,away,date,time,provisional,highlight,source_url)
+INSERT INTO public.matchtrip_fixtures (fixture_key,country,zone,cluster,city,league,home,away,date,time,provisional,highlight,source_url)
 VALUES
 ('2026-10-18-paris-fc-rennes','France','Paris','Paris & alentours','Paris','Ligue 1','Paris FC','Rennes','2026-10-18','17:15',false,false,'https://ligue1.com/'),
 ('2026-10-25-psg-lyon','France','Paris','Paris & alentours','Paris','Ligue 1','PSG','Lyon','2026-10-25','20:45',false,true,'https://ligue1.com/'),

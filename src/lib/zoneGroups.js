@@ -19,6 +19,20 @@ export const WEEKEND_ZONE_GROUPS = Object.freeze({
     Barcelone: 'Barcelone',
     'Valence / Villarreal': 'Valence & Villarreal',
   }),
+  'Pays-Bas': Object.freeze({
+    Amsterdam: 'Amsterdam / Alkmaar',
+    'Amsterdam / Alkmaar': 'Amsterdam / Alkmaar',
+    'Rotterdam / La Haye': 'Rotterdam / La Haye',
+    'Nord des Pays-Bas': 'Nord des Pays-Bas',
+    'Eindhoven / Tilburg': 'Eindhoven / Tilburg',
+    'Zwolle / Deventer': 'Zwolle / Deventer',
+  }),
+  Allemagne: Object.freeze({
+    'Cologne / Leverkusen / Mönchengladbach': 'Cologne / Leverkusen / Mönchengladbach',
+    'Dortmund / Schalke': 'Dortmund / Schalke',
+    'Francfort / Mayence': 'Francfort / Mayence',
+    'Munich / Augsbourg': 'Munich / Augsbourg',
+  }),
   Italie: Object.freeze({
     'Milan / Lombardie': 'Milan / Lombardie',
     'Rome / Latium': 'Rome / Latium',
