@@ -11,14 +11,9 @@ export function sortMatches(list, sort) {
 export function groupMatches(list, group) {
   const map = new Map();
   list.forEach(m => {
-    const k = group === 'date' ? m.date : `${m.country} / ${m.zone}`;
+    const k = group === 'date' ? m.date : group === 'zone-date' ? `${m.date}|${m.country} / ${m.zone}` : `${m.country} / ${m.zone}`;
     if (!map.has(k)) map.set(k, []);
     map.get(k).push(m);
   });
   return [...map.entries()];
-}
-
-/** Destination puis date : [[« Pays / Zone », [[date, matchs]]]]. Destinations par ordre d'apparition. */
-export function groupByZoneThenDate(list) {
-  return groupMatches(list, 'zone').map(([zone, ms]) => [zone, groupMatches(ms, 'date')]);
 }
