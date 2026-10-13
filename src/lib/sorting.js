@@ -1,4 +1,4 @@
-import { timestamp } from './dates.js';
+import { getWeekend, timestamp } from './dates.js';
 
 export const compareChrono = (a, b) => timestamp(a.date) - timestamp(b.date) || (a.time || '99').localeCompare(b.time || '99');
 
@@ -11,7 +11,7 @@ export function sortMatches(list, sort) {
 export function groupMatches(list, group) {
   const map = new Map();
   list.forEach(m => {
-    const k = group === 'date' ? m.date : group === 'zone-date' ? `${m.date}|${m.country} / ${m.zone}` : `${m.country} / ${m.zone}`;
+    const k = group === 'zone-weekend' ? `${getWeekend(m.date)}|${m.country} / ${m.zone}` : group === 'date' ? m.date : group === 'zone-date' ? `${m.date}|${m.country} / ${m.zone}` : `${m.country} / ${m.zone}`;
     if (!map.has(k)) map.set(k, []);
     map.get(k).push(m);
   });

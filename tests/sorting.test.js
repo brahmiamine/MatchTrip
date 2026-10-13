@@ -34,5 +34,13 @@ describe('regroupement', () => {
       ['2026-10-18|Italie / Milan', 'X'],
     ]);
   });
+  it('destination et week-end : samedi et dimanche réunis', () => {
+    const x = mk({ home: 'X', date: '2026-10-24', time: '15:00' });
+    const g = groupMatches(sortMatches([x, a, b, d], 'asc'), 'zone-weekend');
+    expect(g.map(([k, v]) => [k, names(v)])).toEqual([
+      ['2026-10-17|France / Paris', 'DBA'],
+      ['2026-10-24|France / Paris', 'X'],
+    ]);
+  });
   it('liste vide', () => expect(groupMatches([], 'date')).toEqual([]));
 });
