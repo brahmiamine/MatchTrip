@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { seedFixtures } from '../src/data/fixtures.js';
-import { COUNTRY_ORDER, END, START } from '../src/constants.js';
+import { COUNTRY_ORDER } from '../src/constants.js';
 import { weekdayOf } from '../src/lib/dates.js';
 
 describe('catalogue intégré', () => {
@@ -10,10 +10,9 @@ describe('catalogue intégré', () => {
   });
   it.each(['fixture_key', 'country', 'zone', 'league', 'home', 'away', 'date', 'source_url'])('champ %s renseigné', f =>
     expect(seedFixtures.every(m => typeof m[f] === 'string' && m[f].length > 0)).toBe(true));
-  it('dates valides, dans la période, samedi ou dimanche', () => {
+  it('dates valides, samedi ou dimanche', () => {
     for (const m of seedFixtures) {
       expect(m.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(m.date >= START && m.date <= END).toBe(true);
       expect([0, 6]).toContain(weekdayOf(m.date));
     }
   });

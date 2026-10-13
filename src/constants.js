@@ -1,9 +1,8 @@
 export const FLAGS = { France: '🇫🇷', Belgique: '🇧🇪', 'Pays-Bas': '🇳🇱', Espagne: '🇪🇸', Italie: '🇮🇹' };
+/** Ordre d'affichage préféré ; les pays absents de cette liste sont ajoutés à la suite. */
 export const COUNTRY_ORDER = ['France', 'Belgique', 'Pays-Bas', 'Espagne', 'Italie'];
-export const START = '2026-10-17';
-export const END = '2026-12-31';
-export const EXCLUDED_DEFAULT = ['2026-10-31', '2026-11-07'];
-export const EXCLUDED_LABELS = { '2026-10-31': '31 oct. – 1 nov.', '2026-11-07': '7 – 8 novembre' };
+/** Aucun week-end indisponible par défaut : c'est l'utilisateur qui les ajoute. */
+export const EXCLUDED_DEFAULT = [];
 export const EVENING_FROM = '18:00';
 export const MIN_GAP_MINUTES = 240;
 export const PAGE_SIZE = 40;

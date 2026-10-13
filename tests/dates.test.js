@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addDays, dayLabel, formatDay, formatFull, formatTime, formatWhen, getWeekend, minutesOf, nextDate, weekdayOf } from '../src/lib/dates.js';
+import { addDays, dayLabel, formatDay, formatFull, formatMonth, formatTime, formatWeekendRange, formatWhen, getWeekend, minutesOf, monthRange, nextDate, weekdayOf } from '../src/lib/dates.js';
 
 describe('dates', () => {
   it('weekdayOf est indépendant du fuseau', () => {
@@ -40,5 +40,14 @@ describe('dates', () => {
     expect(minutesOf('20:45:00')).toBe(1245);
     expect(minutesOf(null)).toBeNull();
     expect(minutesOf('abc')).toBeNull();
+  });
+  it('monthRange gère fin d’année et février', () => {
+    expect(monthRange('2026-10')).toEqual(['2026-10-01', '2026-10-31']);
+    expect(monthRange('2026-12')).toEqual(['2026-12-01', '2026-12-31']);
+    expect(monthRange('2028-02')).toEqual(['2028-02-01', '2028-02-29']);
+  });
+  it('formatMonth / formatWeekendRange', () => {
+    expect(formatMonth('2026-10')).toBe('oct. 2026');
+    expect(formatWeekendRange('2026-10-31')).toBe('sam 31 oct – dim 1 nov');
   });
 });

@@ -13,17 +13,17 @@ describe('état dans l’URL', () => {
     expect(s.view).toEqual(defaultView());
   });
   it('aller-retour complet', () => {
-    const f = { ...defaultFilters(), countries: ['Pays-Bas', 'Espagne'], zones: ['Paris & alentours'], clubs: ['Paris FC', 'Atlético, Madrid'], leagues: ['Ligue 1'], search: 'été & plus', dateFrom: '2026-11-01', dateTo: '2026-12-10', month: '11', day: 'dimanche', slot: 'evening', onlyHighlights: true, onlyCertain: true, onlyFav: true, excluded: ['2026-11-14'] };
+    const f = { ...defaultFilters(), countries: ['Pays-Bas', 'Espagne'], zones: ['Paris & alentours'], clubs: ['Paris FC', 'Atlético, Madrid'], leagues: ['Ligue 1'], search: 'été & plus', dateFrom: '2026-11-01', dateTo: '2026-12-10', day: 'dimanche', slot: 'evening', onlyHighlights: true, onlyCertain: true, onlyFav: true, excluded: ['2026-11-14', '2026-10-31'] };
     const v = { view: 'matches', sort: 'highlights', group: 'zone-weekend' };
     const s = rt(f, v);
-    expect(s.filters).toEqual({ ...f, excluded: defaultFilters().excluded });
-    expect(s.excluded).toEqual(['2026-11-14']);
+    expect(s.filters).toEqual({ ...f, excluded: [] });
+    expect(s.excluded).toEqual(['2026-10-31', '2026-11-14']);
     expect(s.view).toEqual(v);
   });
-  it('week-ends exclus par défaut non écrits dans l’URL', () => expect(encodeState(defaultFilters(), defaultView())).not.toContain('excl'));
-  it('aucun week-end exclu est conservé', () => expect(rt({ ...defaultFilters(), excluded: [] }).excluded).toEqual([]));
+  it('aucun week-end exclu : absent de l’URL', () => expect(encodeState(defaultFilters(), defaultView())).not.toContain('excl'));
+  it('plusieurs week-ends exclus', () => expect(rt({ ...defaultFilters(), excluded: ['2026-10-31', '2026-11-07'] }).excluded).toEqual(['2026-10-31', '2026-11-07']));
   it('valeurs invalides ignorées', () => {
-    const s = decodeState('?m=99&d=lundi&slot=x&v=y&sort=z&g=w&from=abc&to=2026-13&hl=0&excl=nope');
+    const s = decodeState('?d=lundi&slot=x&v=y&sort=z&g=w&from=abc&to=2026-13&hl=0&excl=nope');
     expect(s.filters).toEqual(defaultFilters());
     expect(s.view).toEqual(defaultView());
     expect(s.excluded).toEqual([]);

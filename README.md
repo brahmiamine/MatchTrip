@@ -5,10 +5,10 @@ Une interface React + Vite pour trouver son prochain week-end football depuis Pa
 Le catalogue initial comprend **147 matchs** sur 5 pays (France, Espagne, Italie, Belgique, Pays-Bas), exclusivement à domicile le samedi ou dimanche, du 17 octobre au 31 décembre 2026.
 
 ## Interface
-- Filtres combinables : pays, région, équipe à domicile, compétition, recherche libre (club/adversaire/ville), dates, mois, samedi/dimanche, horaire, grandes affiches, horaires et dates à confirmer, favoris, week-ends indisponibles.
+- Filtres combinables : pays, région, équipe à domicile, compétition, recherche libre (club/adversaire/ville), période (avec raccourcis par mois déduits des données), samedi/dimanche, horaire, grandes affiches, horaires et dates à confirmer, favoris, week-ends indisponibles.
 - Deux vues : **Combinaisons** (week-ends avec plusieurs matchs compatibles sur le papier) et **Tous les matchs**.
 - Tri chronologique / affiches, regroupement par date ou destination, liens vers les calendriers officiels, favoris enregistrés dans le navigateur.
-- Responsive mobile / desktop. Les 31 octobre–1er novembre et 7–8 novembre sont exclus par défaut, mais réactivables.
+- Responsive mobile / desktop. Les week-ends indisponibles sont ajoutés par l'utilisateur (autant que nécessaire), mémorisés dans le navigateur et dans l'URL.
 
 ## Installation locale
 ```bash

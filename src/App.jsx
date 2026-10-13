@@ -22,7 +22,7 @@ import Footer from './components/Footer.jsx';
 export default function App() {
   const { fixtures: all, origin, error, loading } = useFixtures();
   const [initial] = useState(() => decodeState(window.location.search));
-  const { filters, set, toggleIn, toggleExcluded, reset, focusWeekend } = useFilters(all, initial);
+  const { filters, set, toggleIn, addExcluded, removeExcluded, reset, focusWeekend } = useFilters(all, initial);
   const [favorites, setFavorites] = usePersistentList('matchtrip-favorites', []);
   const [view, setView] = useState(initial.view.view);
   const [sort, setSort] = useState(initial.view.sort);
@@ -52,7 +52,7 @@ export default function App() {
       <Hero/>
       <Stats all={all} filteredCount={filtered.length}/>
       <div className="content-grid">
-        <FilterSidebar open={filtersOpen} filters={filters} options={options} set={set} toggleIn={toggleIn} toggleExcluded={toggleExcluded} reset={reset}/>
+        <FilterSidebar open={filtersOpen} filters={filters} options={options} set={set} toggleIn={toggleIn} addExcluded={addExcluded} removeExcluded={removeExcluded} reset={reset}/>
         <section className="results">
           {error && <div className="warning"><span>⚠</span>{error}</div>}
           {!configured && <div className="notice"><span className="notice-icon">i</span><div><strong>Mode catalogue autonome</strong><p>Données initiales du 13 octobre 2026. La connexion à un projet Supabase dédié peut être activée ultérieurement.</p></div></div>}

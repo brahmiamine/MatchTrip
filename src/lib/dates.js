@@ -32,3 +32,16 @@ export function minutesOf(time) {
 
 /** Date + heure toujours lisibles : « sam 18 oct · 17h15 » ou « … · Heure à confirmer ». */
 export const formatWhen = (date, time) => `${formatDay(date)} · ${time ? formatTime(time) : 'Heure à confirmer'}`;
+
+const fmtMonth = new Intl.DateTimeFormat('fr-FR', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+/** « 2026-10 » → « oct. 2026 » */
+export const formatMonth = ym => fmtMonth.format(toDate(ym + '-01'));
+/** « 2026-10 » → ['2026-10-01', '2026-10-31'] */
+export function monthRange(ym) {
+  const first = ym + '-01';
+  const [y, m] = ym.split('-').map(Number);
+  const next = m === 12 ? `${y + 1}-01-01` : `${y}-${String(m + 1).padStart(2, '0')}-01`;
+  return [first, addDays(next, -1)];
+}
+/** Libellé d'un week-end indisponible : « sam 31 oct – dim 1 nov » */
+export const formatWeekendRange = sat => `${formatDay(sat)} – ${formatDay(nextDate(sat))}`;

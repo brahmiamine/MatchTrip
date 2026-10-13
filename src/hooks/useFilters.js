@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { defaultFilters, pruneSelection } from '../lib/filters.js';
+import { addExcludedWeekend, defaultFilters, pruneSelection } from '../lib/filters.js';
 import { toggleItem } from '../lib/collections.js';
 import { nextDate } from '../lib/dates.js';
 import { usePersistentList } from './usePersistentList.js';
@@ -14,12 +14,14 @@ export function useFilters(all, initial) {
 
   const set = useCallback((key, value) => setFilters(f => ({ ...f, [key]: value })), []);
   const toggleIn = useCallback((key, value) => setFilters(f => pruneSelection(all, { ...f, [key]: toggleItem(f[key], value) })), [all]);
-  const toggleExcluded = useCallback(day => setExcluded(p => toggleItem(p, day)), [setExcluded]);
-  const reset = useCallback(() => { setFilters(defaultFilters()); setExcluded([...EXCLUDED_DEFAULT]); }, [setExcluded]);
+  const addExcluded = useCallback(date => setExcluded(p => addExcludedWeekend(p, date)), [setExcluded]);
+  const removeExcluded = useCallback(sat => setExcluded(p => p.filter(x => x !== sat)), [setExcluded]);
+  /** Les week-ends indisponibles sont des contraintes personnelles : la réinitialisation les conserve. */
+  const reset = useCallback(() => setFilters(defaultFilters()), []);
   const focusWeekend = useCallback(w => {
     setFilters(f => ({ ...f, countries: [w.country], zones: w.zones, clubs: [], leagues: [], dateFrom: w.weekend, dateTo: nextDate(w.weekend) }));
     setExcluded(p => p.filter(x => x !== w.weekend));
   }, [setExcluded]);
 
-  return { filters: merged, set, toggleIn, toggleExcluded, reset, focusWeekend };
+  return { filters: merged, set, toggleIn, addExcluded, removeExcluded, reset, focusWeekend };
 }
