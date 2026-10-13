@@ -47,7 +47,12 @@ export const OFFICIAL_TICKET_URLS = Object.freeze({
   "Lazio": "https://www.sslazio.it/en/biglietteria/matches",
   "Espanyol": "https://tickets.rcdespanyol.com/",
   "PSV": "https://www.psv.nl/tickets",
-  "1. FC Cologne": "https://fc.de/service/stadionerlebnis/ticketing"
+  "1. FC Cologne": "https://fc.de/service/stadionerlebnis/ticketing",
+  "Parma": "https://www.parmacalcio1913.com/tickets/",
+  "Sassuolo": "https://www.sassuolocalcio.it/categoria/biglietteria/",
+  "Frosinone": "https://www.frosinonecalcio.com/biglietti/",
+  "Monza": "https://www.acmonza.com/it/ticketing/",
+  "Go Ahead Eagles": "https://gaeagles.tmtickets.nl/"
 });
 export function getTicketUrl(homeClub) {
   return OFFICIAL_TICKET_URLS[homeClub] ?? null;
