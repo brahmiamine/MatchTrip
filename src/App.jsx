@@ -3,7 +3,6 @@ import { configured } from './lib/api.js';
 import { describeActiveFilters } from './lib/activeFilters.js';
 import { applyFilters, buildOptions } from './lib/filters.js';
 import { sortMatches } from './lib/sorting.js';
-import { buildWeekends } from './lib/weekends.js';
 import { decodeState, encodeState } from './lib/urlState.js';
 import { toggleItem } from './lib/collections.js';
 import { useFixtures } from './hooks/useFixtures.js';
@@ -15,7 +14,6 @@ import Hero from './components/Hero.jsx';
 import Toolbar from './components/Toolbar.jsx';
 import FilterSidebar from './components/FilterSidebar.jsx';
 import ActiveFilters from './components/ActiveFilters.jsx';
-import WeekendsView from './components/WeekendsView.jsx';
 import MatchesView from './components/MatchesView.jsx';
 import Empty, { Skeletons } from './components/Empty.jsx';
 import Footer from './components/Footer.jsx';
@@ -51,9 +49,8 @@ export default function App() {
   const options = useMemo(() => buildOptions(all, filters), [all, filters.countries, filters.zones]);
   const filtered = useMemo(() => applyFilters(all, filters, favorites), [all, filters, favorites]);
   const ordered = useMemo(() => sortMatches(filtered, sort), [filtered, sort]);
-  const weekends = useMemo(() => buildWeekends(filtered, sort), [filtered, sort]);
   const active = useMemo(() => describeActiveFilters(filters), [filters]);
-  const summary = loading ? 'Chargement…' : `${plural(filtered.length, 'match')} · ${plural(weekends.length, 'week-end')}`;
+  const summary = loading ? 'Chargement…' : plural(filtered.length, 'match');
 
   return <div className="app">
     <Header origin={origin} theme={theme} onToggleTheme={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}/>
@@ -69,10 +66,7 @@ export default function App() {
           <ActiveFilters items={active} onRemove={remove} summary={summary} excludedCount={filters.excluded.length}/>
           {loading ? <Skeletons/>
             : filtered.length === 0 ? <Empty onReset={reset} noFavorites={filters.onlyFav && favorites.length === 0}/>
-              : <>
-                <WeekendsView weekends={weekends} mode={mode}/>
-                <MatchesView ordered={ordered} group={group} mode={mode} favorites={favorites} onToggleFavorite={k => setFavorites(p => toggleItem(p, k))}/>
-              </>}
+              : <MatchesView ordered={ordered} group={group} mode={mode} favorites={favorites} onToggleFavorite={k => setFavorites(p => toggleItem(p, k))}/>}
         </section>
       </div>
       <Footer/>

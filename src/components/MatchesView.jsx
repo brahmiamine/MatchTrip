@@ -21,7 +21,7 @@ export default function MatchesView({ ordered, group, mode, favorites, onToggleF
   const grouped = groupMatches(ordered, group);
   const Item = mode === 'list' ? MatchRow : MatchCard;
   return <>
-    <div className="section-head bordered" id="matchs"><h2>Tous les matchs</h2><span>{ordered.length} match{ordered.length > 1 ? 's' : ''}</span></div>
+    <div className="section-head" id="matchs"><h2>Tous les matchs</h2><span>{ordered.length} match{ordered.length > 1 ? 's' : ''}</span></div>
     <p className="hint">La ville de séjour est le point de départ touristique de chaque destination. Les distances sont approximatives, à vol d'oiseau entre centres-villes (pas les trajets vers les stades).</p>
     <div className="match-groups">{grouped.map(([key, ms]) => {
       const m0 = ms[0], byDate = group === 'date', hub = getDestinationHub(m0), period = groupPeriod(group, key);
