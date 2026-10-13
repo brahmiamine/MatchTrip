@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatDay, formatFull, weekendFriday, weekendSunday } from '../lib/dates.js';
-import { groupMatches } from '../lib/sorting.js';
+import { compareCountry, groupMatches } from '../lib/sorting.js';
 import { getDestinationHub, getDestinationName } from '../lib/destinations.js';
 import { enrichFixture } from '../lib/media.js';
 import { FLAGS } from '../constants.js';
@@ -17,8 +17,15 @@ function groupPeriod(group, key) {
   return '';
 }
 
+/** Groupes par week-end, puis pays (les destinations d'un même pays se suivent), puis destination. */
+function orderGroups(grouped, group) {
+  if (group !== 'zone-weekend') return grouped;
+  return [...grouped].sort(([ka, a], [kb, b]) => ka.split('|')[0].localeCompare(kb.split('|')[0])
+    || compareCountry(a[0], b[0]) || getDestinationName(a[0]).localeCompare(getDestinationName(b[0]), 'fr'));
+}
+
 export default function MatchesView({ ordered, group, mode, favorites, onToggleFavorite }) {
-  const grouped = groupMatches(ordered, group);
+  const grouped = orderGroups(groupMatches(ordered, group), group);
   const Item = mode === 'list' ? MatchRow : MatchCard;
   return <>
     <div className="section-head" id="matchs"><h2>Tous les matchs</h2><span>{ordered.length} match{ordered.length > 1 ? 's' : ''}</span></div>
