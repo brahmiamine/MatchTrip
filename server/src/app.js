@@ -6,7 +6,7 @@ import { registerRoutes } from './routes.js'
 export const DEFAULT_ORIGINS = ['https://brahmiamine.github.io', 'http://localhost:5173', 'http://localhost:4173']
 
 export function createApp({ pool, env = process.env, mailer = createMailer(env), logger = console }) {
-  const appUrl = env.APP_URL || 'https://brahmiamine.github.io/matches/'
+  const appUrl = env.APP_URL || 'https://match.clubika.com/'
   const router = createRouter()
   const auth = createAuth({
     pool,
@@ -24,5 +24,5 @@ export function createApp({ pool, env = process.env, mailer = createMailer(env),
   registerRoutes(router, { pool, auth })
 
   const allowedOrigins = env.ALLOWED_ORIGINS ? env.ALLOWED_ORIGINS.split(',').map((value) => value.trim()) : DEFAULT_ORIGINS
-  return createServer({ router, allowedOrigins, logger })
+  return createServer({ router, allowedOrigins, logger, staticDir: env.STATIC_DIR })
 }
