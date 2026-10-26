@@ -109,3 +109,13 @@ Le bouton « Sauvegarder mes choix » permet de créer un compte ou de se connec
 Les ajouts du 13 octobre 2026 (30 noms de stades et 59 photos complétés, trois horaires italiens confirmés à 20:45 avec leurs sources officielles) figurent dans `server/seed.sql`. Les 42 heures restantes inconnues et les liens officiels de stade sans preuve restent vides. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre.
 
 Validation : tests Vitest du catalogue distant, de la restauration hors connexion, de la synchronisation des préférences et de l'isolation entre comptes ; tests d'intégration de l'API contre une vraie base MariaDB de test (`cd server && npm test`, variables `TEST_DB_NAME`, `TEST_DB_USER`, `TEST_DB_PASSWORD`, `TEST_DB_HOST` ou `TEST_DB_SOCKET`).
+
+## Déploiement automatique
+
+Chaque commit poussé sur `main` met l'application à jour :
+
+1. **GitHub Actions** exécute les tests (et publie la version GitHub Pages).
+2. **Le serveur** (`match.clubika.com`) vérifie chaque minute si `main` a changé (`app-deploy.timer`, script `~/deploy/auto-deploy.sh`) : il récupère le commit, reconstruit l'image Docker (`docker compose up -d --build` dans `server/`), teste `/api/health`, et **revient automatiquement à la version précédente** si le nouveau build échoue ou ne répond pas.
+3. Le journal est dans `~/deploy/deploy.log` sur le serveur ; un commit refusé n'est pas retenté tant qu'un nouveau commit n'arrive pas.
+
+La mise en ligne prend en général 1 à 3 minutes après le push.

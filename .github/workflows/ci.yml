@@ -1,7 +1,7 @@
 name: Verify React build
 on:
   push:
-    branches: [feat/matchtrip-explorer]
+    branches: [main, feat/matchtrip-explorer]
   pull_request:
     branches: [main]
 permissions:
