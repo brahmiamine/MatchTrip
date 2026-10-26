@@ -638,7 +638,7 @@ export const VERIFIED_FRIDAY_FIXTURES = Object.freeze([
 export function markFixtureVerification(row) {
   const verified = VERIFIED_SCHEDULE[row.fixture_key];
   if (!verified || (row.verified_at && row.verified_source_url && row.date_confirmed === true)) {
-    // Préserver une éventuelle mise à jour plus récente réalisée côté Supabase.
+    // Préserver une éventuelle mise à jour plus récente réalisée côté base de données.
     return { ...row, date_confirmed: row.date_confirmed === true, time_confirmed: row.time_confirmed === true && !!row.time };
   }
   // Ne jamais appliquer de vieilles certitudes à une rencontre dont la date a changé.

@@ -28,8 +28,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_SUPABASE_URL: https://nkcvffmgosvipnxcttms.supabase.co
-          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_mqqFN222VJ58VHFvdgYZRA_MvwrzLlB
+          VITE_API_URL: https://matches-api.clubika.com
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

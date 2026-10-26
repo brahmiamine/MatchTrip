@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { supabase } from '../lib/supabase.js';
+import { api, auth, configured } from '../lib/client.js';
 
 export function useStoredPreference(key, fallback, { valid = () => true, override = null } = {}) {
   const fallbackRef = useRef(fallback), validRef = useRef(valid), overrideRef = useRef(override);
@@ -26,7 +26,7 @@ export function useStoredPreference(key, fallback, { valid = () => true, overrid
     });
   }, []);
   useEffect(() => {
-    if (!supabase) return undefined;
+    if (!configured) return undefined;
     let active = true, generation = 0;
     const hydrate = async session => {
       const userId = session?.user?.id ?? null;
@@ -45,13 +45,17 @@ export function useStoredPreference(key, fallback, { valid = () => true, overrid
         valueRef.current = local;
         setValue(local);
       }
-      const { data, error } = await supabase.from('matchtrip_preferences').select('value').eq('user_id', userId).eq('key', key).maybeSingle();
-      if (!active || token !== generation) return;
-      if (error) {
+      let data = null;
+      try {
+        const stored = await api('GET', '/preferences/' + key);
+        data = stored.value === null ? null : { value: stored.value };
+      } catch (error) {
+        if (!active || token !== generation) return;
         hydratedUser.current = undefined;
         window.dispatchEvent(new CustomEvent('matchtrip-sync-error', { detail: 'Synchronisation indisponible : ' + error.message }));
         return;
       }
+      if (!active || token !== generation) return;
       if (edits.current === edited && (overrideRef.current === null || previousUser)) {
         const next = data && validRef.current(data.value) ? data.value : previousUser ? readLocal(userId) : valueRef.current;
         valueRef.current = next;
@@ -59,19 +63,18 @@ export function useStoredPreference(key, fallback, { valid = () => true, overrid
       }
       setReadyUser(userId);
     };
-    supabase.auth.getSession().then(({ data }) => { if (active) hydrate(data.session); });
-    // Never await a Supabase query inside the auth callback (auth lock).
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => { setTimeout(() => { if (active) hydrate(session); }, 0); });
-    return () => { active = false; generation++; hydratedUser.current = undefined; listener.subscription.unsubscribe(); };
+    hydrate(auth.getSession());
+    const unsubscribe = auth.onChange(session => { setTimeout(() => { if (active) hydrate(session); }, 0); });
+    return () => { active = false; generation++; hydratedUser.current = undefined; unsubscribe(); };
   }, [key, readLocal]);
   useEffect(() => {
     valueRef.current = value;
     try { localStorage.setItem(currentUser.current ? `${key}:${currentUser.current}` : key, JSON.stringify(value)); } catch { /* offline cache unavailable */ }
-    if (!supabase || !readyUser) return undefined;
+    if (!configured || !readyUser) return undefined;
     const timer = setTimeout(async () => {
       if (currentUser.current !== readyUser) return;
-      const { error } = await supabase.from('matchtrip_preferences').upsert({ user_id: readyUser, key, value, updated_at: new Date().toISOString() }, { onConflict: 'user_id,key' });
-      if (error) window.dispatchEvent(new CustomEvent('matchtrip-sync-error', { detail: 'Sauvegarde indisponible : ' + error.message }));
+      try { await api('PUT', '/preferences/' + key, { value }); }
+      catch (error) { window.dispatchEvent(new CustomEvent('matchtrip-sync-error', { detail: 'Sauvegarde indisponible : ' + error.message })); }
     }, 400);
     return () => clearTimeout(timer);
   }, [value, readyUser, key]);

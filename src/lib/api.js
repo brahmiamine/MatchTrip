@@ -1,5 +1,5 @@
-import { supabase } from './supabase.js';
-export { configured } from './supabase.js';
+import { api, configured } from './client.js';
+export { configured } from './client.js';
 import { configureMedia, enrichFixture } from './media.js';
 import { configureTicketing } from './ticketing.js';
 import { configureDestinations, DESTINATION_HUBS, CITY_COORDINATES, HOME_CITIES } from './destinations.js';
@@ -20,27 +20,10 @@ function restoreOfflineCatalogue() {
   configureConstants(offlineConfig.constants);
 }
 
-async function readAll(table, ordering) {
-  const all = [];
-  for (let page = 0; page < 100; page++) {
-    let query = supabase.from(table).select('*');
-    for (const column of ordering) query = query.order(column, { ascending: true });
-    const { data, error } = await query.range(page * 500, (page + 1) * 500 - 1);
-    if (error) throw error;
-    all.push(...(data ?? []));
-    if ((data ?? []).length < 500) return all;
-  }
-  throw new Error('Catalogue trop volumineux : pagination incomplète');
-}
-
 export async function loadFixtures() {
-  if (!supabase) { restoreOfflineCatalogue(); return { fixtures: embedded.map(enrichFixture), origin: 'catalogue intégré', error: null }; }
+  if (!configured) { restoreOfflineCatalogue(); return { fixtures: embedded.map(enrichFixture), origin: 'catalogue intégré', error: null }; }
   try {
-    // Pagination pour ne jamais dépendre de la limite par défaut du Data API.
-    const all = await readAll('matchtrip_fixtures', ['date', 'time', 'fixture_key']);
-    const media = await readAll('matchtrip_club_media', ['club']);
-    const { data: settings, error: settingsError } = await supabase.from('matchtrip_catalog_config').select('value').eq('key', 'catalogue').single();
-    if (settingsError) throw settingsError;
+    const [all, media, settings] = await Promise.all([api('GET', '/fixtures'), api('GET', '/club-media'), api('GET', '/catalog-config/catalogue')]);
     const config = settings.value;
     if (!config.hubs || !config.coordinates || !config.homeCities || !config.zoneGroups) throw new Error('Configuration du catalogue incomplète');
     configureDestinations(config);
@@ -56,9 +39,9 @@ export async function loadFixtures() {
     };
     const unique = [...new Map(all.filter(row => row.zone !== 'Autres villes italiennes').map(row => [row.fixture_key, row])).values()];
     // Confirmation comes exclusively from the database. Embedded confirmations are offline fallback only.
-    return {fixtures:unique.map(row=>withMedia({...row,time:row.time?row.time.slice(0,5):null})),origin:'Supabase',error:null};
+    return {fixtures:unique.map(row=>withMedia({...row,time:row.time?row.time.slice(0,5):null})),origin:'Serveur',error:null};
   } catch(err) {
     restoreOfflineCatalogue();
-    return {fixtures:embedded.map(enrichFixture),origin:'catalogue intégré',error:'Supabase inaccessible : données intégrées affichées. '+(err?.message??'')};
+    return {fixtures:embedded.map(enrichFixture),origin:'catalogue intégré',error:'Serveur inaccessible : données intégrées affichées. '+(err?.message??'')};
   }
 }

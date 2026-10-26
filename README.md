@@ -34,14 +34,22 @@ Le workflow `.github/workflows/deploy.yml` exécute les tests, compile Vite et d
 
 Site : https://brahmiamine.github.io/matches/
 
-## Supabase (base utilisée en production)
-MatchTrip utilise maintenant le projet Supabase partagé **Test** (`nkcvffmgosvipnxcttms`). Le projet initial `arbitres` n'est pas modifié. Les données sont lues dans deux tables publiques avec RLS :
-- `public.matchtrip_fixtures` : 226 matchs, clé unique `fixture_key`, événements et fenêtres de dates provisoires ;
-- `public.matchtrip_club_media` : 104 fiches club, logo, stade, photo et sources.
+## API et base MariaDB (base utilisée en production)
+Le navigateur ne parle jamais à la base : il appelle l'API de `server/` (Node.js 24, sans framework), qui lit et écrit dans la base MariaDB `matches` du VPS. Les données sont dans quatre tables :
+- `matchtrip_fixtures` : les matchs, clé unique `fixture_key`, événements et fenêtres de dates provisoires ;
+- `matchtrip_club_media` : fiches club, logo, stade, photo, sources et billetterie ;
+- `matchtrip_catalog_config` : configuration du catalogue (clé `catalogue`) ;
+- `matchtrip_preferences` : préférences privées de chaque compte.
 
-L'application utilise une clé publique **anon** (jamais une clé `service_role`) ; les écritures sont interdites aux visiteurs et réservées à l'administration de la base. Le workflow de déploiement fixe la connexion publique de MatchTrip sur le projet Test. La clé publique est visible dans le navigateur ; aucune clé service_role ne doit y être employée.
+Le catalogue est public en lecture et **n'est modifiable que par l'administrateur de la base** (phpMyAdmin ou `server/seed.sql`) : l'API n'expose aucune écriture du catalogue. Les préférences, elles, sont toujours filtrées par le compte connecté.
 
-Scripts SQL rejouables dans un nouveau projet : `supabase/schema.sql`, `supabase/seed.sql`, `supabase/seed-expansion.sql`, `supabase/media-schema.sql`, `supabase/media-seed.sql`, `supabase/media-seed-expansion.sql`. Le catalogue `src/data/fixtures.js` + `src/data/newFixtures.js` sert de secours en cas d'indisponibilité de Supabase.
+- Schéma : `server/schema.sql`, appliqué automatiquement au démarrage de l'API (idempotent).
+- Données : `server/seed.sql` (catalogue exporté de l'ancienne base), rejouable : `mariadb matches < server/seed.sql`.
+- Configuration : copier `server/.env.example` vers `server/.env`.
+- Déploiement sur le VPS : `cd server && docker compose up -d --build`, servi par Caddy sur `https://matches-api.clubika.com`.
+- Comptes : e-mail + mot de passe (bcrypt), sessions par jeton opaque stocké haché en base. Sans SMTP configuré, il n'y a pas de récupération de mot de passe par e-mail.
+
+Le front cible `https://matches-api.clubika.com` par défaut ; pour une autre API, copiez `.env.example` vers `.env.local` et renseignez `VITE_API_URL`. Le catalogue `src/data/fixtures.js` + `src/data/newFixtures.js` sert de secours en cas d'indisponibilité de l'API.
 
 ## Sources des calendriers et stades
 - https://www.knvb.nl/competities/eredivisie/programma
@@ -60,7 +68,7 @@ Toutes les vues « Par destination » regroupent désormais **Paris** et **Autou
 
 Chaque zone dispose d'une **ville de séjour touristique** (`src/lib/destinations.js`), par exemple Madrid pour Espagne / Madrid, Paris pour Paris & alentours ou Valence pour Valence / Villarreal. Chaque match affiche la ville du club recevant et une distance en kilomètres par rapport à cette ville de référence. Les valeurs sont arrondies et calculées **à vol d'oiseau entre centres-villes**, pas à partir du stade et **jamais** en distance routière ou en temps de trajet. Une ville non reconnue donne « Distance indisponible » ; il n'y a pas de géocodage ou de requête payante. La zone non regroupée « Autres villes italiennes » a été supprimée.
 
-Le calcul est purement dans le frontend : aucune modification de la base Supabase n'est nécessaire. Ajout de tests de regroupement et couverture du catalogue dans `tests/destinations.test.js`.
+Le calcul est purement dans le frontend : aucune modification de la base n'est nécessaire. Ajout de tests de regroupement et couverture du catalogue dans `tests/destinations.test.js`.
 
 ## Billetteries et itinéraires
 
@@ -76,9 +84,9 @@ Les filtres proposent un jour « Vendredi » et une plage horaire indépendante 
 
 ## Contrôle documentaire des calendriers (13 octobre 2026)
 
-Le catalogue initial de 214 rencontres n'était pas un export de calendrier officiel synchronisé. En conséquence, il serait incorrect de considérer toutes ses dates et heures comme vérifiées. **55 rencontres existantes** ont été rapprochées par clé de match des calendriers d'organisateurs (Ligue 1, LaLiga, KNVB, Bundesliga/DFB, Lega Serie A), et **12 rencontres du vendredi** ont été ajoutées après consultation de publications officielles. L'historique des sources et les dates/horaires rapprochés sont conservés dans `src/data/verifiedSchedule.js` et `supabase/verified-schedule-seed.sql`. Les **159 rencontres non rapprochées** gardent un état `date_confirmed=false`, `time_confirmed=false`; l'interface affiche donc « Date et heure à confirmer » plutôt que d'inventer une confirmation. Une date/heure affichée sans preuve est un **repère à revalider**. Le badge « Date et heure vérifiées » n'apparaît que lorsqu'une source officielle correspond explicitement à la rencontre ; pour une date seule, le badge indique « Heure à confirmer ».
+Le catalogue initial de 214 rencontres n'était pas un export de calendrier officiel synchronisé. En conséquence, il serait incorrect de considérer toutes ses dates et heures comme vérifiées. **55 rencontres existantes** ont été rapprochées par clé de match des calendriers d'organisateurs (Ligue 1, LaLiga, KNVB, Bundesliga/DFB, Lega Serie A), et **12 rencontres du vendredi** ont été ajoutées après consultation de publications officielles. L'historique des sources et les dates/horaires rapprochés sont conservés dans `src/data/verifiedSchedule.js`. Les **159 rencontres non rapprochées** gardent un état `date_confirmed=false`, `time_confirmed=false`; l'interface affiche donc « Date et heure à confirmer » plutôt que d'inventer une confirmation. Une date/heure affichée sans preuve est un **repère à revalider**. Le badge « Date et heure vérifiées » n'apparaît que lorsqu'une source officielle correspond explicitement à la rencontre ; pour une date seule, le badge indique « Heure à confirmer ».
 
-Base Supabase partagée **Test** (`nkcvffmgosvipnxcttms`) : migration additive `supabase/fixture-verification.sql`, puis `supabase/verified-schedule-seed.sql` (rejouable, sans suppression). Le projet `arbitres` demeure inchangé. Ce contrôle est un **audit partiel et daté** : les organisateurs peuvent encore décaler les horaires. Le site ne prétend pas une vérification exhaustive ni une mise à jour en temps réel.
+Les statuts de vérification sont stockés dans `matchtrip_fixtures` (colonnes `date_confirmed`, `time_confirmed`, `verified_source_url`, `verified_at`) et repris dans `server/seed.sql`. Ce contrôle est un **audit partiel et daté** : les organisateurs peuvent encore décaler les horaires. Le site ne prétend pas une vérification exhaustive ni une mise à jour en temps réel.
 
 Sources primaires :
 - Ligue 1 : https://ligue1.com/fr/articles/l1_article_5797- , https://ligue1.com/fr/articles/l1_article_5805- , https://ligue1.com/fr/articles/l1_article_5839- , https://ligue1.com/fr/articles/l1_article_5843-
@@ -87,19 +95,17 @@ Sources primaires :
 - DFB : https://datencenter.dfb.de/competitions/12/seasons/current
 - Lega Serie A : https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata
 
-### Catalogue et préférences dans Supabase
-
-La base active de MatchTrip est `nkcvffmgosvipnxcttms` (projet « abonnement »). La copie historique dans « arbitres » n'est pas utilisée et ne doit pas servir de source de mise à jour.
+### Catalogue et préférences dans MariaDB
 
 - `matchtrip_fixtures` : rencontres, dates, heures, fenêtres de dates et preuves de vérification ; `venue_override` permet de préciser le stade réel d'une rencontre avec `venue_confirmed` et `venue_source_url`.
 - `matchtrip_club_media` : logos, stades habituels, photos, sources, crédits des images et liens de billetterie. `ticket_kind=information` identifie une page d'information officielle (Rayo Vallecano) plutôt qu'une boutique.
 - `matchtrip_catalog_config`, clé `catalogue` : villes de séjour, coordonnées indicatives des centres-villes, correspondances clubs/villes, regroupements de zones et paramètres du catalogue.
-- `matchtrip_preferences` : favoris, week-ends exclus, filtres, thème et affichage. Clé primaire `(user_id,key)` ; les politiques RLS réservent lecture et écriture au compte propriétaire.
+- `matchtrip_preferences` : favoris, week-ends exclus, filtres, thème et affichage. Clé primaire `(user_id,key)` ; l'API ne lit et n'écrit que les lignes du compte connecté.
 
-L'application lit ces tables au chargement. Les statuts de confirmation de Supabase sont prioritaires ; une ancienne confirmation intégrée au code ne remplace pas une incertitude enregistrée en base. Les données intégrées restent une copie de secours en cas d'indisponibilité, signalée dans l'interface.
+L'application lit ces tables (via l'API) au chargement. Les statuts de confirmation de la base sont prioritaires ; une ancienne confirmation intégrée au code ne remplace pas une incertitude enregistrée en base. Les données intégrées restent une copie de secours en cas d'indisponibilité de l'API, signalée dans l'interface.
 
-Le bouton « Sauvegarder mes choix » permet de créer un compte ou de se connecter. À la première connexion sans préférences enregistrées, les choix de ce navigateur sont importés ; les sessions suivantes restaurent les données du compte. Le cache local reste disponible hors connexion. Les choix d'un visiteur non connecté restent locaux jusqu'à sa connexion. Aucun favori existant dans un navigateur ne peut être importé par une migration exécutée à distance.
+Le bouton « Sauvegarder mes choix » permet de créer un compte ou de se connecter (sans confirmation par e-mail). À la première connexion sans préférences enregistrées, les choix de ce navigateur sont importés ; les sessions suivantes restaurent les données du compte. Le cache local reste disponible hors connexion. Les choix d'un visiteur non connecté restent locaux jusqu'à sa connexion. Aucun favori existant dans un navigateur ne peut être importé par une migration exécutée à distance.
 
-Les scripts `supabase/catalog-storage.sql` et `supabase/catalog-data-seed.sql` documentent les ajouts appliqués le 13 octobre 2026. Les 30 noms de stades et 59 photos manquants ont été complétés ; les trois horaires italiens ont été confirmés à 20:45 avec leurs sources officielles. Les 42 heures restantes inconnues et les liens officiels de stade sans preuve restent vides. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre.
+Les ajouts du 13 octobre 2026 (30 noms de stades et 59 photos complétés, trois horaires italiens confirmés à 20:45 avec leurs sources officielles) figurent dans `server/seed.sql`. Les 42 heures restantes inconnues et les liens officiels de stade sans preuve restent vides. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre.
 
-Validation : tests du catalogue distant et de sa pagination, restauration hors connexion, synchronisation des préférences, isolation entre comptes, lectures REST publiques et politiques RLS testées dans une transaction annulée. Aucune donnée de test n'est conservée dans la base.
+Validation : tests Vitest du catalogue distant, de la restauration hors connexion, de la synchronisation des préférences et de l'isolation entre comptes ; tests d'intégration de l'API contre une vraie base MariaDB de test (`cd server && npm test`, variables `TEST_DB_NAME`, `TEST_DB_USER`, `TEST_DB_PASSWORD`, `TEST_DB_HOST` ou `TEST_DB_SOCKET`).

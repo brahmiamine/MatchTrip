@@ -1,21 +1,24 @@
 import { act, create } from 'react-test-renderer';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
-const { auth, records, writes, from, listeners } = vi.hoisted(() => ({ auth: { session: null }, records: new Map(), writes: [], from: vi.fn(), listeners: new Set() }));
-vi.mock('../src/lib/supabase.js', () => ({ supabase: {
+const { auth, records, writes, api, listeners, net } = vi.hoisted(() => ({ auth: { session: null }, records: new Map(), writes: [], api: vi.fn(), listeners: new Set(), net: { deferred: null, failure: null } }));
+// Le serveur déduit l'utilisateur du jeton : la simulation lit donc la session courante.
+vi.mock('../src/lib/client.js', () => ({
+  configured: true,
+  api,
   auth: {
-    getSession: async () => ({ data: { session: auth.session } }),
-    onAuthStateChange: callback => { listeners.add(callback); return { data: { subscription: { unsubscribe: () => listeners.delete(callback) } } }; }
-  }, from
-} }));
+    getSession: () => auth.session,
+    onChange: callback => { listeners.add(callback); return () => listeners.delete(callback); }
+  }
+}));
 import { useStoredPreference } from '../src/hooks/useStoredPreference.js';
 
-let renderer, state, deferred;
+let renderer, state;
 const session = id => id ? { user: { id } } : null;
 async function switchUser(id) {
   await act(async () => {
     auth.session = session(id);
-    for (const callback of listeners) callback('SIGNED_IN', auth.session);
+    for (const callback of listeners) callback(auth.session);
     await vi.advanceTimersByTimeAsync(1);
   });
 }
@@ -29,16 +32,16 @@ beforeEach(() => {
   const cache = new Map();
   vi.stubGlobal('localStorage', { getItem: k => cache.has(k) ? cache.get(k) : null, setItem: (k, v) => cache.set(k, v) });
   vi.stubGlobal('window', new EventTarget());
-  records.clear(); writes.length = 0; listeners.clear(); auth.session = null; deferred = null;
-  from.mockImplementation(() => {
-    const filters = {};
-    const query = {
-      select: () => query,
-      eq: (key, value) => { filters[key] = value; return query; },
-      maybeSingle: () => deferred ?? Promise.resolve({ data: records.get(filters.user_id + ':' + filters.key) ? { value: records.get(filters.user_id + ':' + filters.key) } : null, error: null }),
-      upsert: async row => { writes.push(row); records.set(row.user_id + ':' + row.key, row.value); return { error: null }; }
-    };
-    return query;
+  records.clear(); writes.length = 0; listeners.clear(); auth.session = null; net.deferred = null; net.failure = null;
+  api.mockReset();
+  api.mockImplementation(async (method, path, body) => {
+    const key = path.replace('/preferences/', ''), user = auth.session?.user.id;
+    if (method === 'GET') {
+      if (net.failure) throw new Error(net.failure);
+      if (net.deferred) return net.deferred;
+      return { value: records.has(user + ':' + key) ? records.get(user + ':' + key) : null };
+    }
+    writes.push({ user_id: user, key, value: body.value }); records.set(user + ':' + key, body.value);
   });
 });
 afterEach(async () => {
@@ -77,16 +80,16 @@ describe('private cloud preference synchronization', () => {
     expect(JSON.parse(localStorage.getItem('matchtrip-theme:b'))).toBe('dark');
   });
   it('keeps edits made during a slow account read', async () => {
-    let resolve; deferred = new Promise(r => { resolve = r; }); auth.session = session('a');
+    let resolve; net.deferred = new Promise(r => { resolve = r; }); auth.session = session('a');
     await act(async () => { renderer = create(React.createElement(Harness)); });
     await act(async () => state[1]('light'));
-    await act(async () => resolve({ data: { value: 'dark' }, error: null }));
+    await act(async () => resolve({ value: 'dark' }));
     await act(async () => vi.advanceTimersByTimeAsync(500));
     expect(state[0]).toBe('light');
     expect(records.get('a:matchtrip-theme')).toBe('light');
   });
   it('does not write when cloud hydration fails', async () => {
-    auth.session = session('a'); deferred = Promise.resolve({ data: null, error: { message: 'offline' } });
+    auth.session = session('a'); net.failure = 'offline';
     const errors = []; window.addEventListener('matchtrip-sync-error', event => errors.push(event.detail));
     await act(async () => { renderer = create(React.createElement(Harness)); });
     await act(async () => state[1]('light'));
