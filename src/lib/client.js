@@ -1,5 +1,5 @@
 // Client de l'API MatchTrip (MariaDB). Surchargeable via VITE_API_URL (voir .env.example).
-export const API_URL = (import.meta.env.VITE_API_URL ?? 'https://matches-api.clubika.com').replace(/\/+$/, '');
+export const API_URL = (import.meta.env.VITE_API_URL ?? 'https://match.clubika.com').replace(/\/+$/, '');
 export const configured = Boolean(API_URL);
 const SESSION_KEY = 'matchtrip-session';
 

@@ -46,10 +46,10 @@ Le catalogue est public en lecture et **n'est modifiable que par l'administrateu
 - Schéma : `server/schema.sql`, appliqué automatiquement au démarrage de l'API (idempotent).
 - Données : `server/seed.sql` (catalogue exporté de l'ancienne base), rejouable : `mariadb matches < server/seed.sql`.
 - Configuration : copier `server/.env.example` vers `server/.env`.
-- Déploiement sur le VPS : `cd server && docker compose up -d --build`, servi par Caddy sur `https://matches-api.clubika.com`.
+- Déploiement sur le VPS : `cd server && docker compose up -d --build`, servi par Caddy sur `https://match.clubika.com`.
 - Comptes : e-mail + mot de passe (bcrypt), sessions par jeton opaque stocké haché en base. Sans SMTP configuré, il n'y a pas de récupération de mot de passe par e-mail.
 
-Le front cible `https://matches-api.clubika.com` par défaut ; pour une autre API, copiez `.env.example` vers `.env.local` et renseignez `VITE_API_URL`. Le catalogue `src/data/fixtures.js` + `src/data/newFixtures.js` sert de secours en cas d'indisponibilité de l'API.
+Le front cible `https://match.clubika.com` par défaut ; pour une autre API, copiez `.env.example` vers `.env.local` et renseignez `VITE_API_URL`. Le catalogue `src/data/fixtures.js` + `src/data/newFixtures.js` sert de secours en cas d'indisponibilité de l'API.
 
 ## Sources des calendriers et stades
 - https://www.knvb.nl/competities/eredivisie/programma
