@@ -68,7 +68,7 @@ export function countActiveFilters(f) {
 
 /** Ajoute le week-end contenant `date` (clé = samedi) sans doublon, trié. */
 export function addExcludedWeekend(list, date) {
-  if (!date) return list;
+  if (!date || !isWeekendDay(date)) return list;
   const sat = getWeekend(date);
   return list.includes(sat) ? list : [...list, sat].sort();
 }

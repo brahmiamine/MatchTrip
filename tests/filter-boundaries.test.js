@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyFilters, buildOptions, defaultFilters } from '../src/lib/filters.js';
+import { addExcludedWeekend, applyFilters, buildOptions, defaultFilters } from '../src/lib/filters.js';
 import { mk } from './helpers.js';
 
 const rows = [
@@ -53,5 +53,8 @@ describe('limites des week-ends et cumul des filtres',()=>{
   it('ne propose aucun week-end provenant uniquement d’un jour de semaine ou d’une fenêtre jusqu’au lundi',()=>{
     const ineligible=rows.filter(r=>['2026-12-28','fri-mon-window'].includes(r.fixture_key));
     expect(buildOptions(ineligible,defaultFilters()).weekends).toEqual([]);
+  });
+  it.each(['2027-01-11','2027-01-12','2027-01-13','2027-01-14'])('refuse une indisponibilité en semaine (%s) sans masquer le week-end précédent',date=>{
+    expect(addExcludedWeekend(['2027-01-16'],date)).toEqual(['2027-01-16']);
   });
 });
