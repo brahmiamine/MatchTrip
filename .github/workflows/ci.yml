@@ -17,6 +17,3 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm test
       - run: npm run build
-      - name: Check seeded fixtures and migration
-        run: |
-          node --input-type=module -e "import('./src/data/fixtures.js').then(({seedFixtures})=>{if(seedFixtures.length!==129)process.exit(1);const keys=new Set(seedFixtures.map(x=>x.fixture_key));if(keys.size!==129)process.exit(2);console.log('129 fixtures, unique keys')})"

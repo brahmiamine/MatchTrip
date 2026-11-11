@@ -9,8 +9,8 @@ import * as originalConstants from '../constants.js';
 import offlineMedia from '../data/clubMedia.json';
 import { seedFixtures } from '../data/fixtures.js';
 import { newFixtures } from '../data/newFixtures.js';
-import { VERIFIED_FRIDAY_FIXTURES, markFixtureVerification } from '../data/verifiedSchedule.js';
-const embedded = [...seedFixtures, ...newFixtures, ...VERIFIED_FRIDAY_FIXTURES].map(markFixtureVerification);
+import { markFixtureVerification } from '../data/verifiedSchedule.js';
+const embedded = [...seedFixtures, ...newFixtures].map(markFixtureVerification);
 const offlineConfig = { hubs: DESTINATION_HUBS, coordinates: CITY_COORDINATES, homeCities: HOME_CITIES, zoneGroups: WEEKEND_ZONE_GROUPS, constants: { ...originalConstants } };
 function restoreOfflineCatalogue() {
   configureMedia(Object.entries(offlineMedia).map(([club, row]) => ({ club, ...row })));

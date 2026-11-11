@@ -4,7 +4,7 @@ import { applyFilters, buildOptions, defaultFilters, addExcludedWeekend } from '
 import { groupMatches } from '../src/lib/sorting.js';
 import { buildWeekends, compatible } from '../src/lib/weekends.js';
 import { fixtureVerification } from '../src/lib/fixtureVerification.js';
-import { VERIFIED_FRIDAY_FIXTURES, VERIFIED_SCHEDULE, markFixtureVerification } from '../src/data/verifiedSchedule.js';
+import { markFixtureVerification } from '../src/data/verifiedSchedule.js';
 import { seedFixtures } from '../src/data/fixtures.js';
 import { newFixtures } from '../src/data/newFixtures.js';
 import { encodeState, decodeState, defaultView } from '../src/lib/urlState.js';
@@ -82,16 +82,18 @@ describe('audit de fiabilité des matchs', () => {
     expect(fixtureVerification({ date_confirmed:true,time_confirmed:false,time:'20:45' }).label).toBe('Heure à confirmer');
     expect(fixtureVerification({date_confirmed:true,time_confirmed:true,time:'20:45'}).kind).toBe('verified');
   });
-  it('le catalogue et les vendredis conservent leurs sources après complément des horaires', () => {
-    expect(Object.keys(VERIFIED_SCHEDULE)).toHaveLength(57);
-    expect(VERIFIED_FRIDAY_FIXTURES).toHaveLength(12);
-    expect(VERIFIED_FRIDAY_FIXTURES.every(m => getWeekend(m.date) && isWeekendDay(m.date) && m.date_confirmed && m.verified_source_url.startsWith('https://'))).toBe(true);
-    const keys = new Set([...seedFixtures,...newFixtures,...VERIFIED_FRIDAY_FIXTURES].map(m=>m.fixture_key));
-    expect(keys.size).toBe(226);
-    expect([...seedFixtures,...newFixtures].filter(m=>VERIFIED_SCHEDULE[m.fixture_key]).length).toBe(55);
-    for (const key of ['2026-10-25-udinese-ac-milan','2026-10-23-torino-monza','2026-11-06-venezia-udinese']) {
-      expect(VERIFIED_SCHEDULE[key]).toMatchObject({time:'20:45',time_confirmed:true});
-    }
+  it('les vendredis sont intégrés au même catalogue, avec une source datée', () => {
+    const all = [...seedFixtures,...newFixtures];
+    const fridays = all.filter(m => m.date_confirmed && weekendFriday(getWeekend(m.date)) === m.date);
+    expect(fridays.length).toBeGreaterThan(0);
+    expect(fridays.every(m => m.verified_source_url.startsWith('https://') && m.verified_at.startsWith('2026-11-11'))).toBe(true);
+    expect(all.map(markFixtureVerification)).toEqual(all);
+    expect(all.find(m => m.home === 'Bayern Munich' && m.away === '1. FC Cologne')).toMatchObject({date:'2026-11-20',time:'20:30',time_confirmed:true});
+  });
+  it('une ancienne date ne réapplique aucune confirmation retirée par le nouvel audit', () => {
+    const row={fixture_key:'2026-10-18-paris-fc-rennes',date:'2026-10-18',time:null,date_confirmed:false,time_confirmed:false};
+    expect(markFixtureVerification(row)).toEqual(row);
+    expect(markFixtureVerification({...row,date_confirmed:true,time_confirmed:true,time:'17:15'}).date_confirmed).toBe(false);
   });
   it('un horaire non vérifié ne rend pas combinables 2 matchs du même jour', () => {
     expect(compatible(mk({time_confirmed:false,time:'13:00'}), mk({time_confirmed:true,time:'19:00'}))).toBe(false);

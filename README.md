@@ -2,7 +2,7 @@
 
 Application React + Vite sur GitHub Pages pour trouver un week-end de football depuis Paris.
 
-**226 matchs de championnat** du 17 octobre au 31 décembre 2026, répartis dans **6 pays** : France (28), Belgique (8), Pays-Bas (60), Espagne (39), Italie (55) et Allemagne (36). Les matchs à domicile et leurs calendriers sont issus des recherches du 13 octobre 2026 ; dates susceptibles d'évoluer.
+**271 matchs de championnat** à partir du 11 novembre 2026 et jusqu’aux journées de fin janvier 2027, pour les **56 clubs receveurs déjà sélectionnés** : France (26), Belgique (8), Pays-Bas (62), Espagne (48), Italie (82) et Allemagne (45). Contrôle Internet du **11 novembre 2026** : 106 anciens matchs supprimés, 146 ajouts dont 134 en janvier. Les 205 horaires confirmés sont affichés en heure de Paris ; 66 rencontres gardent une fenêtre provisoire. [Détail et sources de chaque match](docs/fixtures-audit-2026-11-11.md).
 
 ## Application
 - Filtres combinables : pays, zones, clubs à domicile, adversaires, texte/stade, dates, compétitions, samedi/dimanche, horaire, grandes affiches, favoris, week-ends indisponibles.
@@ -19,7 +19,7 @@ Application React + Vite sur GitHub Pages pour trouver un week-end de football d
 - **Allemagne :** Cologne / Leverkusen / Mönchengladbach ; Dortmund / Schalke ; Francfort / Mayence ; Munich / Augsbourg.
 - Venise / Udine reste visible dans la liste sans combinaison automatique. Les **18 rencontres non localisées** de « Autres villes italiennes » ont été retirées du catalogue et des données du projet Test.
 
-**Important :** pour les 13 matchs allemands de décembre, la Bundesliga donne une **fenêtre vendredi–dimanche**, sans jour ni heure exacte à ce stade. Ils sont représentés par des plages explicites et exclus des suggestions automatiques tant que le calendrier définitif n'est pas publié ; pas de garantie d'un match le samedi ou le dimanche.
+**Dates non définitives :** 38 matchs espagnols, 21 italiens, 2 belges et 5 allemands restent sans programmation exacte. Leur heure est vide et leur fenêtre de dates explicite ; ils sont exclus des combinaisons automatiques. Les fenêtres vendredi–lundi des dernières journées de janvier peuvent inclure le 1er février. Les dates et heures allemandes de décembre sont désormais publiées.
 
 ## Installer
 ```bash
@@ -44,7 +44,7 @@ Le navigateur ne parle jamais à la base : il appelle l'API de `server/` (Node.j
 Le catalogue est public en lecture et **n'est modifiable que par l'administrateur de la base** (phpMyAdmin ou `server/seed.sql`) : l'API n'expose aucune écriture du catalogue. Les préférences, elles, sont toujours filtrées par le compte connecté.
 
 - Schéma : `server/schema.sql`, appliqué automatiquement au démarrage de l'API (idempotent).
-- Données : `server/seed.sql` (catalogue exporté de l'ancienne base), rejouable : `mariadb matches < server/seed.sql`.
+- Données : `server/seed.sql`, rejouable depuis la racine avec `mariadb matches < server/seed.sql`. Le catalogue des rencontres est actualisé dans une transaction et les matchs antérieurs au 11 novembre 2026 sont supprimés. Les comptes, sessions et préférences restent hors du seed.
 - Configuration : copier `server/.env.example` vers `server/.env`.
 - Déploiement sur le VPS : `cd server && docker compose up -d --build`, le conteneur sert le site compilé sur `https://match.clubika.com` et l'API sous `https://match.clubika.com/api` (derrière Caddy). Le build du site se fait dans l'image Docker avec `VITE_BASE=/`.
 - Comptes : e-mail + mot de passe (bcrypt), sessions par jeton opaque stocké haché en base. Sans SMTP configuré, il n'y a pas de récupération de mot de passe par e-mail.
@@ -82,18 +82,15 @@ Les groupes, options de filtre « Week-ends », week-ends exclus, URL partageabl
 
 Les filtres proposent un jour « Vendredi » et une plage horaire indépendante **[heure de début incluse, heure de fin exclue)**. Par exemple 10:00–19:00 accepte 10:00 et 18:59, mais **pas 19:00**, ni les rencontres sans heure. Les anciens filtres (pays, destination, club, compétition, favoris, dates, horaires inconnus) restent cumulables.
 
-## Contrôle documentaire des calendriers (13 octobre 2026)
+## Contrôle documentaire des calendriers (11 novembre 2026)
 
-Le catalogue initial de 214 rencontres n'était pas un export de calendrier officiel synchronisé. En conséquence, il serait incorrect de considérer toutes ses dates et heures comme vérifiées. **55 rencontres existantes** ont été rapprochées par clé de match des calendriers d'organisateurs (Ligue 1, LaLiga, KNVB, Bundesliga/DFB, Lega Serie A), et **12 rencontres du vendredi** ont été ajoutées après consultation de publications officielles. L'historique des sources et les dates/horaires rapprochés sont conservés dans `src/data/verifiedSchedule.js`. Les **159 rencontres non rapprochées** gardent un état `date_confirmed=false`, `time_confirmed=false`; l'interface affiche donc « Date et heure à confirmer » plutôt que d'inventer une confirmation. Une date/heure affichée sans preuve est un **repère à revalider**. Le badge « Date et heure vérifiées » n'apparaît que lorsqu'une source officielle correspond explicitement à la rencontre ; pour une date seule, le badge indique « Heure à confirmer ».
+Les 125 rencontres qui étaient encore à venir ont été rapprochées des calendriers en ligne ; quatre repères espagnols ont été corrigés ou complétés. Le catalogue couvre maintenant 271 rencontres, dont 134 de janvier 2027. Les fiches des matchs et les flux mensuels ESPN ont été consultés pour les six championnats, puis recoupés avec les publications officielles exploitables de Ligue 1, KNVB, Bundesliga, LaLiga et Lega Serie A. **198 rencontres concordent aussi avec une source officielle** ; les autres gardent un lien vers la fiche ESPN individuelle. Une source ESPN n’est pas présentée comme une publication officielle.
 
-Les statuts de vérification sont stockés dans `matchtrip_fixtures` (colonnes `date_confirmed`, `time_confirmed`, `verified_source_url`, `verified_at`) et repris dans `server/seed.sql`. Ce contrôle est un **audit partiel et daté** : les organisateurs peuvent encore décaler les horaires. Le site ne prétend pas une vérification exhaustive ni une mise à jour en temps réel.
+Le [rapport détaillé](docs/fixtures-audit-2026-11-11.md) liste chaque rencontre, son heure ou sa fenêtre et sa source. Le [relevé structuré](docs/data/fixtures-audit-2026-11-11.json) conserve le lien de flux, l’identifiant du fournisseur, le coup d’envoi UTC et le statut de confirmation. Les valeurs de la base et celles du secours intégré sont identiques après cette mise à jour.
 
-Sources primaires :
-- Ligue 1 : https://ligue1.com/fr/articles/l1_article_5797- , https://ligue1.com/fr/articles/l1_article_5805- , https://ligue1.com/fr/articles/l1_article_5839- , https://ligue1.com/fr/articles/l1_article_5843-
-- LaLiga : https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-9 et https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-10
-- KNVB : https://www.knvb.nl/competities/eredivisie/programma
-- DFB : https://datencenter.dfb.de/competitions/12/seasons/current
-- Lega Serie A : https://www.legaseriea.it/serie-a/news/quando-si-gioca-anticipi-e-posticipi-fino-alla-12a-giornata
+Un horaire fournisseur `timeValid=false` reste vide : il ne devient jamais une confirmation. Les 66 rencontres provisoires ne participent pas aux combinaisons de week-end. Les clés des matchs existants restent stables lors d’un déplacement de date, pour préserver les favoris. Les vendredis figurent directement dans les deux fichiers du catalogue ; aucune ancienne table de confirmations ne réinjecte des matchs d’octobre.
+
+Les confirmations sont stockées dans `matchtrip_fixtures` (`date_confirmed`, `time_confirmed`, `verified_source_url`, `verified_at`) et dans le seed. Cet audit est daté : il ne crée pas de synchronisation automatique avec les organisateurs, qui peuvent encore modifier leur calendrier.
 
 ### Catalogue et préférences dans MariaDB
 
@@ -106,7 +103,7 @@ L'application lit ces tables (via l'API) au chargement. Les statuts de confirmat
 
 Le bouton « Sauvegarder mes choix » permet de créer un compte ou de se connecter (sans confirmation par e-mail). À la première connexion sans préférences enregistrées, les choix de ce navigateur sont importés ; les sessions suivantes restaurent les données du compte. Le cache local reste disponible hors connexion. Les choix d'un visiteur non connecté restent locaux jusqu'à sa connexion. Aucun favori existant dans un navigateur ne peut être importé par une migration exécutée à distance.
 
-Les ajouts du 13 octobre 2026 (30 noms de stades et 59 photos complétés, trois horaires italiens confirmés à 20:45 avec leurs sources officielles) figurent dans `server/seed.sql`. Les 42 heures restantes inconnues et les liens officiels de stade sans preuve restent vides. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre.
+Les fiches de stades et les billetteries sont conservées. Les noms de stades usuels et les photographies ne certifient pas le lieu de chaque rencontre ; les dates et heures non confirmées restent explicitement provisoires.
 
 Validation : tests Vitest du catalogue distant, de la restauration hors connexion, de la synchronisation des préférences et de l'isolation entre comptes ; tests d'intégration de l'API contre une vraie base MariaDB de test (`cd server && npm test`, variables `TEST_DB_NAME`, `TEST_DB_USER`, `TEST_DB_PASSWORD`, `TEST_DB_HOST` ou `TEST_DB_SOCKET`).
 
