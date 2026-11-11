@@ -60,7 +60,7 @@ export default function App() {
         <FilterSidebar open={filtersOpen} onClose={() => setFiltersOpen(false)} resultCount={filtered.length} favoritesCount={favorites.length} filters={filters} options={options} set={set} toggleIn={toggleIn} addExcluded={addExcluded} removeExcluded={removeExcluded} reset={reset}/>
         <section className="results">
           {error && <div className="notice warning"><span>⚠</span>{error}</div>}
-          {!configured && <div className="notice"><span className="notice-icon">i</span><div><strong>Mode catalogue autonome</strong><p>Données initiales du 13 octobre 2026. La connexion à une API dédiée peut être activée ultérieurement.</p></div></div>}
+          {!configured && <div className="notice"><span className="notice-icon">i</span><div><strong>Mode catalogue autonome</strong><p>Catalogue contrôlé le 11 novembre 2026. Consultez la source de chaque rencontre pour connaître les éventuels changements de programmation.</p></div></div>}
           <ActiveFilters items={active} onRemove={remove} summary={summary} excludedCount={filters.excluded.length}/>
           {loading ? <Skeletons/>
             : filtered.length === 0 ? <Empty onReset={reset} noFavorites={filters.onlyFav && favorites.length === 0}/>

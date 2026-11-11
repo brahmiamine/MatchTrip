@@ -24,7 +24,7 @@ export default function MatchCard({ match: m, favorite, onToggleFavorite }) {
     <div className="card-links">
       <Stadium match={m}/>
       <DistanceFromHub match={m}/>
-      {m.source_url && <a className="meta-link" href={m.source_url} target="_blank" rel="noreferrer">Calendrier officiel ↗</a>}
+      {m.source_url && <a className="meta-link" href={m.source_url} target="_blank" rel="noreferrer">Source du calendrier ↗</a>}
     </div>
     {ticketUrl && <a className="outline-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`${getTicketLabel(m.home)} : ${m.home}`}>{getTicketLabel(m.home)}</a>}
   </article>;

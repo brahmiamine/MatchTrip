@@ -12,7 +12,7 @@ export default function FixtureStatus({ match, compact = false }) {
       {state.label}
     </span>
     {state.source && <a className="fixture-source" href={state.source}
-      target="_blank" rel="noopener noreferrer" title="Calendrier officiel vérifié">
+      target="_blank" rel="noopener noreferrer" title="Source de la vérification">
       Source <ExternalLink size={10} aria-hidden="true"/>
     </a>}
   </span>;

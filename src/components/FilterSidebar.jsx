@@ -41,7 +41,7 @@ export default function FilterSidebar({ open, onClose, resultCount, favoritesCou
         <Switch label="✓ Date et heure vérifiées*" checked={f.onlyCertain} onChange={v => set('onlyCertain', v)}/>
         <Switch label={`♥ Mes favoris (${favoritesCount})`} checked={f.onlyFav} onChange={v => set('onlyFav', v)}/></div>
       <ExcludedWeekends list={f.excluded} onAdd={addExcluded} onRemove={removeExcluded}/>
-      <p className="hint">* Vérifié : une publication officielle correspond à la date et à l'heure exactes. Les autres matchs restent à confirmer.</p>
+      <p className="hint">* Vérifié : une source consultée correspond à la date et à l'heure exactes. Les autres matchs restent à confirmer.</p>
       <button type="button" className="drawer-cta" onClick={onClose}>Voir {resultCount} match{resultCount > 1 ? 's' : ''}</button>
     </div>
   </aside>;

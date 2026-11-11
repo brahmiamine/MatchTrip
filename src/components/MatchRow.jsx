@@ -28,7 +28,7 @@ export default function MatchRow({ match: m, favorite, onToggleFavorite }) {
     </div>
     <div className="row-actions">
       {ticketUrl && <a className="ghost-button" href={ticketUrl} target="_blank" rel="noopener noreferrer" title={`${getTicketLabel(m.home)} : ${m.home}`}>{getTicketLabel(m.home)}</a>}
-      {m.source_url && <a className="icon-button" href={m.source_url} target="_blank" rel="noreferrer" title="Calendrier officiel" aria-label="Calendrier officiel">↗</a>}
+      {m.source_url && <a className="icon-button" href={m.source_url} target="_blank" rel="noreferrer" title="Source du calendrier" aria-label="Source du calendrier">↗</a>}
       <FavoriteButton active={favorite} onToggle={() => onToggleFavorite(m.fixture_key)}/>
     </div>
   </div>;
