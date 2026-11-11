@@ -1,12 +1,12 @@
 # Audit des rencontres du 11 novembre 2026
 
-Catalogue contrôlé du 11 novembre 2026 au 31 janvier 2027, pour les **56 clubs receveurs déjà sélectionnés**. Les pays, zones, destinations, billetteries et règles de combinaisons vendredi–dimanche restent ceux de l’application. Les rencontres en semaine sont visibles dans la liste et exclues des combinaisons de week-end.
+Catalogue contrôlé du 11 novembre 2026 au 31 janvier 2027, pour les **56 clubs receveurs déjà sélectionnés**. Les pays, zones, destinations, billetteries et règles de combinaisons vendredi–dimanche restent ceux de l’application. Les rencontres programmées du lundi au jeudi ont ensuite été retirées à la demande de l’utilisateur. Les fenêtres pouvant déborder en semaine restent archivées dans le catalogue et sont masquées par les filtres de week-end.
 
-Résultat : **106 anciennes rencontres retirées**, **125 rencontres à venir conservées et contrôlées**, **146 ajouts dont 134 de janvier**, soit **271 rencontres**. **205 dates et heures sont confirmées** ; **66 restent provisoires**. Toutes les heures sont converties depuis UTC vers `Europe/Paris` (CET en hiver).
+L’audit initial a retiré 106 anciennes rencontres et ajouté 146 matchs, dont 134 de janvier. Le contrôle des filtres a ensuite entraîné la suppression demandée des **20 matchs programmés du lundi au jeudi** (dont 13 en janvier). Le catalogue actuel contient **251 rencontres**, dont **121 de janvier** : **185 dates et heures confirmées** et **66 fenêtres provisoires**. Les filtres affichent uniquement les vendredis, samedis et dimanches ; une fenêtre pouvant déborder au lundi est masquée. Toutes les heures sont exprimées dans `Europe/Paris`.
 
 ## Méthode et sources
 
-Les 18 flux mensuels ESPN (6 championnats, novembre, décembre et janvier) ont été consultés et rapprochés par pays, club recevant et adversaire. Les données de 198 rencontres concordent également avec une publication officielle exploitable. Pour ces rencontres, le lien officiel est prioritaire. Pour les autres, la fiche ESPN individuelle et le flux consulté sont conservés dans [le relevé structuré](data/fixtures-audit-2026-11-11.json). Une donnée ESPN seule n’est pas présentée comme une publication officielle.
+Les 18 flux mensuels ESPN (6 championnats, novembre, décembre et janvier) ont été consultés et rapprochés par pays, club recevant et adversaire. Les données de 180 rencontres conservées concordent également avec une publication officielle exploitable. Pour ces rencontres, le lien officiel est prioritaire. Pour les autres, la fiche ESPN individuelle et le flux consulté sont conservés dans [le relevé structuré](data/fixtures-audit-2026-11-11.json). Une donnée ESPN seule n’est pas présentée comme une publication officielle.
 
 - France : [J11](https://ligue1.com/fr/articles/l1_article_5839-), [J12](https://ligue1.com/fr/articles/l1_article_5843-), [J13 à J18](https://ligue1.com/en/articles/l1_article_5979-programmation-tv-de-la-j13-a-la-j18).
 - Pays-Bas : [programme KNVB](https://www.knvb.nl/competities/eredivisie/programma). Deux rencontres absentes du rendu consulté sont documentées par ESPN.
@@ -23,7 +23,6 @@ La reprise Rayo–Athletic du 9 décembre est exclue des nouveaux déplacements 
 
 | Rencontre | Ancien repère | Date et heure contrôlées |
 |---|---|---|
-| Espanyol – Getafe | 29 novembre, sans heure | 30 novembre 2026 à 21:00 |
 | Levante – Racing Santander | 29 novembre, sans heure | 27 novembre 2026 à 21:00 |
 | Real Madrid – Alavés | 29 novembre, sans heure | 28 novembre 2026 à 21:00 |
 | Valencia CF – Osasuna | 29 novembre, sans heure | 29 novembre 2026 à 14:00 |
@@ -34,11 +33,11 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 
 | Pays | Total | Janvier | Dates/heures confirmées | Provisoires |
 |---|---:|---:|---:|---:|
-| Allemagne | 45 | 22 | 40 | 5 |
+| Allemagne | 40 | 17 | 35 | 5 |
 | Belgique | 8 | 3 | 6 | 2 |
-| Espagne | 48 | 24 | 10 | 38 |
+| Espagne | 45 | 24 | 7 | 38 |
 | France | 26 | 13 | 26 | 0 |
-| Italie | 82 | 44 | 61 | 21 |
+| Italie | 70 | 36 | 49 | 21 |
 | Pays-Bas | 62 | 28 | 62 | 0 |
 
 ## Détail de chaque rencontre
@@ -73,8 +72,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Belgique | Anderlecht – OH Louvain | 2026-11-22 | 18:30 | [Source](https://www.espn.com/soccer/match/_/gameId/401878941/oud-heverlee-leuven-anderlecht) |
 | Italie | Atalanta – Inter Milan | 2026-11-22 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf) |
 | Espagne | Getafe – Atlético Madrid | 2026-11-22 | 21:00 | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13) |
-| Italie | Monza – Fiorentina | 2026-11-23 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf) |
-| Espagne | Levante – Elche | 2026-11-23 | 21:00 | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13) |
 | Pays-Bas | FC Groningen – Willem II | 2026-11-27 | 20:00 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Italie | Venezia – Bologna | 2026-11-27 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Espagne | Levante – Racing Santander | 2026-11-27 | 21:00 | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14) |
@@ -101,8 +98,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Belgique | Union SG – La Gantoise | 2026-11-29 | 19:15 | [Source](https://www.espn.com/soccer/match/_/gameId/401878925/kaa-gent-union-st-gilloise) |
 | Allemagne | Borussia Dortmund – Bayer Leverkusen | 2026-11-29 | 19:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/11) |
 | Italie | Como – Juventus | 2026-11-29 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Espagne | Espanyol – Getafe | 2026-11-30 | 21:00 | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14) |
-| Espagne | FC Barcelone – Atlético Madrid | 2026-12-02 | 21:30 | [Source](https://www.espn.com/soccer/match/_/gameId/401882700/atletico-madrid-barcelona) |
 | Pays-Bas | Telstar – FC Groningen | 2026-12-04 | 20:00 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Allemagne | Bayern Munich – SC Paderborn 07 | 2026-12-04 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/12) |
 | Italie | Bologna – AS Roma | 2026-12-04 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
@@ -130,7 +125,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Pays-Bas | ADO Den Haag – Excelsior Rotterdam | 2026-12-06 | 16:45 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Italie | Juventus – Udinese | 2026-12-06 | 18:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Italie | AC Milan – Parma | 2026-12-06 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Venezia – Sassuolo | 2026-12-07 | 18:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Italie | Udinese – Frosinone | 2026-12-11 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | France | Auxerre – Toulouse | 2026-12-11 | 20:45 | [Source](https://ligue1.com/en/articles/l1_article_5979-programmation-tv-de-la-j13-a-la-j18) |
 | Allemagne | 1. FC Cologne – RB Leipzig | 2026-12-12 | 15:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/13) |
@@ -156,8 +150,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Pays-Bas | AZ Alkmaar – NEC | 2026-12-13 | 16:45 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Italie | Parma – Fiorentina | 2026-12-13 | 18:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Pays-Bas | Ajax – SC Cambuur | 2026-12-13 | 20:00 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
-| Italie | Atalanta – Genoa | 2026-12-14 | 18:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Juventus – Monza | 2026-12-14 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Italie | Frosinone – Lazio | 2026-12-18 | 18:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Pays-Bas | Telstar – Willem II | 2026-12-18 | 20:00 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Allemagne | Bayern Munich – Werder Bremen | 2026-12-18 | 20:30 | [Source](https://www.espn.com/soccer/match/_/gameId/401884700/werder-bremen-bayern-munich) |
@@ -199,13 +191,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Italie | Parma – Napoli | 2027-01-03 | 18:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Italie | Bologna – Juventus | 2027-01-03 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | France | Lens – PSG | 2027-01-03 | 20:45 | [Source](https://ligue1.com/en/articles/l1_article_5979-programmation-tv-de-la-j13-a-la-j18) |
-| Italie | Venezia – AS Roma | 2027-01-05 | 18:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | AC Milan – Fiorentina | 2027-01-05 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Juventus – Torino | 2027-01-06 | 12:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Frosinone – Bologna | 2027-01-06 | 15:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Atalanta – Como | 2027-01-06 | 18:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Lazio – Inter Milan | 2027-01-06 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Sassuolo – Udinese | 2027-01-07 | 18:30 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Allemagne | Borussia Dortmund – FSV Mainz 05 | 2027-01-08 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/15) |
 | Italie | Monza – Frosinone | 2027-01-09 | 15:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Allemagne | 1. FC Cologne – SC Freiburg | 2027-01-09 | 15:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/15) |
@@ -228,12 +213,6 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Pays-Bas | FC Groningen – Go Ahead Eagles | 2027-01-10 | 16:45 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Italie | Torino – Atalanta | 2027-01-10 | 18:00 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
 | Italie | Inter Milan – Juventus | 2027-01-10 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Italie | Udinese – Napoli | 2027-01-11 | 20:45 | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
-| Allemagne | 1. FC Cologne – Borussia Dortmund | 2027-01-12 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
-| Allemagne | FC Augsburg – Borussia Mönchengladbach | 2027-01-12 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
-| Allemagne | FSV Mainz 05 – TSG Hoffenheim | 2027-01-12 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
-| Allemagne | Bayern Munich – Bayer Leverkusen | 2027-01-13 | 20:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
-| Allemagne | Schalke 04 – Werder Bremen | 2027-01-14 | 20:30 | [Source](https://www.espn.com/soccer/match/_/gameId/401884675/werder-bremen-schalke-04) |
 | Pays-Bas | sc Heerenveen – Sparta Rotterdam | 2027-01-15 | 20:00 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Allemagne | Borussia Dortmund – SC Freiburg | 2027-01-16 | 15:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/17) |
 | Allemagne | Borussia Mönchengladbach – Union Berlin | 2027-01-16 | 15:30 | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/17) |
@@ -316,3 +295,28 @@ Les clés techniques des rencontres existantes sont conservées même si leur da
 | Pays-Bas | sc Heerenveen – Ajax | 2027-01-31 | 12:15 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Pays-Bas | AZ Alkmaar – Feyenoord | 2027-01-31 | 14:30 | [Source](https://www.knvb.nl/competities/eredivisie/programma) |
 | Pays-Bas | FC Groningen – NEC | 2027-01-31 | 16:45 | [Source](https://www.espn.com/soccer/match/_/gameId/401875664/nec-nijmegen-fc-groningen) |
+
+## Rencontres en semaine retirées
+
+| Rencontre | Date | Jour | Source |
+|---|---|---|---|
+| Monza – Fiorentina | 2026-11-23 | lundi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf) |
+| Levante – Elche | 2026-11-23 | lundi | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13) |
+| Espanyol – Getafe | 2026-11-30 | lundi | [Source](https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14) |
+| FC Barcelone – Atlético Madrid | 2026-12-02 | mercredi | [Source](https://www.espn.com/soccer/match/_/gameId/401882700/atletico-madrid-barcelona) |
+| Venezia – Sassuolo | 2026-12-07 | lundi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Atalanta – Genoa | 2026-12-14 | lundi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Juventus – Monza | 2026-12-14 | lundi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Venezia – AS Roma | 2027-01-05 | mardi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| AC Milan – Fiorentina | 2027-01-05 | mardi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Juventus – Torino | 2027-01-06 | mercredi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Frosinone – Bologna | 2027-01-06 | mercredi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Atalanta – Como | 2027-01-06 | mercredi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Lazio – Inter Milan | 2027-01-06 | mercredi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Sassuolo – Udinese | 2027-01-07 | jeudi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| Udinese – Napoli | 2027-01-11 | lundi | [Source](https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf) |
+| 1. FC Cologne – Borussia Dortmund | 2027-01-12 | mardi | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
+| FC Augsburg – Borussia Mönchengladbach | 2027-01-12 | mardi | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
+| FSV Mainz 05 – TSG Hoffenheim | 2027-01-12 | mardi | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
+| Bayern Munich – Bayer Leverkusen | 2027-01-13 | mercredi | [Source](https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16) |
+| Schalke 04 – Werder Bremen | 2027-01-14 | jeudi | [Source](https://www.espn.com/soccer/match/_/gameId/401884675/werder-bremen-schalke-04) |

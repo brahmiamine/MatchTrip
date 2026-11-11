@@ -4,12 +4,13 @@
   "through": "2027-01-31",
   "timezone": "Europe/Paris",
   "counts": {
-    "total": 271,
-    "january": 134,
-    "confirmed": 205,
+    "total": 251,
+    "january": 121,
+    "confirmed": 185,
     "provisional": 66,
     "deleted": 106,
-    "added": 146
+    "added": 146,
+    "weekday_removed": 20
   },
   "reviewed_clubs": {
     "Allemagne": [
@@ -335,24 +336,6 @@
       "official_source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13"
     },
     {
-      "fixture_key": "2026-11-23-monza-fiorentina",
-      "event_id": "401875009",
-      "kickoff_utc": "2026-11-23T19:45Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202611&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875009/fiorentina-monza",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf"
-    },
-    {
-      "fixture_key": "2026-11-22-levante-elche",
-      "event_id": "401882802",
-      "kickoff_utc": "2026-11-23T20:00Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202611&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401882802/elche-levante",
-      "official_source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13"
-    },
-    {
       "fixture_key": "2026-11-27-fc-groningen-willem-ii",
       "event_id": "401875536",
       "kickoff_utc": "2026-11-27T19:00Z",
@@ -585,24 +568,6 @@
       "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202611&limit=1000",
       "event_url": "https://www.espn.com/soccer/match/_/gameId/401874994/juventus-como",
       "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2026-11-29-espanyol-getafe",
-      "event_id": "401882792",
-      "kickoff_utc": "2026-11-30T20:00Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202611&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401882792/getafe-espanyol",
-      "official_source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14"
-    },
-    {
-      "fixture_key": "2026-12-02-fc-barcelone-atletico-madrid",
-      "event_id": "401882700",
-      "kickoff_utc": "2026-12-02T20:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401882700/atletico-madrid-barcelona",
-      "official_source_url": null
     },
     {
       "fixture_key": "2026-12-04-telstar-groningen",
@@ -848,15 +813,6 @@
       "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
     },
     {
-      "fixture_key": "2026-12-07-venezia-sassuolo",
-      "event_id": "401875011",
-      "kickoff_utc": "2026-12-07T17:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875011/sassuolo-venezia",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
       "fixture_key": "2026-12-11-udinese-frosinone",
       "event_id": "401874775",
       "kickoff_utc": "2026-12-11T19:45Z",
@@ -1080,24 +1036,6 @@
       "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard?dates=202612&limit=1000",
       "event_url": "https://www.espn.com/soccer/match/_/gameId/401875520/sc-cambuur-ajax-amsterdam",
       "official_source_url": "https://www.knvb.nl/competities/eredivisie/programma"
-    },
-    {
-      "fixture_key": "2026-12-14-atalanta-genoa",
-      "event_id": "401875032",
-      "kickoff_utc": "2026-12-14T17:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875032/genoa-atalanta",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2026-12-14-juventus-monza",
-      "event_id": "401874783",
-      "kickoff_utc": "2026-12-14T19:45Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401874783/monza-juventus",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
     },
     {
       "fixture_key": "2026-12-18-frosinone-lazio",
@@ -1469,69 +1407,6 @@
       "official_source_url": "https://ligue1.com/en/articles/l1_article_5979-programmation-tv-de-la-j13-a-la-j18"
     },
     {
-      "fixture_key": "2027-01-05-venezia-as-roma",
-      "event_id": "401875099",
-      "kickoff_utc": "2027-01-05T17:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875099/as-roma-venezia",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-05-ac-milan-fiorentina",
-      "event_id": "401875034",
-      "kickoff_utc": "2027-01-05T19:45Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875034/fiorentina-ac-milan",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-06-juventus-torino",
-      "event_id": "401875070",
-      "kickoff_utc": "2027-01-06T11:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875070/torino-juventus",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-06-frosinone-bologna",
-      "event_id": "401875087",
-      "kickoff_utc": "2027-01-06T14:00Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401875087/bologna-frosinone",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-06-atalanta-como",
-      "event_id": "401874843",
-      "kickoff_utc": "2027-01-06T17:00Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401874843/como-atalanta",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-06-lazio-inter-milan",
-      "event_id": "401874778",
-      "kickoff_utc": "2027-01-06T19:45Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401874778/internazionale-lazio",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-07-sassuolo-udinese",
-      "event_id": "401874999",
-      "kickoff_utc": "2027-01-07T17:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401874999/udinese-sassuolo",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
       "fixture_key": "2027-01-08-borussia-dortmund-fsv-mainz-05",
       "event_id": "401884691",
       "kickoff_utc": "2027-01-08T19:30Z",
@@ -1728,60 +1603,6 @@
       "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
       "event_url": "https://www.espn.com/soccer/match/_/gameId/401875035/juventus-internazionale",
       "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-11-udinese-napoli",
-      "event_id": "401874835",
-      "kickoff_utc": "2027-01-11T19:45Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401874835/napoli-udinese",
-      "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
-    },
-    {
-      "fixture_key": "2027-01-12-1-fc-cologne-borussia-dortmund",
-      "event_id": "401884676",
-      "kickoff_utc": "2027-01-12T19:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401884676/borussia-dortmund-fc-cologne",
-      "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
-    },
-    {
-      "fixture_key": "2027-01-12-fc-augsburg-borussia-monchengladbach",
-      "event_id": "401884679",
-      "kickoff_utc": "2027-01-12T19:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401884679/borussia-monchengladbach-fc-augsburg",
-      "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
-    },
-    {
-      "fixture_key": "2027-01-12-fsv-mainz-05-tsg-hoffenheim",
-      "event_id": "401884678",
-      "kickoff_utc": "2027-01-12T19:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401884678/tsg-hoffenheim-mainz",
-      "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
-    },
-    {
-      "fixture_key": "2027-01-13-bayern-munich-bayer-leverkusen",
-      "event_id": "401884682",
-      "kickoff_utc": "2027-01-13T19:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401884682/bayer-leverkusen-bayern-munich",
-      "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
-    },
-    {
-      "fixture_key": "2027-01-14-schalke-04-werder-bremen",
-      "event_id": "401884675",
-      "kickoff_utc": "2027-01-14T19:30Z",
-      "time_valid": true,
-      "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
-      "event_url": "https://www.espn.com/soccer/match/_/gameId/401884675/werder-bremen-schalke-04",
-      "official_source_url": null
     },
     {
       "fixture_key": "2027-01-15-sc-heerenveen-sparta-rotterdam",
@@ -2529,6 +2350,355 @@
       "away": "Athletic Bilbao",
       "reason": "Reprise à huis clos le 9 décembre : pas de déplacement spectateur.",
       "source_url": "https://as.com/futbol/primera/el-rayo-athletic-se-jugara-el-9-de-diciembre-f202610-n/"
+    },
+    {
+      "fixture_key": "2026-11-23-monza-fiorentina",
+      "home": "Monza",
+      "away": "Fiorentina",
+      "date": "2026-11-23",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf",
+      "evidence": {
+        "fixture_key": "2026-11-23-monza-fiorentina",
+        "event_id": "401875009",
+        "kickoff_utc": "2026-11-23T19:45Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202611&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875009/fiorentina-monza",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/w2zepi8iww3zamzewn8y.pdf"
+      }
+    },
+    {
+      "fixture_key": "2026-11-22-levante-elche",
+      "home": "Levante",
+      "away": "Elche",
+      "date": "2026-11-23",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13",
+      "evidence": {
+        "fixture_key": "2026-11-22-levante-elche",
+        "event_id": "401882802",
+        "kickoff_utc": "2026-11-23T20:00Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202611&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401882802/elche-levante",
+        "official_source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-13"
+      }
+    },
+    {
+      "fixture_key": "2026-11-29-espanyol-getafe",
+      "home": "Espanyol",
+      "away": "Getafe",
+      "date": "2026-11-30",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14",
+      "evidence": {
+        "fixture_key": "2026-11-29-espanyol-getafe",
+        "event_id": "401882792",
+        "kickoff_utc": "2026-11-30T20:00Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202611&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401882792/getafe-espanyol",
+        "official_source_url": "https://www.laliga.com/laliga-easports/resultados/2026-27/jornada-14"
+      }
+    },
+    {
+      "fixture_key": "2026-12-02-fc-barcelone-atletico-madrid",
+      "home": "FC Barcelone",
+      "away": "Atlético Madrid",
+      "date": "2026-12-02",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.espn.com/soccer/match/_/gameId/401882700/atletico-madrid-barcelona",
+      "evidence": {
+        "fixture_key": "2026-12-02-fc-barcelone-atletico-madrid",
+        "event_id": "401882700",
+        "kickoff_utc": "2026-12-02T20:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401882700/atletico-madrid-barcelona",
+        "official_source_url": null
+      }
+    },
+    {
+      "fixture_key": "2026-12-07-venezia-sassuolo",
+      "home": "Venezia",
+      "away": "Sassuolo",
+      "date": "2026-12-07",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2026-12-07-venezia-sassuolo",
+        "event_id": "401875011",
+        "kickoff_utc": "2026-12-07T17:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875011/sassuolo-venezia",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2026-12-14-atalanta-genoa",
+      "home": "Atalanta",
+      "away": "Genoa",
+      "date": "2026-12-14",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2026-12-14-atalanta-genoa",
+        "event_id": "401875032",
+        "kickoff_utc": "2026-12-14T17:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875032/genoa-atalanta",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2026-12-14-juventus-monza",
+      "home": "Juventus",
+      "away": "Monza",
+      "date": "2026-12-14",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2026-12-14-juventus-monza",
+        "event_id": "401874783",
+        "kickoff_utc": "2026-12-14T19:45Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202612&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401874783/monza-juventus",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-05-venezia-as-roma",
+      "home": "Venezia",
+      "away": "AS Roma",
+      "date": "2027-01-05",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-05-venezia-as-roma",
+        "event_id": "401875099",
+        "kickoff_utc": "2027-01-05T17:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875099/as-roma-venezia",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-05-ac-milan-fiorentina",
+      "home": "AC Milan",
+      "away": "Fiorentina",
+      "date": "2027-01-05",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-05-ac-milan-fiorentina",
+        "event_id": "401875034",
+        "kickoff_utc": "2027-01-05T19:45Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875034/fiorentina-ac-milan",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-06-juventus-torino",
+      "home": "Juventus",
+      "away": "Torino",
+      "date": "2027-01-06",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-06-juventus-torino",
+        "event_id": "401875070",
+        "kickoff_utc": "2027-01-06T11:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875070/torino-juventus",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-06-frosinone-bologna",
+      "home": "Frosinone",
+      "away": "Bologna",
+      "date": "2027-01-06",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-06-frosinone-bologna",
+        "event_id": "401875087",
+        "kickoff_utc": "2027-01-06T14:00Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401875087/bologna-frosinone",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-06-atalanta-como",
+      "home": "Atalanta",
+      "away": "Como",
+      "date": "2027-01-06",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-06-atalanta-como",
+        "event_id": "401874843",
+        "kickoff_utc": "2027-01-06T17:00Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401874843/como-atalanta",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-06-lazio-inter-milan",
+      "home": "Lazio",
+      "away": "Inter Milan",
+      "date": "2027-01-06",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-06-lazio-inter-milan",
+        "event_id": "401874778",
+        "kickoff_utc": "2027-01-06T19:45Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401874778/internazionale-lazio",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-07-sassuolo-udinese",
+      "home": "Sassuolo",
+      "away": "Udinese",
+      "date": "2027-01-07",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-07-sassuolo-udinese",
+        "event_id": "401874999",
+        "kickoff_utc": "2027-01-07T17:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401874999/udinese-sassuolo",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-11-udinese-napoli",
+      "home": "Udinese",
+      "away": "Napoli",
+      "date": "2027-01-11",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf",
+      "evidence": {
+        "fixture_key": "2027-01-11-udinese-napoli",
+        "event_id": "401874835",
+        "kickoff_utc": "2027-01-11T19:45Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401874835/napoli-udinese",
+        "official_source_url": "https://images.legaseriea.it/image/private/fl_attachment/prd/uregsxswxv7ddacwghha.pdf"
+      }
+    },
+    {
+      "fixture_key": "2027-01-12-1-fc-cologne-borussia-dortmund",
+      "home": "1. FC Cologne",
+      "away": "Borussia Dortmund",
+      "date": "2027-01-12",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16",
+      "evidence": {
+        "fixture_key": "2027-01-12-1-fc-cologne-borussia-dortmund",
+        "event_id": "401884676",
+        "kickoff_utc": "2027-01-12T19:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401884676/borussia-dortmund-fc-cologne",
+        "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
+      }
+    },
+    {
+      "fixture_key": "2027-01-12-fc-augsburg-borussia-monchengladbach",
+      "home": "FC Augsburg",
+      "away": "Borussia Mönchengladbach",
+      "date": "2027-01-12",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16",
+      "evidence": {
+        "fixture_key": "2027-01-12-fc-augsburg-borussia-monchengladbach",
+        "event_id": "401884679",
+        "kickoff_utc": "2027-01-12T19:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401884679/borussia-monchengladbach-fc-augsburg",
+        "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
+      }
+    },
+    {
+      "fixture_key": "2027-01-12-fsv-mainz-05-tsg-hoffenheim",
+      "home": "FSV Mainz 05",
+      "away": "TSG Hoffenheim",
+      "date": "2027-01-12",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16",
+      "evidence": {
+        "fixture_key": "2027-01-12-fsv-mainz-05-tsg-hoffenheim",
+        "event_id": "401884678",
+        "kickoff_utc": "2027-01-12T19:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401884678/tsg-hoffenheim-mainz",
+        "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
+      }
+    },
+    {
+      "fixture_key": "2027-01-13-bayern-munich-bayer-leverkusen",
+      "home": "Bayern Munich",
+      "away": "Bayer Leverkusen",
+      "date": "2027-01-13",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16",
+      "evidence": {
+        "fixture_key": "2027-01-13-bayern-munich-bayer-leverkusen",
+        "event_id": "401884682",
+        "kickoff_utc": "2027-01-13T19:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401884682/bayer-leverkusen-bayern-munich",
+        "official_source_url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/16"
+      }
+    },
+    {
+      "fixture_key": "2027-01-14-schalke-04-werder-bremen",
+      "home": "Schalke 04",
+      "away": "Werder Bremen",
+      "date": "2027-01-14",
+      "reason": "Match programmé du lundi au jeudi : retrait demandé par l’utilisateur.",
+      "source_url": "https://www.espn.com/soccer/match/_/gameId/401884675/werder-bremen-schalke-04",
+      "evidence": {
+        "fixture_key": "2027-01-14-schalke-04-werder-bremen",
+        "event_id": "401884675",
+        "kickoff_utc": "2027-01-14T19:30Z",
+        "time_valid": true,
+        "feed_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=202701&limit=1000",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/401884675/werder-bremen-schalke-04",
+        "official_source_url": null
+      }
     }
-  ]
+  ],
+  "before_weekday_cleanup_counts": {
+    "total": 271,
+    "january": 134,
+    "confirmed": 205,
+    "provisional": 66,
+    "deleted": 106,
+    "added": 146
+  },
+  "weekday_cleanup_at": "2026-11-11T16:19:30Z"
 }

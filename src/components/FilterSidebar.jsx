@@ -21,6 +21,7 @@ export default function FilterSidebar({ open, onClose, resultCount, favoritesCou
         <MultiSelect label="Zones géographiques" values={options.zones} chosen={f.zones} onToggle={z => toggleIn('zones', z)}/>
         <MultiSelect label="Clubs à domicile" values={options.clubs} chosen={f.clubs} onToggle={c => toggleIn('clubs', c)}/>
         <MultiSelect label="Week-ends" values={options.weekends} chosen={f.weekends} onToggle={w => toggleIn('weekends', w)} format={formatWeekendRange}/>
+        <p className="hint">Vendredi, samedi et dimanche uniquement, y compris avec « Tous ». Les dates provisoires pouvant déborder en semaine sont masquées.</p>
         <MultiSelect label="Compétitions" values={options.leagues} chosen={f.leagues} onToggle={l => toggleIn('leagues', l)}/></div>
       <div className="field"><span className="field-label">PÉRIODE</span>
         <div className="pair-row">

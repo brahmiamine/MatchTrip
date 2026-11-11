@@ -5,13 +5,13 @@ import { COUNTRY_ORDER } from '../src/constants.js';
 const fixtures = [...seedFixtures, ...newFixtures];
 
 describe('catalogue intégré', () => {
-  it('271 matchs aux clés uniques après le contrôle de novembre', () => {
-    expect(fixtures).toHaveLength(271);
-    expect(new Set(fixtures.map(m => m.fixture_key)).size).toBe(271);
+  it('251 matchs aux clés uniques après retrait des matchs en semaine', () => {
+    expect(fixtures).toHaveLength(251);
+    expect(new Set(fixtures.map(m => m.fixture_key)).size).toBe(251);
   });
   it.each(['fixture_key', 'country', 'zone', 'league', 'home', 'away', 'date', 'source_url'])('champ %s renseigné', f =>
     expect(fixtures.every(m => typeof m[f] === 'string' && m[f].length > 0)).toBe(true));
-  it('dates valides à partir du 11 novembre, y compris les rencontres en semaine', () => {
+  it('dates valides à partir du 11 novembre', () => {
     for (const m of fixtures) {
       expect(m.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(new Date(m.date + 'T00:00:00Z').toISOString().slice(0, 10)).toBe(m.date);
@@ -24,7 +24,10 @@ describe('catalogue intégré', () => {
   });
   it('heures au format HH:MM ou nulles', () => expect(fixtures.every(m => m.time === null || /^([01]\d|2[0-3]):[0-5]\d$/.test(m.time))).toBe(true));
   it('pays connus', () => expect(fixtures.every(m => COUNTRY_ORDER.includes(m.country))).toBe(true));
+  it('ne conserve aucun match programmé du lundi au jeudi', () => {
+    expect(fixtures.filter(m => [1,2,3,4].includes(new Date(m.date + 'T12:00:00Z').getUTCDay())).map(m => m.fixture_key)).toEqual([]);
+  });
   it('conserve la clé des favoris lorsque le coup d’envoi change de date', () => {
-    expect(fixtures.find(m => m.fixture_key === '2026-11-29-espanyol-getafe')).toMatchObject({date:'2026-11-30', time:'21:00', date_confirmed:true, time_confirmed:true});
+    expect(fixtures.find(m => m.fixture_key === '2026-11-29-levante-racing-santander')).toMatchObject({date:'2026-11-27', time:'21:00', date_confirmed:true, time_confirmed:true});
   });
 });

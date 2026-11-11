@@ -9,7 +9,7 @@ describe('calendrier Eredivisie et Bundesliga jusqu’à janvier 2027', () => {
   it('couvre les clubs sélectionnés dans les deux championnats', () => {
     expect(new Set(all.map(x => x.fixture_key)).size).toBe(all.length);
     expect(newFixtures.filter(x => x.country === 'Pays-Bas')).toHaveLength(62);
-    expect(newFixtures.filter(x => x.country === 'Allemagne')).toHaveLength(45);
+    expect(newFixtures.filter(x => x.country === 'Allemagne')).toHaveLength(40);
   });
   it('dates et stades retrouvables par clubs', () => {
     expect(newFixtures.every(x => x.zone && x.cluster && x.home && x.away && x.source_url && x.date)).toBe(true);

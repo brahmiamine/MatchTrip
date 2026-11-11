@@ -2,7 +2,9 @@
 
 Application React + Vite sur GitHub Pages pour trouver un week-end de football depuis Paris.
 
-**271 matchs de championnat** à partir du 11 novembre 2026 et jusqu’aux journées de fin janvier 2027, pour les **56 clubs receveurs déjà sélectionnés** : France (26), Belgique (8), Pays-Bas (62), Espagne (48), Italie (82) et Allemagne (45). Contrôle Internet du **11 novembre 2026** : 106 anciens matchs supprimés, 146 ajouts dont 134 en janvier. Les 205 horaires confirmés sont affichés en heure de Paris ; 66 rencontres gardent une fenêtre provisoire. [Détail et sources de chaque match](docs/fixtures-audit-2026-11-11.md).
+**251 matchs de championnat** à partir du 11 novembre 2026 et jusqu’aux journées de fin janvier 2027, pour les **56 clubs receveurs déjà sélectionnés** : France (26), Belgique (8), Pays-Bas (62), Espagne (45), Italie (70) et Allemagne (40). Le contrôle Internet du 11 novembre a retiré 106 anciens matchs et ajouté janvier ; les **20 rencontres programmées du lundi au jeudi** ont ensuite été supprimées à la demande de l’utilisateur. Le catalogue conserve **121 rencontres de janvier**, 185 dates/heures confirmées et 66 fenêtres provisoires. [Détail et sources de chaque match](docs/fixtures-audit-2026-11-11.md).
+
+**Affichage vendredi–dimanche uniquement :** « Week-ends : Tous » signifie tous les week-ends. Les dates provisoires pouvant déborder en semaine sont masquées. Les fenêtres entièrement comprises entre vendredi et dimanche restent visibles, avec leur incertitude ; elles ne passent pas un filtre de jour précis. Les filtres d’heures et les plages horaires n’acceptent que des heures confirmées. Une période de dates doit contenir toute la fenêtre provisoire pour l’afficher.
 
 ## Application
 - Filtres combinables : pays, zones, clubs à domicile, adversaires, texte/stade, dates, compétitions, samedi/dimanche, horaire, grandes affiches, favoris, week-ends indisponibles.
@@ -84,7 +86,7 @@ Les filtres proposent un jour « Vendredi » et une plage horaire indépendante 
 
 ## Contrôle documentaire des calendriers (11 novembre 2026)
 
-Les 125 rencontres qui étaient encore à venir ont été rapprochées des calendriers en ligne ; quatre repères espagnols ont été corrigés ou complétés. Le catalogue couvre maintenant 271 rencontres, dont 134 de janvier 2027. Les fiches des matchs et les flux mensuels ESPN ont été consultés pour les six championnats, puis recoupés avec les publications officielles exploitables de Ligue 1, KNVB, Bundesliga, LaLiga et Lega Serie A. **198 rencontres concordent aussi avec une source officielle** ; les autres gardent un lien vers la fiche ESPN individuelle. Une source ESPN n’est pas présentée comme une publication officielle.
+Les 125 rencontres qui étaient encore à venir ont été rapprochées des calendriers en ligne ; quatre repères espagnols ont été corrigés ou complétés. Après suppression des matchs programmés en semaine, le catalogue conserve 251 rencontres, dont 121 de janvier 2027. Les fiches des matchs et les flux mensuels ESPN ont été consultés pour les six championnats, puis recoupés avec les publications officielles exploitables de Ligue 1, KNVB, Bundesliga, LaLiga et Lega Serie A. **180 rencontres conservées concordent aussi avec une source officielle** ; les autres gardent un lien vers la fiche ESPN individuelle. Une source ESPN n’est pas présentée comme une publication officielle.
 
 Le [rapport détaillé](docs/fixtures-audit-2026-11-11.md) liste chaque rencontre, son heure ou sa fenêtre et sa source. Le [relevé structuré](docs/data/fixtures-audit-2026-11-11.json) conserve le lien de flux, l’identifiant du fournisseur, le coup d’envoi UTC et le statut de confirmation. Les valeurs de la base et celles du secours intégré sont identiques après cette mise à jour.
 

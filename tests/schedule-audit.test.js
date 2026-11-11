@@ -14,7 +14,7 @@ describe('rapprochement du catalogue et des sources du 11 novembre', () => {
       expect(fixtures.some(m => m.country === country && m.date.startsWith('2027-01'))).toBe(true);
     }
     expect(fixtures.filter(m => m.date.startsWith('2027-01'))).toHaveLength(audit.counts.january);
-    expect(audit.counts.january).toBe(134);
+    expect(audit.counts.january).toBe(121);
   });
 
   it('dispose d’une preuve de contrôle pour chaque rencontre, sans doublon d’affiche', () => {
@@ -33,7 +33,7 @@ describe('rapprochement du catalogue et des sources du 11 novembre', () => {
       timeZone: audit.timezone, year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23',
     });
     const confirmed = fixtures.filter(m => m.time_confirmed);
-    expect(confirmed).toHaveLength(205);
+    expect(confirmed).toHaveLength(185);
     for (const match of confirmed) {
       const evidence = sources.get(match.fixture_key);
       expect(evidence.time_valid).toBe(true);
