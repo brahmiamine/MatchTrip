@@ -9,7 +9,9 @@ services:
       dockerfile: server/Dockerfile
     container_name: matches-api
     restart: unless-stopped
-    env_file: .env
+    env_file:
+      - .env
+      - /home/debian/deploy/shared/smtp.env
     volumes:
       - /run/mysqld:/run/mysqld
     networks:
