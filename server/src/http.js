@@ -177,7 +177,7 @@ export function createServer({ router, allowedOrigins, bodyLimit = 1024 * 1024, 
 
     try {
       let body
-      if (req.method !== 'GET' && req.method !== 'DELETE') {
+      if (req.method !== 'GET') {
         const raw = await readBody(req, bodyLimit)
         const type = String(req.headers['content-type'] || '')
         if (raw.length && type.includes('application/json')) {

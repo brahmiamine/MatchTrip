@@ -119,7 +119,9 @@ describe('MatchTrip API', { skip }, () => {
     const { token, user } = await signup()
     await call('PUT', '/preferences/matchtrip-theme', { token, body: { value: 'light' } })
     assert.equal((await call('DELETE', '/auth/user', { token })).status, 400)
-    assert.equal((await call('DELETE', '/auth/user?confirmation=DELETE', { token })).status, 204)
+    assert.equal((await call('DELETE', '/auth/user?confirmation=DELETE', { token })).status, 403) // mot de passe absent
+    assert.equal((await call('DELETE', '/auth/user?confirmation=DELETE', { token, body: { password: 'mauvais-mot-de-passe' } })).status, 403)
+    assert.equal((await call('DELETE', '/auth/user?confirmation=DELETE', { token, body: { password: 'motdepasse1' } })).status, 204)
     assert.equal((await call('GET', '/auth/user', { token })).status, 401)
     const [[{ count }]] = await pool.query('SELECT COUNT(*) AS count FROM matchtrip_preferences WHERE user_id = ?', [user.id])
     assert.equal(count, 0)

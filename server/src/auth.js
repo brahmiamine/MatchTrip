@@ -192,5 +192,13 @@ export function createAuth({ pool, mailer, appName, buildLink, minPasswordLength
     if (magicLink) router.post('/auth/magic-link', ({ body, ip }) => sendEmailLink(body, ip, 'magic'))
   }
 
-  return { register, currentUser, requireUser, bearer, hashToken }
+  /** Ré-authentification avant une action irréversible : mot de passe exigé, essais limités par compte. */
+  const confirmPassword = async (user, password) => {
+    limitLogin(`confirm:${user.id}`)
+    const [rows] = await pool.execute('SELECT password_hash FROM users WHERE id = ?', [user.id])
+    const valid = typeof password === 'string' && password && rows[0] && await bcrypt.compare(password, rows[0].password_hash)
+    if (!valid) throw new HttpError(403, 'Mot de passe incorrect.', 'wrong_password')
+  }
+
+  return { register, currentUser, requireUser, bearer, hashToken, confirmPassword }
 }

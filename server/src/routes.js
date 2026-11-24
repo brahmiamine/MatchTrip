@@ -76,9 +76,10 @@ export function registerRoutes(router, { pool, auth }) {
   })
 
   /** Suppression du compte : sessions et préférences suivent en cascade. */
-  router.delete('/auth/user', async ({ req, query }) => {
+  router.delete('/auth/user', async ({ req, query, body }) => {
     const user = await auth.requireUser(req)
     if (query.get('confirmation') !== 'DELETE') throw badRequest('Confirmation requise.', 'confirmation_required')
+    await auth.confirmPassword(user, body?.password)
     await pool.execute('DELETE FROM users WHERE id = ?', [user.id])
     return null
   })
