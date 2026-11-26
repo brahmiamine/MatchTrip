@@ -118,3 +118,7 @@ Chaque commit poussé sur `main` met l'application à jour :
 3. Le journal est dans `~/deploy/deploy.log` sur le serveur ; un commit refusé n'est pas retenté tant qu'un nouveau commit n'arrive pas.
 
 La mise en ligne prend en général 1 à 3 minutes après le push.
+
+## Actualisation du 24 novembre 2026
+
+Catalogue du 24 novembre au 31 janvier : 222 rencontres, dont 166 horaires confirmés et 56 provisoires. Les 29 rencontres passées ou désormais programmées en semaine sont retirées. Les 18 flux mensuels ESPN des six championnats ont été relus ; aucune rencontre supplémentaire à domicile des 56 clubs sélectionnés ne correspond aux critères. Preuves : `docs/data/fixtures-catalogue-2026-11-24.json`.

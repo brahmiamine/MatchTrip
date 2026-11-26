@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-11-24T12:32:52.827421+00:00",
+  "total": 251,
+  "feeds": 18,
+  "errors": {},
+  "missing": [],
+  "changes": [
+    {
+      "key": "2026-12-06-atletico-madrid-betis-seville",
+      "before_date": "2026-12-06",
+      "before_time": null,
+      "date": "2026-12-06",
+      "time": "21:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882784"
+    },
+    {
+      "key": "2026-12-06-fc-barcelone-celta-vigo",
+      "before_date": "2026-12-06",
+      "before_time": null,
+      "date": "2026-12-05",
+      "time": "21:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882783"
+    },
+    {
+      "key": "2026-12-06-getafe-valence",
+      "before_date": "2026-12-06",
+      "before_time": null,
+      "date": "2026-12-06",
+      "time": "18:30:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882782"
+    },
+    {
+      "key": "2026-12-06-rayo-vallecano-levante",
+      "before_date": "2026-12-06",
+      "before_time": null,
+      "date": "2026-12-05",
+      "time": "16:15:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882779"
+    },
+    {
+      "key": "2026-12-06-villarreal-real-sociedad",
+      "before_date": "2026-12-06",
+      "before_time": null,
+      "date": "2026-12-05",
+      "time": "18:30:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882777"
+    },
+    {
+      "key": "2026-12-13-atletico-madrid-valence",
+      "before_date": "2026-12-13",
+      "before_time": null,
+      "date": "2026-12-13",
+      "time": "14:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882776"
+    },
+    {
+      "key": "2026-12-13-espanyol-celta-vigo",
+      "before_date": "2026-12-13",
+      "before_time": null,
+      "date": "2026-12-14",
+      "time": "21:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882772"
+    },
+    {
+      "key": "2026-12-13-levante-alaves",
+      "before_date": "2026-12-13",
+      "before_time": null,
+      "date": "2026-12-12",
+      "time": "14:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882771"
+    },
+    {
+      "key": "2026-12-13-real-madrid-osasuna",
+      "before_date": "2026-12-13",
+      "before_time": null,
+      "date": "2026-12-13",
+      "time": "21:00:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882769"
+    },
+    {
+      "key": "2026-12-13-villarreal-rayo-vallecano",
+      "before_date": "2026-12-13",
+      "before_time": null,
+      "date": "2026-12-12",
+      "time": "16:15:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202612&limit=1000",
+      "event": "401882767"
+    },
+    {
+      "key": "2027-01-02-paris-fc-le-havre",
+      "before_date": "2027-01-02",
+      "before_time": "21:00:00",
+      "date": "2027-01-03",
+      "time": "17:15:00",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=202701&limit=1000",
+      "event": "401876362"
+    }
+  ]
+}

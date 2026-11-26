@@ -12,12 +12,14 @@ export const defaultFilters = () => ({
 const timeKey = m => (m.time && m.time_confirmed === true ? m.time.slice(0, 5) : null);
 const searchText = m => normalize([m.home, m.away, m.country, m.zone, m.city, m.league, m.stadium].join(' '));
 
-/** Une fenêtre qui peut déborder en semaine ne garantit pas un match de week-end. */
+/** Afficher les fenêtres provisoires qui recouvrent le week-end sans confirmer leur jour. */
 function fixtureWeekend(m) {
   if (!isWeekendDay(m.date)) return null;
   const weekend = getWeekend(m.date);
   const start = m.date_window_start || m.date, end = m.date_window_end || m.date;
-  return start >= weekendFriday(weekend) && end <= weekendSunday(weekend) ? weekend : null;
+  return m.provisional && !m.date_confirmed
+    ? (start <= weekendSunday(weekend) && end >= weekendFriday(weekend) ? weekend : null)
+    : (start >= weekendFriday(weekend) && end <= weekendSunday(weekend) ? weekend : null);
 }
 
 /** Plage de dates : une borne vide est ouverte (aucune limite) ; deux bornes inversées sont échangées. */
@@ -36,7 +38,9 @@ export function matchesFilters(m, f, favorites = []) {
   if (f.weekends.length && !f.weekends.includes(weekend)) return false;
   if (f.search && !searchText(m).includes(normalize(f.search.trim()))) return false;
   const [from, to] = normalizeRange(f.dateFrom, f.dateTo);
-  if ((from && (m.date_window_start || m.date) < from) || (to && (m.date_window_end || m.date) > to)) return false;
+  if (m.provisional && !m.date_confirmed) {
+    if ((from && (m.date_window_end || m.date) < from) || (to && (m.date_window_start || m.date) > to)) return false;
+  } else if ((from && (m.date_window_start || m.date) < from) || (to && (m.date_window_end || m.date) > to)) return false;
   if (f.day !== 'all') {
     // Date provisoire vendredi–dimanche : ne pas prétendre que le match est samedi.
     if (m.date_window_start && m.date_window_end) return false;

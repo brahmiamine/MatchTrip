@@ -11,7 +11,6 @@ const rows = [
   mk({fixture_key:'unverified-time',country:'Pays-Bas',zone:'Eindhoven / Tilburg',league:'Eredivisie',home:'PSV',away:'Ajax',date:'2027-01-02',time:'16:00',time_confirmed:false}),
   mk({fixture_key:'no-time',country:'Pays-Bas',zone:'Rotterdam / La Haye',league:'Eredivisie',home:'Feyenoord',away:'AZ Alkmaar',date:'2027-01-03',time:null,time_confirmed:false}),
   mk({fixture_key:'fri-sun-window',country:'Allemagne',zone:'Munich / Augsbourg',league:'Bundesliga',home:'Bayern Munich',away:'Schalke 04',date:'2027-01-02',time:null,provisional:true,date_confirmed:false,time_confirmed:false,date_window_start:'2027-01-01',date_window_end:'2027-01-03'}),
-  mk({fixture_key:'fri-mon-window',country:'Espagne',zone:'Madrid',league:'LaLiga',home:'Real Madrid',away:'Alavés',date:'2027-01-03',time:null,provisional:true,date_confirmed:false,time_confirmed:false,date_window_start:'2027-01-01',date_window_end:'2027-01-04'}),
 ];
 const run = (filters={},favorites=[])=>applyFilters(rows,{...defaultFilters(),...filters},favorites).map(r=>r.fixture_key);
 
@@ -35,7 +34,7 @@ describe('limites des week-ends et cumul des filtres',()=>{
     [{day:'samedi'},['sat','unverified-time']],
     [{day:'dimanche'},['sun','no-time']],
     [{dateFrom:'2027-01-01',dateTo:'2027-01-03'},['next-fri','unverified-time','no-time','fri-sun-window']],
-    [{dateFrom:'2027-01-03',dateTo:'2027-01-02'},['unverified-time','no-time']],
+    [{dateFrom:'2027-01-03',dateTo:'2027-01-02'},['unverified-time','no-time','fri-sun-window']],
     [{slot:'day'},['fri','next-fri']],
     [{slot:'evening'},['sat','sun']],
     [{slot:'unknown'},['unverified-time','no-time','fri-sun-window']],
@@ -50,9 +49,15 @@ describe('limites des week-ends et cumul des filtres',()=>{
     expect(run({onlyFav:true},['fri','2026-12-28','unverified-time'])).toEqual(['fri','unverified-time']);
     expect(run({onlyFav:true,onlyCertain:true},['fri','unverified-time'])).toEqual(['fri']);
   });
-  it('ne propose aucun week-end provenant uniquement d’un jour de semaine ou d’une fenêtre jusqu’au lundi',()=>{
-    const ineligible=rows.filter(r=>['2026-12-28','fri-mon-window'].includes(r.fixture_key));
-    expect(buildOptions(ineligible,defaultFilters()).weekends).toEqual([]);
+  it('affiche une fenêtre vendredi–lundi en janvier sans la présenter comme confirmée',()=>{
+    const provisional = mk({fixture_key:'fri-mon-window',country:'Espagne',zone:'Madrid',league:'LaLiga',home:'Real Madrid',away:'Alavés',date:'2027-01-03',time:null,provisional:true,date_confirmed:false,time_confirmed:false,date_window_start:'2027-01-01',date_window_end:'2027-01-04'});
+    const filters={...defaultFilters(),countries:['Espagne'],dateFrom:'2027-01-01',dateTo:'2027-01-31'};
+    expect(applyFilters([provisional],filters,[])).toEqual([provisional]);
+    expect(buildOptions([provisional],filters).weekends).toEqual(['2027-01-02']);
+    expect(applyFilters([provisional],{...filters,onlyCertain:true},[])).toEqual([]);
+    expect(applyFilters([provisional],{...filters,day:'dimanche'},[])).toEqual([]);
+    expect(applyFilters([{...provisional,date:'2027-02-01',provisional:false,date_confirmed:true}],filters,[])).toEqual([]);
+    expect(applyFilters([{...provisional,date:'2027-01-31',date_window_start:'2027-01-29',date_window_end:'2027-02-01'}],filters,[])).toHaveLength(1);
   });
   it.each(['2027-01-11','2027-01-12','2027-01-13','2027-01-14'])('refuse une indisponibilité en semaine (%s) sans masquer le week-end précédent',date=>{
     expect(addExcludedWeekend(['2027-01-16'],date)).toEqual(['2027-01-16']);

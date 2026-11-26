@@ -86,9 +86,10 @@ describe('audit de fiabilité des matchs', () => {
     const all = [...seedFixtures,...newFixtures];
     const fridays = all.filter(m => m.date_confirmed && weekendFriday(getWeekend(m.date)) === m.date);
     expect(fridays.length).toBeGreaterThan(0);
-    expect(fridays.every(m => m.verified_source_url.startsWith('https://') && m.verified_at.startsWith('2026-11-11'))).toBe(true);
+    expect(fridays.every(m => m.verified_source_url.startsWith('https://') && m.verified_at.startsWith('2026-11-24'))).toBe(true);
     expect(all.map(markFixtureVerification)).toEqual(all);
-    expect(all.find(m => m.home === 'Bayern Munich' && m.away === '1. FC Cologne')).toMatchObject({date:'2026-11-20',time:'20:30',time_confirmed:true});
+    expect(all.every(m => m.date >= '2026-11-24' && m.date <= '2027-01-31')).toBe(true);
+    expect(all.every(m => [0,5,6].includes(new Date(m.date+'T12:00:00Z').getUTCDay()))).toBe(true);
   });
   it('une ancienne date ne réapplique aucune confirmation retirée par le nouvel audit', () => {
     const row={fixture_key:'2026-10-18-paris-fc-rennes',date:'2026-10-18',time:null,date_confirmed:false,time_confirmed:false};

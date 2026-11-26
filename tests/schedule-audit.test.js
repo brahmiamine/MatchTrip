@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { seedFixtures } from '../src/data/fixtures.js';
 import { newFixtures } from '../src/data/newFixtures.js';
-import audit from '../docs/data/fixtures-audit-2026-11-11.json';
+import audit from '../docs/data/fixtures-catalogue-2026-11-24.json';
 import { buildWeekends } from '../src/lib/weekends.js';
 
 const fixtures = [...seedFixtures, ...newFixtures];
@@ -33,7 +33,7 @@ describe('rapprochement du catalogue et des sources du 11 novembre', () => {
       timeZone: audit.timezone, year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23',
     });
     const confirmed = fixtures.filter(m => m.time_confirmed);
-    expect(confirmed).toHaveLength(185);
+    expect(confirmed).toHaveLength(audit.counts.confirmed);
     for (const match of confirmed) {
       const evidence = sources.get(match.fixture_key);
       expect(evidence.time_valid).toBe(true);
@@ -45,7 +45,7 @@ describe('rapprochement du catalogue et des sources du 11 novembre', () => {
 
   it('ne transforme pas les horaires provisoires en voyages combinables', () => {
     const provisional = fixtures.filter(m => !m.time_confirmed);
-    expect(provisional).toHaveLength(66);
+    expect(provisional).toHaveLength(audit.counts.provisional);
     for (const match of provisional) {
       expect(sources.get(match.fixture_key).time_valid).toBe(false);
       expect(match).toMatchObject({time:null, date_confirmed:false, time_confirmed:false, provisional:true});
